@@ -1,6 +1,7 @@
 program myProgram
 
-
+	int arr[];
+	char brr[];
 
     class Integer {
         int myInt;
@@ -53,7 +54,6 @@ program myProgram
             void getTable()
                 int a;
                 {
-
                     return 1;
                 }
         }

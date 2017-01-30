@@ -23,11 +23,14 @@ public class CompilerImpl {
 	private static int localArrays;
 	private static int globalConstants;
 	
+	public static final int _ARRAY = Struct.Array;
 	public static final int _STRING = 6;
-	public static final int _BOOL = 5;
+	public static final int _BOOL = Struct.Bool;
 	
 	public static final Struct stringType = new Struct(_STRING, Tab.charType);
     public static final Struct boolType = new Struct(_BOOL);
+    public static final Struct arrayType = new Struct(_ARRAY, Tab.intType);
+    
     
     public static int globalAdr = 0;
     public static int localAdr = 0;
@@ -80,11 +83,11 @@ public class CompilerImpl {
 	
 
 	public void insertGlobalVar(String varName, int varNameleft) {
-		if(Tab.currentScope().findSymbol(varName) == null){
+		if(Tab.currentScope().findSymbol(varName) == null) {
 			globalVars++;
-			Obj var = Tab.insert(Obj.Var, varName, currentType);
-			var.setAdr(globalAdr);
-			globalAdr++;
+			Tab.insert(Obj.Var, varName, currentType);
+			/*var.setAdr(globalAdr);
+			globalAdr++;*/
 			log.info("Deklarisana je globalna promenljiva " + varName + " - linija: " + varNameleft);
 		} else {
 			log.error("Promenljiva " + varName + " je vec definisana - linija: " + varNameleft);
@@ -95,9 +98,7 @@ public class CompilerImpl {
 	public void insertGlobalArray(String varName, int varNameleft) {
 		if(Tab.currentScope().findSymbol(varName) == null){
 			globalArrays++;
-			Obj var = Tab.insert(Obj.Var, varName, currentType);
-			var.setAdr(globalAdr);
-			globalAdr++;
+			Tab.insert(Obj.Var, varName, new Struct(Struct.Array, currentType));
 			log.info("Deklarisan je globalni niz " + varName + " - linija: " + varNameleft);
 		} else {
 			log.error("Niz " + varName + " je vec definisan - linija: " + varNameleft);
@@ -108,9 +109,8 @@ public class CompilerImpl {
 	public void insertLocalVar(String varName, int varNameleft) {
 		if(Tab.currentScope().findSymbol(varName) == null){
 			localVars++;
-			Obj var = Tab.insert(Obj.Var, varName, currentType);
-			var.setAdr(localAdr);
-			localAdr++;
+			Tab.insert(Obj.Var, varName, currentType);
+			
 			log.info("Deklarisana je lokalna promenljiva " + varName + " - linija: " + varNameleft);
 		} else {
 			log.error("Promenljiva " + varName + " je vec definisana - linija: " + varNameleft);
@@ -121,7 +121,7 @@ public class CompilerImpl {
 	public void insertLocalArray(String varName, int varNameleft) {
 		if(Tab.currentScope().findSymbol(varName) == null){
 			localArrays++;
-			Obj var = Tab.insert(Obj.Var, varName, currentType);
+			Obj var = Tab.insert(Obj.Var, varName, new Struct(Struct.Array, currentType));
 			var.setAdr(localAdr);
 			localAdr++;
 			log.info("Deklarisan je lokalni niz " + varName + " - linija: " + varNameleft);
@@ -224,19 +224,14 @@ public class CompilerImpl {
 	public void insertConstant(String constName, Object constValue, int constNameleft){
 		
 		if(Tab.currentScope().findSymbol(constName) == null){
-			
-			
-			
 			int adr = 0;
 			
 			if (constValue instanceof Integer && currentType.getKind() == Struct.Int) {
 				adr = (Integer) constValue;
-			}
-			else if (constValue instanceof Character && currentType.getKind() == Struct.Char) {
+			} else if (constValue instanceof Character && currentType.getKind() == Struct.Char) {
 				adr = (int) ((Character) (constValue));
-			}
-			else if (constValue instanceof Boolean && currentType.getKind() == Struct.Bool) {
-					adr =  1;
+			} else if (constValue instanceof Boolean && currentType.getKind() == Struct.Bool) {
+				adr =  1;
 			} else {
 				log.error("Vrednost " + constValue + " nije komaptibilna sa tipom konstante, linija: " + constNameleft);
 				return;
@@ -244,8 +239,6 @@ public class CompilerImpl {
 			
 			globalConstants++;
 			Tab.insert(Obj.Var, constName, currentType).setAdr(adr);
-			
-			
 			
 			log.info("Deklarisana je konstanta " + constName + " - linija: " + constNameleft);
 		} else {

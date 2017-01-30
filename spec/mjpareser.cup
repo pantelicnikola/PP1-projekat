@@ -78,7 +78,7 @@ terminal String IDENT;
 
 non terminal Program, DeclList, Decls ;
 non terminal MethodDecl, MethodReturnType, MethodDeclList, MethodFormPars, FormPars, FormPar;   
-non terminal VarDecl, VarDecls, VarPar, VarDeclList;
+non terminal VarDecl, VarDecls, VarPar;
 non terminal LocalVarDecl, LocalVarDecls, LocalVarPar, LocalVarDeclList;
 non terminal ClassDecl, ExtendsType, ClassMethods;
 non terminal ConstDecl, Const, ConstDecls, ConstPar;
@@ -152,11 +152,6 @@ VarDecls ::= VarDecls COMMA VarPar
 VarPar ::= IDENT:varName {: impl.insertGlobalVar(varName,varNameleft); :} 
 		   |
 		   IDENT:varName LBRACKET RBRACKET {: impl.insertGlobalArray(varName,varNameleft); :} ;
-		   
-VarDeclList ::= VarDeclList VarDecl
-				|
-				/* epsilon */
-				;
 				
 				
 				
@@ -190,7 +185,7 @@ LocalVarDeclList ::= LocalVarDeclList LocalVarDecl
 		   
 				
 ClassDecl ::= CLASS IDENT:className {: impl.insertClass(className,classNameleft); :} 
-			  ExtendsType LBRACE VarDeclList ClassMethods RBRACE {: impl.endClass(); :}; 
+			  ExtendsType LBRACE LocalVarDeclList ClassMethods RBRACE {: impl.endClass(); :}; 
 
 ExtendsType ::= EXTENDS Type
 			   |
