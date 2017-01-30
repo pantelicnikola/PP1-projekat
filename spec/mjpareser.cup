@@ -83,7 +83,7 @@ non terminal LocalVarDecl, LocalVarDecls, LocalVarPar, LocalVarDeclList;
 non terminal ClassDecl, ExtendsType, ClassMethods;
 non terminal ConstDecl, Const, ConstDecls, ConstPar;
 non terminal Statement, StatementList, ForDesignatorStatement, ForCondition;
-non terminal DesignatorStatement ;
+non terminal DesignatorStatement, DesignatorAssignStatement ;
 non terminal Condition, CondTerm, CondFact ;
 non terminal ActPars, Expr, AddopTermList, Term, MulopFactorList ;
 non terminal Factor ;
@@ -137,9 +137,12 @@ ConstDecls ::= ConstPar COMMA ConstDecls
 
 
 
-VarDecl ::= Type:type {: impl.setType(type); :} VarDecls SEMI_COLON ; 
+VarDecl ::= Type:type {: impl.setType(type); :} VarDecls SEMI_COLON 
+			|
+			error SEMI_COLON
+			{: parser.log.debug("Uspesan oporavak od greske pri deklarisanju globalne promenljive."); :};
 
-VarDecls ::= VarPar COMMA VarDecls
+VarDecls ::= VarDecls COMMA VarPar 
 			 |
 			 VarPar
 			 |
@@ -148,10 +151,7 @@ VarDecls ::= VarPar COMMA VarDecls
 			   
 VarPar ::= IDENT:varName {: impl.insertGlobalVar(varName,varNameleft); :} 
 		   |
-		   IDENT:varName LBRACKET RBRACKET {: impl.insertGlobalArray(varName,varNameleft); :} 
-		   |
-		   error
-		   {: parser.log.debug("Uspesan oporavak od greske pri deklarisanju globalne promenljive."); :};
+		   IDENT:varName LBRACKET RBRACKET {: impl.insertGlobalArray(varName,varNameleft); :} ;
 		   
 VarDeclList ::= VarDeclList VarDecl
 				|
@@ -260,9 +260,6 @@ Type ::= IDENT:typeName {: RESULT = impl.getType(typeName,typeNameleft); :};
 
 Statement ::= DesignatorStatement SEMI_COLON:semi
 			  |
-			  error SEMI_COLON
-			  {: parser.log.debug("Uspesan oporavak od greske pri dodeli vrednosti."); :}
-			  |
 			  IF LPAREN Condition RPAREN Statement 
 			  |
 			  IF LPAREN Condition RPAREN Statement ELSE Statement 
@@ -316,7 +313,7 @@ ForCondition ::= Condition
 				
 				
 
-DesignatorStatement ::= Designator:des Assignop Expr:expr
+DesignatorStatement ::= DesignatorAssignStatement
 						|
 						Designator LPAREN RPAREN
 						|
@@ -326,7 +323,10 @@ DesignatorStatement ::= Designator:des Assignop Expr:expr
 						|
 						Designator:des DEC {: impl.decrement(des,desleft); :} ;
 
-
+DesignatorAssignStatement ::= Designator:des Assignop Expr:expr
+							  |
+							  error
+							  {: parser.log.debug("Uspesan oporavak od greske pri dodeli vrednosti."); :};
 							 
 			
 			

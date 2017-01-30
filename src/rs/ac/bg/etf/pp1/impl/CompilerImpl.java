@@ -23,8 +23,8 @@ public class CompilerImpl {
 	private static int localArrays;
 	private static int globalConstants;
 	
-	public static final int _STRING = 5;
-	public static final int _BOOL = 6;
+	public static final int _STRING = 6;
+	public static final int _BOOL = 5;
 	
 	public static final Struct stringType = new Struct(_STRING, Tab.charType);
     public static final Struct boolType = new Struct(_BOOL);
@@ -225,24 +225,24 @@ public class CompilerImpl {
 		
 		if(Tab.currentScope().findSymbol(constName) == null){
 			
-			globalConstants++;
+			
 			
 			int adr = 0;
 			
-			if (constValue instanceof Integer) {
+			if (constValue instanceof Integer && currentType.getKind() == Struct.Int) {
 				adr = (Integer) constValue;
 			}
-			else if (constValue instanceof Character) {
+			else if (constValue instanceof Character && currentType.getKind() == Struct.Char) {
 				adr = (int) ((Character) (constValue));
 			}
-			else if (constValue instanceof Boolean) {
-				if((Boolean) constValue == null)
-					adr =  0;
-				else 
+			else if (constValue instanceof Boolean && currentType.getKind() == Struct.Bool) {
 					adr =  1;
+			} else {
+				log.error("Vrednost " + constValue + " nije komaptibilna sa tipom konstante, linija: " + constNameleft);
+				return;
 			}
 			
-			
+			globalConstants++;
 			Tab.insert(Obj.Var, constName, currentType).setAdr(adr);
 			
 			
