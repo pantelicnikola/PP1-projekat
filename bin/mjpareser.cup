@@ -1,0 +1,465 @@
+package rs.ac.bg.etf.pp1;
+
+import java_cup.runtime.*;
+import org.apache.log4j.*;
+
+
+import rs.etf.pp1.symboltable.Tab;
+import rs.etf.pp1.symboltable.concepts.*;
+
+import rs.ac.bg.etf.pp1.impl.CompilerImpl;
+
+import rs.etf.pp1.mj.runtime.Code;
+
+parser code {:
+	
+	int printCallCount = 0;
+	boolean errorDetected = false;
+	
+	Logger log = Logger.getLogger(getClass());
+   
+   
+    // slede redefinisani metodi za prijavu gresaka radi izmene teksta poruke
+     
+    public void report_fatal_error(String message, Object info) throws java.lang.Exception {
+      done_parsing();
+      report_error(message, info);
+    }
+  
+    public void syntax_error(Symbol cur_token) {
+        report_error("\nSintaksna greska", cur_token);
+    }
+  
+    public void unrecovered_syntax_error(Symbol cur_token) throws java.lang.Exception {
+        report_fatal_error("Fatalna greska, parsiranje se ne moze nastaviti", cur_token);
+    }
+
+    public void report_error(String message, Object info) {
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol)
+            msg.append (" na liniji ").append(((Symbol)info).left);
+        log.error(msg.toString());
+    }
+    
+    public void report_info(String message, Object info) {
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol)
+            msg.append (" na liniji ").append(((Symbol)info).left);
+        log.info (msg.toString());
+    }
+:}
+
+
+scan with {:
+	Symbol s = this.getScanner().next_token();
+	if (s != null && s.value != null) 
+		log.info(s.toString() + " " + s.value.toString());
+	return s;
+:}
+
+init with {:
+	Tab.init(); // Universe scope
+:}
+
+action code {:
+	CompilerImpl impl = new CompilerImpl();
+:}
+
+
+terminal PROGRAM, LBRACE, RBRACE, LPAREN, RPAREN, LBRACKET, RBRACKET, STATIC, VOID, EQUALS, SEMI_COLON, NEW, PRINT, READ, RETURN ; 
+terminal CLASS, CONST, INC, DEC, IF, FOR, EXTENDS, CONTINUE, AND, OR, COMMA, DOT, BREAK ; 
+terminal IS_EQUAL, IS_NOT_EQUAL, GREATER, LOWER, GREATER_EQUAL, LOWER_EQUAL, PLUS, MINUS, PLUS_EQUAL, MINUS_EQUAL; 
+terminal TIMES, DIVIDE, MODULE, TIMES_EQUAL, DIVIDE_EQUAL, MODULE_EQUAL, ELSE ;
+terminal Integer NUM_CONST;
+terminal Character CHAR_CONST;
+terminal Boolean BOOL_CONST;
+terminal String IDENT;
+ 
+
+non terminal Program, DeclList, Decls ;
+non terminal MethodDecl, MethodReturnType, MethodDeclList, MethodFormPars, FormPars, FormPar;   
+non terminal VarDecl, VarDecls, VarPar, VarDeclList;
+non terminal LocalVarDecl, LocalVarDecls, LocalVarPar, LocalVarDeclList;
+non terminal ClassDecl, ExtendsType, ClassMethods;
+non terminal ConstDecl, Const, ConstDecls, ConstPar;
+non terminal Statement, StatementList, ForDesignatorStatement, ForCondition;
+non terminal DesignatorStatement ;
+non terminal Condition, CondTerm, CondFact ;
+non terminal ActPars, Expr, AddopTermList, Term, MulopFactorList ;
+non terminal Factor ;
+non terminal Designator, DesignatorNesto ;
+non terminal Assignop, Relop, Addop, AddopLeft, AddopRight, Mulop, MulopLeft, MulopRight ;
+non terminal Struct Type ;
+
+
+precedence left ELSE ;
+
+
+
+Program ::= PROGRAM IDENT:programName {: impl.startProgram(programName); :} DeclList LBRACE MethodDeclList RBRACE {: impl.endProgram(); :};
+
+DeclList ::= DeclList Decls
+			 |
+			 /* epsilon */ 
+			 ;
+
+Decls ::= ConstDecl 
+		  | 
+		  VarDecl 
+		  | 
+		  ClassDecl ;
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+ConstDecl ::= CONST Type:constType {: impl.setType(constType); :} ConstDecls SEMI_COLON ;
+
+Const ::= NUM_CONST:num {: RESULT = num; :}
+		  |
+		  BOOL_CONST:bool {: RESULT = bool; :}
+		  |
+		  CHAR_CONST:chr {: RESULT = chr; :} ;
+		  
+ConstPar ::= IDENT:constName EQUALS Const:constValue {: impl.insertConstant(constName,constValue,constNameleft); :} ;
+
+ConstDecls ::= ConstPar COMMA ConstDecls
+			   |
+			   ConstPar ;		
+
+
+
+
+
+
+
+VarDecl ::= Type:type {: impl.setType(type); :} VarDecls SEMI_COLON ; 
+
+VarDecls ::= VarPar COMMA VarDecls
+			 |
+			 VarPar
+			 |
+			 error 
+			 {: parser.log.debug("Uspesan oporavak od greske pri deklarisanju globalne promenljive."); :};
+			   
+VarPar ::= IDENT:varName {: impl.insertGlobalVar(varName,varNameleft); :} 
+		   |
+		   IDENT:varName LBRACKET RBRACKET {: impl.insertGlobalArray(varName,varNameleft); :} 
+		   |
+		   error
+		   {: parser.log.debug("Uspesan oporavak od greske pri deklarisanju globalne promenljive."); :};
+		   
+VarDeclList ::= VarDeclList VarDecl
+				|
+				/* epsilon */
+				;
+				
+				
+				
+				
+				
+				
+LocalVarDecl ::= Type:varType {: impl.setType(varType); :} LocalVarDecls SEMI_COLON 
+				 |
+				 error SEMI_COLON
+				 {: parser.log.debug("Uspesan oporavak od greske pri deklarisanju lokalne promenljive."); :}
+				 |
+				 error
+				 {: parser.log.debug("Uspesan oporavak od greske pri deklarisanju lokalne promenljive."); :}
+				 ; 
+
+LocalVarDecls ::= LocalVarPar COMMA LocalVarDecls
+			 	  |
+				  LocalVarPar ;
+			   
+LocalVarPar ::= IDENT:varName {: impl.insertLocalVar(varName,varNameleft); :} 
+		   		|
+		        IDENT:varName LBRACKET RBRACKET {: impl.insertLocalArray(varName,varNameleft); :} ;
+		   
+LocalVarDeclList ::= LocalVarDeclList LocalVarDecl
+					 |
+					 /* epsilon */
+					 ;  
+	
+		   
+		   
+		   
+				
+ClassDecl ::= CLASS IDENT:className {: impl.insertClass(className,classNameleft); :} 
+			  ExtendsType LBRACE VarDeclList ClassMethods RBRACE {: impl.endClass(); :}; 
+
+ExtendsType ::= EXTENDS Type
+			   |
+			   /* epsilon */
+			   ;
+
+ClassMethods ::= LBRACE MethodDeclList RBRACE
+				 |
+			     /* epsilon */
+			     ;
+
+
+
+
+ 
+		 
+		 
+
+MethodDecl ::= MethodReturnType LPAREN MethodFormPars RPAREN LocalVarDeclList LBRACE {: impl.startMethod(); :} StatementList RBRACE {: impl.endMethod(); :} ;
+
+MethodReturnType ::= Type:retType IDENT:methName  {: impl.insertMethod(retType,methName,methNameleft); :}
+					 |
+					 STATIC Type:retType IDENT:methName  {: impl.insertMethod(retType,methName,methNameleft); :}
+					 |
+					 VOID IDENT:methName  {: impl.insertMethod(null,methName,methNameleft); :}
+					 |
+					 STATIC VOID IDENT:methName  {: impl.insertMethod(null,methName,methNameleft); :} ;
+					  
+MethodDeclList ::= MethodDeclList MethodDecl 
+				   |
+				   /* epsilon */
+				   ;
+				   
+MethodFormPars ::= FormPars
+				   |
+				   /* epsilon */
+				   ;
+				   
+FormPars ::= FormPar COMMA FormPars
+			 |
+			 FormPar ;
+
+FormPar ::= Type:formType IDENT:formVar {: impl.insertMethodArg(formType, formVar, formVarleft); :}
+			|
+			Type:formType IDENT:formVar {: impl.insertMethodArg(formType, formVar, formVarleft); :} LBRACKET RBRACKET;  
+
+				  
+
+
+
+
+
+
+
+			
+			
+			
+
+Type ::= IDENT:typeName {: RESULT = impl.getType(typeName,typeNameleft); :};
+
+
+
+
+
+
+
+
+Statement ::= DesignatorStatement SEMI_COLON:semi
+			  |
+			  error SEMI_COLON
+			  {: parser.log.debug("Uspesan oporavak od greske pri dodeli vrednosti."); :}
+			  |
+			  IF LPAREN Condition RPAREN Statement 
+			  |
+			  IF LPAREN Condition RPAREN Statement ELSE Statement 
+			  |
+			  FOR LPAREN ForDesignatorStatement SEMI_COLON ForCondition SEMI_COLON ForDesignatorStatement RPAREN Statement
+			  |
+			  BREAK SEMI_COLON
+			  |
+			  CONTINUE SEMI_COLON
+			  | 
+			  RETURN:a Expr:expr {: impl.checkReturn(expr,aleft); :} SEMI_COLON
+			  |
+			  RETURN:a {: impl.checkReturn(null,aleft); :} SEMI_COLON
+			  |
+			  READ LPAREN Designator:des {: impl.read(des,desleft); :}RPAREN SEMI_COLON
+			  |
+			  PRINT LPAREN Expr:exp COMMA NUM_CONST:num RPAREN SEMI_COLON
+			  {: 
+			  	parser.printCallCount++; 
+			  	impl.printN(exp,num,expleft);
+			  :}    
+			  |
+			  PRINT LPAREN Expr:e RPAREN SEMI_COLON
+			  {: 
+			  	parser.printCallCount++; 
+			  	impl.print(e,eleft);
+			  :} 
+			  |
+			  LBRACE StatementList RBRACE ;
+
+StatementList ::= StatementList Statement
+				  |
+				  /* epsilon */
+		 		  ;
+				  
+ForDesignatorStatement ::= DesignatorStatement
+						   |
+						   /* epsilon */
+						   ;	
+
+ForCondition ::= Condition
+				 |
+				 /* epsilon */
+				 ;	
+				 
+				
+				
+				
+				
+				
+				
+				
+
+DesignatorStatement ::= Designator:des Assignop Expr:expr
+						|
+						Designator LPAREN RPAREN
+						|
+						Designator LPAREN ActPars RPAREN
+						|
+						Designator:des INC {: impl.increment(des,desleft); :}
+						|
+						Designator:des DEC {: impl.decrement(des,desleft); :} ;
+
+
+							 
+			
+			
+ActPars ::= Expr COMMA ActPars 
+			|
+			Expr ;
+							 
+
+
+
+
+Condition ::= CondTerm OR Condition 
+			  |
+			  CondTerm ;
+			  
+CondTerm ::= CondFact AND CondTerm
+			 |
+			 CondFact ;
+			 
+CondFact ::= Expr Relop Expr 
+			 |
+			 Expr ;
+
+
+Expr ::= MINUS Term AddopTermList 
+		 |
+		 Term AddopTermList ;
+
+AddopTermList ::= AddopTermList Addop Term 
+				  |
+				  /* epsilon */
+			      ;
+
+Term ::= Factor MulopFactorList ;
+
+MulopFactorList ::= MulopFactorList Mulop Factor
+					|
+					/* epsilon */
+		 			;
+
+
+
+
+
+
+
+
+
+
+
+//r-value
+
+Factor ::= Designator:des {: RESULT = impl.factorInsertDesignator(des); :}
+		 | 
+		 Designator:des LPAREN ActPars RPAREN {: RESULT = impl.factorInsertFunc(des,desleft); :}
+		 |
+		 Designator:des LPAREN RPAREN {: RESULT = impl.factorInsertFunc(des,desleft); :}
+		 |
+		 NUM_CONST:num {: RESULT = impl.factorInsertNum(num); :}
+		 |
+		 CHAR_CONST:chr {: RESULT = impl.factorInsertChar(chr); :}
+		 |
+		 BOOL_CONST:bool {: RESULT = impl.factorInsertBool(bool); :}
+		 |
+		 NEW Type 
+		 |
+		 NEW Type:type LBRACKET Expr:expr RBRACKET 
+		 |
+		 LPAREN Expr:exp RPAREN {: RESULT = exp; :} ;
+		 
+
+
+		 
+
+
+
+
+
+Designator ::= IDENT:name {: RESULT = impl.checkIfExists(name, nameleft); :} 
+			   DesignatorNesto ;
+
+DesignatorNesto ::= DOT IDENT:ident {: RESULT = ident; :} DesignatorNesto
+					|
+					LBRACKET Expr RBRACKET DesignatorNesto
+					|
+					/* epsilon */ 
+					;
+					
+
+
+
+Assignop ::= EQUALS {: RESULT = new Integer(0); :}  
+			 |
+			 AddopRight:ar {: RESULT = ar; :}
+			 |
+			 MulopRight:mr {: RESULT = mr; :} ;
+			 
+Relop ::= IS_EQUAL {: RESULT = new Integer(Code.eq); :}
+		  |
+		  IS_NOT_EQUAL {: RESULT = new Integer(Code.ne); :}
+		  |
+		  GREATER {: RESULT = new Integer(Code.gt); :}
+		  |
+		  GREATER_EQUAL {: RESULT = new Integer(Code.ge); :}
+		  |
+		  LOWER {: RESULT = new Integer(Code.lt); :}
+		  |
+		  LOWER_EQUAL {: RESULT = new Integer(Code.le); :};
+
+Addop ::= AddopLeft
+		  |
+		  AddopRight ;
+		  
+AddopLeft ::= PLUS {: RESULT = new Integer(Code.add); :}
+			  |
+			  MINUS {: RESULT = new Integer(Code.sub); :} ;
+			  
+AddopRight ::= PLUS_EQUAL {: RESULT = new Integer(Code.add); :}
+			   |
+			   MINUS_EQUAL {: RESULT = new Integer(Code.sub); :} ;
+			   
+Mulop ::= MulopLeft
+		  |
+		  MulopRight ;
+		  
+MulopLeft ::= TIMES {: RESULT = new Integer(Code.mul); :}
+			  |
+			  DIVIDE {: RESULT = new Integer(Code.div); :}
+			  |
+			  MODULE {: RESULT = new Integer(Code.rem); :};
+			  
+MulopRight ::= TIMES_EQUAL {: RESULT = new Integer(Code.mul); :}
+			   |
+			   DIVIDE_EQUAL {: RESULT = new Integer(Code.div); :}
+			   |
+			   MODULE_EQUAL {: RESULT = new Integer(Code.rem); :};

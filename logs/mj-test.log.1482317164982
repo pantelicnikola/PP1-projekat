@@ -1,0 +1,767 @@
+INFO  11:29:30,506 - Compiling source file: C:\Users\Nikola\Desktop\pp1 Projekat\projekat\workspace\PP1Project\test\program.mj
+INFO  11:29:30,516 - #2 program
+INFO  11:29:30,517 - #50 myProgram
+INFO  11:29:30,517 - #17 class
+INFO  11:29:30,517 - #50 Integer
+INFO  11:29:30,517 - #3 {
+INFO  11:29:30,517 - #50 int
+INFO  11:29:30,517 - #50 myInt
+ERROR 11:29:30,517 - Postojani tip: int
+INFO  11:29:30,517 - #12 ;
+INFO  11:29:30,517 - Deklarisana promenljiva na liniji 6
+INFO  11:29:30,517 - #3 {
+INFO  11:29:30,517 - #10 void
+INFO  11:29:30,517 - #50 setInt
+INFO  11:29:30,517 - #5 (
+INFO  11:29:30,517 - #50 int
+INFO  11:29:30,518 - #50 myInt
+ERROR 11:29:30,518 - Postojani tip: int
+INFO  11:29:30,518 - #6 )
+INFO  11:29:30,518 - #3 {
+INFO  11:29:30,518 - #4 }
+INFO  11:29:30,518 - #50 int
+INFO  11:29:30,518 - #50 getInt
+ERROR 11:29:30,518 - Postojani tip: int
+INFO  11:29:30,518 - #5 (
+INFO  11:29:30,518 - #6 )
+INFO  11:29:30,518 - #3 {
+INFO  11:29:30,518 - #16 return
+INFO  11:29:30,518 - #50 myInt
+INFO  11:29:30,518 - #12 ;
+INFO  11:29:30,518 - #4 }
+INFO  11:29:30,518 - #4 }
+INFO  11:29:30,518 - #4 }
+INFO  11:29:30,518 - #17 class
+INFO  11:29:30,519 - #50 Table
+INFO  11:29:30,519 - #3 {
+INFO  11:29:30,519 - #50 int
+INFO  11:29:30,519 - #50 pos
+ERROR 11:29:30,519 - Postojani tip: int
+INFO  11:29:30,519 - #7 [
+INFO  11:29:30,519 - #8 ]
+INFO  11:29:30,519 - #27 ,
+INFO  11:29:30,519 - Deklarisan niz na liniji 21
+INFO  11:29:30,519 - #50 neg
+INFO  11:29:30,519 - #7 [
+INFO  11:29:30,519 - #8 ]
+INFO  11:29:30,519 - #12 ;
+INFO  11:29:30,519 - Deklarisan niz na liniji 21
+INFO  11:29:30,519 - #3 {
+INFO  11:29:30,519 - #50 int
+INFO  11:29:30,519 - #50 putp
+ERROR 11:29:30,519 - Postojani tip: int
+INFO  11:29:30,519 - #5 (
+INFO  11:29:30,519 - #50 int
+INFO  11:29:30,519 - #50 a
+ERROR 11:29:30,520 - Postojani tip: int
+INFO  11:29:30,520 - #27 ,
+INFO  11:29:30,520 - #50 int
+INFO  11:29:30,520 - #50 idx
+ERROR 11:29:30,520 - Postojani tip: int
+INFO  11:29:30,520 - #6 )
+INFO  11:29:30,520 - #3 {
+INFO  11:29:30,520 - #50 this
+INFO  11:29:30,520 - #28 .
+INFO  11:29:30,520 - #50 pos
+INFO  11:29:30,520 - #7 [
+INFO  11:29:30,520 - #50 idx
+INFO  11:29:30,520 - #8 ]
+INFO  11:29:30,520 - #11 =
+INFO  11:29:30,520 - #50 a
+INFO  11:29:30,520 - #12 ;
+INFO  11:29:30,520 - #16 return
+INFO  11:29:30,520 - #47 1
+INFO  11:29:30,520 - #12 ;
+INFO  11:29:30,521 - #4 }
+INFO  11:29:30,521 - #50 int
+INFO  11:29:30,521 - #50 putn
+ERROR 11:29:30,521 - Postojani tip: int
+INFO  11:29:30,521 - #5 (
+INFO  11:29:30,521 - #50 int
+INFO  11:29:30,521 - #50 a
+ERROR 11:29:30,521 - Postojani tip: int
+INFO  11:29:30,521 - #27 ,
+INFO  11:29:30,521 - #50 int
+INFO  11:29:30,521 - #50 idx
+ERROR 11:29:30,521 - Postojani tip: int
+INFO  11:29:30,521 - #6 )
+INFO  11:29:30,521 - #3 {
+INFO  11:29:30,521 - #50 this
+INFO  11:29:30,521 - #28 .
+INFO  11:29:30,521 - #50 neg
+INFO  11:29:30,521 - #7 [
+INFO  11:29:30,521 - #50 idx
+INFO  11:29:30,521 - #8 ]
+INFO  11:29:30,521 - #11 =
+INFO  11:29:30,522 - #50 a
+INFO  11:29:30,522 - #12 ;
+INFO  11:29:30,522 - #16 return
+INFO  11:29:30,522 - #47 1
+INFO  11:29:30,522 - #12 ;
+INFO  11:29:30,522 - #4 }
+INFO  11:29:30,522 - #50 int
+INFO  11:29:30,522 - #50 getp
+ERROR 11:29:30,522 - Postojani tip: int
+INFO  11:29:30,522 - #5 (
+INFO  11:29:30,522 - #50 int
+INFO  11:29:30,522 - #50 idx
+ERROR 11:29:30,522 - Postojani tip: int
+INFO  11:29:30,522 - #6 )
+INFO  11:29:30,522 - #3 {
+INFO  11:29:30,522 - #16 return
+INFO  11:29:30,522 - #50 pos
+INFO  11:29:30,522 - #7 [
+INFO  11:29:30,522 - #50 idx
+INFO  11:29:30,522 - #8 ]
+INFO  11:29:30,522 - #12 ;
+INFO  11:29:30,523 - #4 }
+INFO  11:29:30,523 - #50 int
+INFO  11:29:30,523 - #50 getn
+ERROR 11:29:30,523 - Postojani tip: int
+INFO  11:29:30,523 - #5 (
+INFO  11:29:30,523 - #50 int
+INFO  11:29:30,523 - #50 idx
+ERROR 11:29:30,523 - Postojani tip: int
+INFO  11:29:30,523 - #6 )
+INFO  11:29:30,523 - #3 {
+INFO  11:29:30,523 - #16 return
+INFO  11:29:30,523 - #50 neg
+INFO  11:29:30,523 - #7 [
+INFO  11:29:30,523 - #50 idx
+INFO  11:29:30,523 - #8 ]
+INFO  11:29:30,523 - #12 ;
+INFO  11:29:30,523 - #4 }
+INFO  11:29:30,524 - #4 }
+INFO  11:29:30,524 - #4 }
+INFO  11:29:30,524 - #17 class
+INFO  11:29:30,524 - #50 Z
+INFO  11:29:30,524 - #23 extends
+INFO  11:29:30,524 - #50 Table
+INFO  11:29:30,524 - #3 {
+ERROR 11:29:30,524 - Nije pronadjen tip Table u tabeli simbola
+INFO  11:29:30,524 - #50 int
+INFO  11:29:30,525 - #50 i
+ERROR 11:29:30,525 - Postojani tip: int
+INFO  11:29:30,525 - #12 ;
+INFO  11:29:30,525 - Deklarisana promenljiva na liniji 31
+INFO  11:29:30,525 - #50 int
+INFO  11:29:30,525 - #50 x
+ERROR 11:29:30,525 - Postojani tip: int
+INFO  11:29:30,525 - #7 [
+INFO  11:29:30,525 - #8 ]
+INFO  11:29:30,525 - #12 ;
+INFO  11:29:30,525 - Deklarisan niz na liniji 31
+INFO  11:29:30,525 - #3 {
+INFO  11:29:30,525 - #50 int
+INFO  11:29:30,525 - #50 getValue
+ERROR 11:29:30,525 - Postojani tip: int
+INFO  11:29:30,525 - #5 (
+INFO  11:29:30,525 - #50 int
+INFO  11:29:30,525 - #50 a
+ERROR 11:29:30,525 - Postojani tip: int
+INFO  11:29:30,525 - #6 )
+INFO  11:29:30,525 - #50 int
+INFO  11:29:30,525 - #50 b
+ERROR 11:29:30,525 - Postojani tip: int
+INFO  11:29:30,525 - #12 ;
+INFO  11:29:30,525 - Deklarisana promenljiva na liniji 34
+INFO  11:29:30,525 - #50 bool
+INFO  11:29:30,526 - #50 c
+ERROR 11:29:30,526 - Nije pronadjen tip bool u tabeli simbola
+INFO  11:29:30,526 - #12 ;
+INFO  11:29:30,526 - Deklarisana promenljiva na liniji 34
+INFO  11:29:30,526 - #3 {
+INFO  11:29:30,526 - #50 x
+INFO  11:29:30,526 - #7 [
+INFO  11:29:30,526 - #50 i
+INFO  11:29:30,526 - #8 ]
+INFO  11:29:30,526 - #11 =
+INFO  11:29:30,526 - #50 i
+INFO  11:29:30,526 - #12 ;
+INFO  11:29:30,526 - #16 return
+INFO  11:29:30,526 - #50 this
+INFO  11:29:30,526 - #28 .
+INFO  11:29:30,526 - #50 i
+INFO  11:29:30,526 - #36 +
+INFO  11:29:30,526 - #50 this
+INFO  11:29:30,526 - #28 .
+INFO  11:29:30,526 - #50 x
+INFO  11:29:30,526 - #7 [
+INFO  11:29:30,526 - #47 0
+INFO  11:29:30,526 - #8 ]
+INFO  11:29:30,526 - #12 ;
+INFO  11:29:30,527 - #4 }
+INFO  11:29:30,527 - #4 }
+INFO  11:29:30,527 - #4 }
+INFO  11:29:30,527 - #17 class
+INFO  11:29:30,527 - #50 B
+INFO  11:29:30,527 - #23 extends
+INFO  11:29:30,527 - #50 Table
+INFO  11:29:30,527 - #3 {
+ERROR 11:29:30,527 - Nije pronadjen tip Table u tabeli simbola
+INFO  11:29:30,527 - #50 int
+INFO  11:29:30,527 - #50 i
+ERROR 11:29:30,527 - Postojani tip: int
+INFO  11:29:30,527 - #12 ;
+INFO  11:29:30,527 - Deklarisana promenljiva na liniji 43
+INFO  11:29:30,527 - #50 int
+INFO  11:29:30,527 - #50 x
+ERROR 11:29:30,527 - Postojani tip: int
+INFO  11:29:30,527 - #7 [
+INFO  11:29:30,527 - #8 ]
+INFO  11:29:30,527 - #12 ;
+INFO  11:29:30,527 - Deklarisan niz na liniji 43
+INFO  11:29:30,527 - #3 {
+INFO  11:29:30,527 - #50 int
+INFO  11:29:30,527 - #50 getValue
+ERROR 11:29:30,527 - Postojani tip: int
+INFO  11:29:30,527 - #5 (
+INFO  11:29:30,527 - #50 int
+INFO  11:29:30,527 - #50 a
+ERROR 11:29:30,527 - Postojani tip: int
+INFO  11:29:30,528 - #6 )
+INFO  11:29:30,528 - #50 int
+INFO  11:29:30,528 - #50 b
+ERROR 11:29:30,528 - Postojani tip: int
+INFO  11:29:30,528 - #12 ;
+INFO  11:29:30,528 - Deklarisana promenljiva na liniji 46
+INFO  11:29:30,528 - #50 bool
+INFO  11:29:30,528 - #50 c
+ERROR 11:29:30,528 - Nije pronadjen tip bool u tabeli simbola
+INFO  11:29:30,528 - #12 ;
+INFO  11:29:30,528 - Deklarisana promenljiva na liniji 46
+INFO  11:29:30,528 - #3 {
+INFO  11:29:30,528 - #14 print
+INFO  11:29:30,528 - #5 (
+INFO  11:29:30,528 - #50 c
+INFO  11:29:30,528 - #28 .
+INFO  11:29:30,528 - #50 getValue
+INFO  11:29:30,528 - #5 (
+INFO  11:29:30,528 - #50 c
+INFO  11:29:30,528 - #28 .
+INFO  11:29:30,528 - #50 theA
+INFO  11:29:30,528 - #28 .
+INFO  11:29:30,528 - #50 x
+INFO  11:29:30,528 - #7 [
+INFO  11:29:30,528 - #47 0
+INFO  11:29:30,528 - #8 ]
+INFO  11:29:30,529 - #6 )
+INFO  11:29:30,529 - #6 )
+INFO  11:29:30,529 - #12 ;
+INFO  11:29:30,529 - #16 return
+INFO  11:29:30,529 - #50 this
+INFO  11:29:30,529 - #28 .
+INFO  11:29:30,529 - #50 i
+INFO  11:29:30,529 - #36 +
+INFO  11:29:30,529 - #50 this
+INFO  11:29:30,529 - #28 .
+INFO  11:29:30,529 - #50 x
+INFO  11:29:30,529 - #7 [
+INFO  11:29:30,529 - #47 0
+INFO  11:29:30,529 - #8 ]
+INFO  11:29:30,529 - #36 +
+INFO  11:29:30,529 - #50 a
+INFO  11:29:30,529 - #12 ;
+INFO  11:29:30,530 - #4 }
+INFO  11:29:30,530 - #10 void
+INFO  11:29:30,530 - #50 getTable
+INFO  11:29:30,530 - #5 (
+INFO  11:29:30,530 - #6 )
+INFO  11:29:30,530 - #50 int
+INFO  11:29:30,530 - #50 a
+ERROR 11:29:30,530 - Postojani tip: int
+INFO  11:29:30,530 - #12 ;
+INFO  11:29:30,530 - Deklarisana promenljiva na liniji 53
+INFO  11:29:30,530 - #3 {
+INFO  11:29:30,530 - #16 return
+INFO  11:29:30,530 - #47 1
+INFO  11:29:30,530 - #12 ;
+INFO  11:29:30,530 - #4 }
+INFO  11:29:30,530 - #4 }
+INFO  11:29:30,530 - #4 }
+INFO  11:29:30,530 - #17 class
+INFO  11:29:30,530 - #50 Beta
+INFO  11:29:30,530 - #3 {
+INFO  11:29:30,530 - #50 int
+INFO  11:29:30,530 - #50 a
+ERROR 11:29:30,530 - Postojani tip: int
+INFO  11:29:30,530 - #27 ,
+INFO  11:29:30,530 - Deklarisana promenljiva na liniji 62
+INFO  11:29:30,530 - #50 b
+INFO  11:29:30,530 - #27 ,
+INFO  11:29:30,530 - Deklarisana promenljiva na liniji 62
+INFO  11:29:30,531 - #50 c
+INFO  11:29:30,531 - #27 ,
+INFO  11:29:30,531 - Deklarisana promenljiva na liniji 62
+INFO  11:29:30,531 - #50 d
+INFO  11:29:30,531 - #12 ;
+INFO  11:29:30,531 - Deklarisana promenljiva na liniji 62
+INFO  11:29:30,531 - #50 Table
+INFO  11:29:30,531 - #50 t
+ERROR 11:29:30,531 - Nije pronadjen tip Table u tabeli simbola
+INFO  11:29:30,531 - #12 ;
+INFO  11:29:30,531 - Deklarisana promenljiva na liniji 63
+INFO  11:29:30,531 - #3 {
+INFO  11:29:30,531 - #50 int
+INFO  11:29:30,531 - #50 getVal
+ERROR 11:29:30,531 - Postojani tip: int
+INFO  11:29:30,531 - #5 (
+INFO  11:29:30,531 - #6 )
+INFO  11:29:30,531 - #3 {
+INFO  11:29:30,531 - #16 return
+INFO  11:29:30,531 - #12 ;
+INFO  11:29:30,531 - #4 }
+INFO  11:29:30,531 - #50 int
+INFO  11:29:30,531 - #50 aaa
+ERROR 11:29:30,531 - Postojani tip: int
+INFO  11:29:30,531 - #5 (
+INFO  11:29:30,531 - #50 int
+INFO  11:29:30,531 - #50 a
+ERROR 11:29:30,531 - Postojani tip: int
+INFO  11:29:30,531 - #6 )
+INFO  11:29:30,531 - #3 {
+INFO  11:29:30,531 - #16 return
+INFO  11:29:30,531 - #12 ;
+INFO  11:29:30,532 - #4 }
+INFO  11:29:30,532 - #4 }
+INFO  11:29:30,532 - #4 }
+INFO  11:29:30,532 - #18 const
+INFO  11:29:30,532 - #50 int
+INFO  11:29:30,532 - #50 a
+ERROR 11:29:30,532 - Postojani tip: int
+INFO  11:29:30,532 - #11 =
+INFO  11:29:30,532 - #47 23
+INFO  11:29:30,532 - #27 ,
+INFO  11:29:30,532 - #50 b
+INFO  11:29:30,532 - #11 =
+INFO  11:29:30,532 - #47 32
+INFO  11:29:30,532 - #27 ,
+INFO  11:29:30,532 - #50 c
+INFO  11:29:30,532 - #11 =
+INFO  11:29:30,532 - #48 a
+INFO  11:29:30,532 - #12 ;
+INFO  11:29:30,532 - #18 const
+INFO  11:29:30,532 - #50 bool
+INFO  11:29:30,532 - #50 p
+ERROR 11:29:30,532 - Nije pronadjen tip bool u tabeli simbola
+INFO  11:29:30,532 - #11 =
+INFO  11:29:30,532 - #49 true
+INFO  11:29:30,532 - #27 ,
+INFO  11:29:30,532 - #50 z
+INFO  11:29:30,532 - #11 =
+INFO  11:29:30,533 - #49 false
+INFO  11:29:30,533 - #27 ,
+INFO  11:29:30,533 - #50 g
+INFO  11:29:30,533 - #11 =
+INFO  11:29:30,533 - #48 a
+INFO  11:29:30,533 - #12 ;
+INFO  11:29:30,533 - #50 int
+INFO  11:29:30,533 - #50 asdv
+ERROR 11:29:30,533 - Postojani tip: int
+INFO  11:29:30,533 - #7 [
+INFO  11:29:30,533 - #8 ]
+INFO  11:29:30,533 - #12 ;
+INFO  11:29:30,533 - Deklarisan niz na liniji 80
+INFO  11:29:30,533 - #50 Table
+INFO  11:29:30,533 - #50 aa
+ERROR 11:29:30,533 - Nije pronadjen tip Table u tabeli simbola
+INFO  11:29:30,533 - #27 ,
+INFO  11:29:30,533 - Deklarisana promenljiva na liniji 81
+INFO  11:29:30,533 - #50 opa
+INFO  11:29:30,533 - #12 ;
+INFO  11:29:30,533 - Deklarisana promenljiva na liniji 81
+INFO  11:29:30,533 - #18 const
+INFO  11:29:30,533 - #50 int
+INFO  11:29:30,533 - #50 size
+ERROR 11:29:30,533 - Postojani tip: int
+INFO  11:29:30,533 - #11 =
+INFO  11:29:30,533 - #47 10
+INFO  11:29:30,533 - #12 ;
+INFO  11:29:30,533 - #50 Table
+INFO  11:29:30,533 - #50 val
+ERROR 11:29:30,533 - Nije pronadjen tip Table u tabeli simbola
+INFO  11:29:30,534 - #12 ;
+INFO  11:29:30,534 - Deklarisana promenljiva na liniji 88
+INFO  11:29:30,534 - #3 {
+INFO  11:29:30,535 - #10 void
+INFO  11:29:30,535 - #50 main
+INFO  11:29:30,535 - #5 (
+INFO  11:29:30,535 - #6 )
+INFO  11:29:30,535 - #50 int
+INFO  11:29:30,535 - #50 x
+ERROR 11:29:30,535 - Postojani tip: int
+INFO  11:29:30,535 - #27 ,
+INFO  11:29:30,535 - Deklarisana promenljiva na liniji 102
+INFO  11:29:30,535 - #50 s
+INFO  11:29:30,535 - #12 ;
+INFO  11:29:30,535 - Deklarisana promenljiva na liniji 102
+INFO  11:29:30,535 - #50 int
+INFO  11:29:30,535 - #50 i
+ERROR 11:29:30,535 - Postojani tip: int
+INFO  11:29:30,535 - #12 ;
+INFO  11:29:30,535 - Deklarisana promenljiva na liniji 103
+INFO  11:29:30,535 - #3 {
+INFO  11:29:30,535 - #50 x
+INFO  11:29:30,535 - #19 ++
+INFO  11:29:30,535 - #12 ;
+INFO  11:29:30,535 - #21 if
+INFO  11:29:30,535 - #5 (
+INFO  11:29:30,535 - #50 i
+INFO  11:29:30,535 - #33 <
+INFO  11:29:30,536 - #47 2
+INFO  11:29:30,536 - #25 &&
+INFO  11:29:30,536 - #50 z
+INFO  11:29:30,536 - #30 ==
+INFO  11:29:30,536 - #47 0
+INFO  11:29:30,536 - #6 )
+INFO  11:29:30,536 - #3 {
+INFO  11:29:30,536 - #50 a
+INFO  11:29:30,536 - #11 =
+INFO  11:29:30,536 - #13 new
+INFO  11:29:30,536 - #50 Beta
+INFO  11:29:30,536 - #12 ;
+ERROR 11:29:30,536 - Nije pronadjen tip Beta u tabeli simbola
+INFO  11:29:30,536 - #50 a
+INFO  11:29:30,536 - #28 .
+INFO  11:29:30,536 - #50 x
+INFO  11:29:30,536 - #11 =
+INFO  11:29:30,536 - #13 new
+INFO  11:29:30,536 - #50 int
+INFO  11:29:30,536 - #7 [
+ERROR 11:29:30,536 - Postojani tip: int
+INFO  11:29:30,536 - #47 5
+INFO  11:29:30,536 - #8 ]
+INFO  11:29:30,536 - #12 ;
+INFO  11:29:30,536 - #50 a
+INFO  11:29:30,536 - #28 .
+INFO  11:29:30,536 - #50 y
+INFO  11:29:30,536 - #11 =
+INFO  11:29:30,536 - #13 new
+INFO  11:29:30,536 - #50 int
+INFO  11:29:30,536 - #7 [
+ERROR 11:29:30,537 - Postojani tip: int
+INFO  11:29:30,537 - #47 5
+INFO  11:29:30,537 - #8 ]
+INFO  11:29:30,537 - #12 ;
+INFO  11:29:30,537 - #50 c
+INFO  11:29:30,537 - #11 =
+INFO  11:29:30,537 - #13 new
+INFO  11:29:30,537 - #50 B
+INFO  11:29:30,537 - #12 ;
+ERROR 11:29:30,537 - Nije pronadjen tip B u tabeli simbola
+INFO  11:29:30,537 - #50 c
+INFO  11:29:30,537 - #28 .
+INFO  11:29:30,537 - #50 theA
+INFO  11:29:30,537 - #11 =
+INFO  11:29:30,537 - #50 a
+INFO  11:29:30,537 - #12 ;
+INFO  11:29:30,537 - #50 c
+INFO  11:29:30,537 - #28 .
+INFO  11:29:30,537 - #50 x
+INFO  11:29:30,537 - #11 =
+INFO  11:29:30,537 - #13 new
+INFO  11:29:30,537 - #50 int
+INFO  11:29:30,537 - #7 [
+ERROR 11:29:30,537 - Postojani tip: int
+INFO  11:29:30,538 - #47 5
+INFO  11:29:30,538 - #8 ]
+INFO  11:29:30,538 - #12 ;
+INFO  11:29:30,538 - #50 x
+INFO  11:29:30,540 - #11 =
+INFO  11:29:30,540 - #13 new
+INFO  11:29:30,540 - #50 int
+INFO  11:29:30,540 - #7 [
+ERROR 11:29:30,540 - Postojani tip: int
+INFO  11:29:30,540 - #47 3
+INFO  11:29:30,540 - #8 ]
+INFO  11:29:30,540 - #12 ;
+INFO  11:29:30,540 - #50 i
+INFO  11:29:30,541 - #11 =
+INFO  11:29:30,541 - #47 0
+INFO  11:29:30,541 - #12 ;
+INFO  11:29:30,541 - #15 read
+INFO  11:29:30,541 - #5 (
+INFO  11:29:30,541 - #50 c
+INFO  11:29:30,541 - #28 .
+INFO  11:29:30,541 - #50 i
+INFO  11:29:30,541 - #6 )
+INFO  11:29:30,541 - #12 ;
+INFO  11:29:30,541 - #22 for
+INFO  11:29:30,541 - #5 (
+INFO  11:29:30,541 - #12 ;
+INFO  11:29:30,541 - #50 i
+INFO  11:29:30,541 - #33 <
+INFO  11:29:30,541 - #47 5
+INFO  11:29:30,541 - #12 ;
+INFO  11:29:30,541 - #50 i
+INFO  11:29:30,541 - #19 ++
+INFO  11:29:30,541 - #6 )
+INFO  11:29:30,541 - #3 {
+INFO  11:29:30,541 - #15 read
+INFO  11:29:30,541 - #5 (
+INFO  11:29:30,541 - #50 c
+INFO  11:29:30,541 - #28 .
+INFO  11:29:30,541 - #50 x
+INFO  11:29:30,541 - #7 [
+INFO  11:29:30,541 - #50 i
+INFO  11:29:30,541 - #8 ]
+INFO  11:29:30,541 - #6 )
+INFO  11:29:30,541 - #12 ;
+INFO  11:29:30,541 - #15 read
+INFO  11:29:30,541 - #5 (
+INFO  11:29:30,541 - #50 c
+INFO  11:29:30,541 - #28 .
+INFO  11:29:30,541 - #50 theA
+INFO  11:29:30,541 - #28 .
+INFO  11:29:30,542 - #50 x
+INFO  11:29:30,542 - #7 [
+INFO  11:29:30,542 - #50 i
+INFO  11:29:30,542 - #8 ]
+INFO  11:29:30,542 - #6 )
+INFO  11:29:30,542 - #12 ;
+INFO  11:29:30,542 - #4 }
+INFO  11:29:30,542 - #14 print
+INFO  11:29:30,542 - #5 (
+INFO  11:29:30,542 - #50 c
+INFO  11:29:30,542 - #28 .
+INFO  11:29:30,542 - #50 getValue
+INFO  11:29:30,542 - #5 (
+INFO  11:29:30,542 - #50 c
+INFO  11:29:30,542 - #28 .
+INFO  11:29:30,542 - #50 theA
+INFO  11:29:30,542 - #28 .
+INFO  11:29:30,542 - #50 x
+INFO  11:29:30,542 - #7 [
+INFO  11:29:30,542 - #47 0
+INFO  11:29:30,542 - #8 ]
+INFO  11:29:30,542 - #6 )
+INFO  11:29:30,542 - #6 )
+INFO  11:29:30,542 - #12 ;
+INFO  11:29:30,542 - #50 z
+INFO  11:29:30,542 - #19 ++
+INFO  11:29:30,542 - #12 ;
+INFO  11:29:30,542 - #14 print
+INFO  11:29:30,542 - #5 (
+INFO  11:29:30,542 - #50 c
+INFO  11:29:30,542 - #28 .
+INFO  11:29:30,543 - #50 getValue
+INFO  11:29:30,543 - #5 (
+INFO  11:29:30,543 - #50 c
+INFO  11:29:30,543 - #28 .
+INFO  11:29:30,543 - #50 theA
+INFO  11:29:30,543 - #28 .
+INFO  11:29:30,543 - #50 x
+INFO  11:29:30,543 - #7 [
+INFO  11:29:30,543 - #47 0
+INFO  11:29:30,543 - #8 ]
+INFO  11:29:30,543 - #6 )
+INFO  11:29:30,543 - #6 )
+INFO  11:29:30,543 - #12 ;
+INFO  11:29:30,543 - #50 z
+INFO  11:29:30,543 - #11 =
+INFO  11:29:30,543 - #50 z
+INFO  11:29:30,543 - #36 +
+INFO  11:29:30,543 - #5 (
+INFO  11:29:30,543 - #50 i
+INFO  11:29:30,543 - #36 +
+INFO  11:29:30,543 - #47 2
+INFO  11:29:30,543 - #6 )
+INFO  11:29:30,543 - #12 ;
+INFO  11:29:30,543 - #16 return
+INFO  11:29:30,543 - #12 ;
+INFO  11:29:30,543 - #4 }
+INFO  11:29:30,543 - #46 else
+INFO  11:29:30,543 - #3 {
+INFO  11:29:30,543 - #21 if
+INFO  11:29:30,543 - #5 (
+INFO  11:29:30,543 - #50 c
+INFO  11:29:30,543 - #32 >
+INFO  11:29:30,543 - #47 3
+INFO  11:29:30,543 - #6 )
+INFO  11:29:30,543 - #29 break
+INFO  11:29:30,543 - #12 ;
+INFO  11:29:30,544 - #46 else
+INFO  11:29:30,544 - #21 if
+INFO  11:29:30,544 - #5 (
+INFO  11:29:30,544 - #50 c
+INFO  11:29:30,544 - #34 >=
+INFO  11:29:30,544 - #47 2
+INFO  11:29:30,544 - #6 )
+INFO  11:29:30,544 - #16 return
+INFO  11:29:30,544 - #12 ;
+INFO  11:29:30,544 - #46 else
+INFO  11:29:30,544 - #24 continue
+INFO  11:29:30,544 - #12 ;
+INFO  11:29:30,544 - #4 }
+INFO  11:29:30,544 - #22 for
+INFO  11:29:30,544 - #5 (
+INFO  11:29:30,544 - #50 i
+INFO  11:29:30,544 - #11 =
+INFO  11:29:30,544 - #47 0
+INFO  11:29:30,544 - #12 ;
+INFO  11:29:30,544 - #50 i
+INFO  11:29:30,544 - #33 <
+INFO  11:29:30,544 - #47 5
+INFO  11:29:30,544 - #12 ;
+INFO  11:29:30,544 - #50 i
+INFO  11:29:30,544 - #19 ++
+INFO  11:29:30,544 - #6 )
+INFO  11:29:30,544 - #3 {
+INFO  11:29:30,544 - #24 continue
+INFO  11:29:30,544 - #12 ;
+INFO  11:29:30,544 - #4 }
+INFO  11:29:30,544 - #4 }
+INFO  11:29:30,544 - #50 int
+INFO  11:29:30,544 - #50 main2
+ERROR 11:29:30,544 - Postojani tip: int
+INFO  11:29:30,544 - #5 (
+INFO  11:29:30,544 - #6 )
+INFO  11:29:30,544 - #50 int
+INFO  11:29:30,544 - #50 x
+ERROR 11:29:30,544 - Postojani tip: int
+INFO  11:29:30,544 - #27 ,
+INFO  11:29:30,545 - Deklarisana promenljiva na liniji 143
+INFO  11:29:30,545 - #50 i
+INFO  11:29:30,545 - #12 ;
+INFO  11:29:30,545 - Deklarisana promenljiva na liniji 143
+INFO  11:29:30,545 - #3 {
+INFO  11:29:30,545 - #50 val
+INFO  11:29:30,545 - #11 =
+INFO  11:29:30,545 - #13 new
+INFO  11:29:30,545 - #50 Table
+INFO  11:29:30,545 - #12 ;
+ERROR 11:29:30,545 - Nije pronadjen tip Table u tabeli simbola
+INFO  11:29:30,545 - #50 val
+INFO  11:29:30,545 - #28 .
+INFO  11:29:30,545 - #50 pos
+INFO  11:29:30,545 - #11 =
+INFO  11:29:30,545 - #13 new
+INFO  11:29:30,545 - #50 int
+INFO  11:29:30,545 - #7 [
+ERROR 11:29:30,545 - Postojani tip: int
+INFO  11:29:30,545 - #50 size
+INFO  11:29:30,545 - #8 ]
+INFO  11:29:30,545 - #12 ;
+INFO  11:29:30,545 - #50 val
+INFO  11:29:30,545 - #28 .
+INFO  11:29:30,545 - #50 neg
+INFO  11:29:30,545 - #11 =
+INFO  11:29:30,545 - #13 new
+INFO  11:29:30,545 - #50 int
+INFO  11:29:30,545 - #7 [
+ERROR 11:29:30,545 - Postojani tip: int
+INFO  11:29:30,545 - #50 size
+INFO  11:29:30,545 - #8 ]
+INFO  11:29:30,545 - #12 ;
+INFO  11:29:30,545 - #22 for
+INFO  11:29:30,545 - #5 (
+INFO  11:29:30,545 - #50 i
+INFO  11:29:30,545 - #11 =
+INFO  11:29:30,545 - #47 0
+INFO  11:29:30,545 - #12 ;
+INFO  11:29:30,545 - #50 i
+INFO  11:29:30,545 - #33 <
+INFO  11:29:30,545 - #50 size
+INFO  11:29:30,546 - #12 ;
+INFO  11:29:30,546 - #50 i
+INFO  11:29:30,546 - #19 ++
+INFO  11:29:30,546 - #6 )
+INFO  11:29:30,546 - #3 {
+INFO  11:29:30,546 - #50 val
+INFO  11:29:30,546 - #28 .
+INFO  11:29:30,546 - #50 putp
+INFO  11:29:30,546 - #5 (
+INFO  11:29:30,546 - #47 0
+INFO  11:29:30,546 - #27 ,
+INFO  11:29:30,546 - #50 i
+INFO  11:29:30,546 - #6 )
+INFO  11:29:30,546 - #12 ;
+INFO  11:29:30,546 - #50 val
+INFO  11:29:30,546 - #28 .
+INFO  11:29:30,546 - #50 putn
+INFO  11:29:30,546 - #5 (
+INFO  11:29:30,546 - #47 0
+INFO  11:29:30,546 - #27 ,
+INFO  11:29:30,546 - #50 i
+INFO  11:29:30,546 - #6 )
+INFO  11:29:30,546 - #12 ;
+INFO  11:29:30,546 - #4 }
+INFO  11:29:30,546 - #15 read
+INFO  11:29:30,546 - #5 (
+INFO  11:29:30,546 - #50 x
+INFO  11:29:30,546 - #6 )
+INFO  11:29:30,546 - #12 ;
+INFO  11:29:30,546 - #22 for
+INFO  11:29:30,546 - #5 (
+INFO  11:29:30,546 - #12 ;
+INFO  11:29:30,546 - #50 x
+INFO  11:29:30,546 - #32 >
+INFO  11:29:30,546 - #47 0
+INFO  11:29:30,546 - #12 ;
+INFO  11:29:30,546 - #6 )
+INFO  11:29:30,546 - #3 {
+INFO  11:29:30,546 - #21 if
+INFO  11:29:30,546 - #5 (
+INFO  11:29:30,546 - #47 0
+INFO  11:29:30,546 - #35 <=
+INFO  11:29:30,547 - #50 x
+INFO  11:29:30,547 - #25 &&
+INFO  11:29:30,547 - #50 x
+INFO  11:29:30,547 - #33 <
+INFO  11:29:30,547 - #50 size
+INFO  11:29:30,547 - #6 )
+INFO  11:29:30,547 - #3 {
+INFO  11:29:30,547 - #50 val
+INFO  11:29:30,547 - #28 .
+INFO  11:29:30,547 - #50 putp
+INFO  11:29:30,547 - #5 (
+INFO  11:29:30,547 - #50 val
+INFO  11:29:30,547 - #28 .
+INFO  11:29:30,547 - #50 getp
+INFO  11:29:30,547 - #5 (
+INFO  11:29:30,547 - #50 x
+INFO  11:29:30,547 - #6 )
+INFO  11:29:30,547 - #36 +
+INFO  11:29:30,547 - #47 1
+INFO  11:29:30,547 - #6 )
+INFO  11:29:30,547 - #12 ;
+INFO  11:29:30,547 - #4 }
+INFO  11:29:30,547 - #46 else
+INFO  11:29:30,547 - #21 if
+INFO  11:29:30,547 - #5 (
+INFO  11:29:30,547 - #37 -
+INFO  11:29:30,547 - #50 size
+INFO  11:29:30,547 - #33 <
+INFO  11:29:30,547 - #50 x
+INFO  11:29:30,547 - #25 &&
+INFO  11:29:30,548 - #50 x
+INFO  11:29:30,548 - #33 <
+INFO  11:29:30,548 - #47 0
+INFO  11:29:30,548 - #6 )
+INFO  11:29:30,548 - #3 {
+INFO  11:29:30,548 - #50 val
+INFO  11:29:30,548 - #28 .
+INFO  11:29:30,548 - #50 putn
+INFO  11:29:30,548 - #5 (
+INFO  11:29:30,548 - #50 val
+INFO  11:29:30,548 - #28 .
+INFO  11:29:30,548 - #50 getn
+INFO  11:29:30,548 - #5 (
+INFO  11:29:30,548 - #37 -
+INFO  11:29:30,548 - #50 x
+INFO  11:29:30,548 - #6 )
+INFO  11:29:30,548 - #36 +
+INFO  11:29:30,548 - #47 1
+INFO  11:29:30,548 - #6 )
+INFO  11:29:30,548 - #12 ;
+INFO  11:29:30,548 - #4 }
+INFO  11:29:30,548 - #15 read
+INFO  11:29:30,548 - #5 (
+INFO  11:29:30,548 - #50 x
+INFO  11:29:30,548 - #6 )
+INFO  11:29:30,548 - #12 ;
+INFO  11:29:30,548 - #4 }
+INFO  11:29:30,548 - #16 return
+INFO  11:29:30,548 - #12 ;
+INFO  11:29:30,548 - #4 }
+INFO  11:29:30,548 - #4 }

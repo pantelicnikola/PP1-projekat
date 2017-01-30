@@ -1,0 +1,7 @@
+INFO  15:36:38,456 - Compiling source file: C:\Users\Nikola\Desktop\pp1 Projekat\projekat\workspace\PP1Project\test\program.mj
+INFO  15:36:38,462 - #2 program
+INFO  15:36:38,462 - #3 P
+ERROR 15:36:38,462 - 
+Sintaksna greska na liniji 1
+ERROR 15:36:38,462 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 1
+INFO  15:36:38,463 - Print calls = 0

@@ -1,0 +1,28 @@
+INFO  15:42:31,650 - Compiling source file: C:\Users\Nikola\Desktop\pp1 Projekat\projekat\workspace\PP1Project\test\program.mj
+INFO  15:42:31,659 - #2 program
+INFO  15:42:31,659 - #50 P
+INFO  15:42:31,659 - #18 const
+INFO  15:42:31,659 - #50 int
+INFO  15:42:31,659 - #50 size
+INFO  15:42:31,659 - #11 =
+INFO  15:42:31,659 - #47 10
+INFO  15:42:31,659 - #12 ;
+INFO  15:42:31,659 - #17 class
+INFO  15:42:31,660 - #50 Table
+INFO  15:42:31,660 - #3 {
+INFO  15:42:31,660 - #50 int
+INFO  15:42:31,660 - #50 pos
+INFO  15:42:31,660 - #7 [
+INFO  15:42:31,660 - #8 ]
+INFO  15:42:31,660 - #27 ,
+INFO  15:42:31,660 - #50 neg
+INFO  15:42:31,660 - #7 [
+INFO  15:42:31,660 - #8 ]
+INFO  15:42:31,660 - #12 ;
+INFO  15:42:31,660 - #3 {
+INFO  15:42:31,660 - #50 putp
+INFO  15:42:31,660 - #5 (
+ERROR 15:42:31,660 - 
+Sintaksna greska na liniji 6
+ERROR 15:42:31,660 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 6
+INFO  15:42:31,661 - Print calls = 0

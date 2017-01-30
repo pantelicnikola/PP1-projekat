@@ -1,0 +1,265 @@
+INFO  17:02:51,952 - Compiling source file: C:\Users\Nikola\Desktop\pp1 Projekat\projekat\workspace\PP1Project\test\program.mj
+INFO  17:02:51,965 - #2 program
+INFO  17:02:51,965 - #50 myProgram
+INFO  17:02:51,965 - #17 class
+INFO  17:02:51,965 - #50 Integer
+INFO  17:02:51,965 - #3 {
+INFO  17:02:51,965 - #50 int
+INFO  17:02:51,965 - #50 myInt
+INFO  17:02:51,965 - #12 ;
+INFO  17:02:51,965 - Deklarisana je globalna promenljiva myInt - linija: 6
+INFO  17:02:51,965 - #3 {
+INFO  17:02:51,965 - #10 void
+INFO  17:02:51,966 - #50 setInt
+INFO  17:02:51,966 - #5 (
+INFO  17:02:51,966 - Obradjuje se funkcija setInt - linija: 8
+INFO  17:02:51,966 - #50 int
+INFO  17:02:51,966 - #50 myInt
+INFO  17:02:51,966 - #6 )
+INFO  17:02:51,966 - #3 {
+INFO  17:02:51,966 - #4 }
+INFO  17:02:51,966 - #50 int
+INFO  17:02:51,966 - #50 getInt
+INFO  17:02:51,966 - #5 (
+INFO  17:02:51,966 - Obradjuje se funkcija getInt - linija: 11
+INFO  17:02:51,966 - #6 )
+INFO  17:02:51,966 - #3 {
+INFO  17:02:51,966 - #16 return
+INFO  17:02:51,966 - #50 myInt
+INFO  17:02:51,966 - #12 ;
+ERROR 17:02:51,967 - Pogresna povratna vrednost u metodi getInt linija - 13
+INFO  17:02:51,967 - #4 }
+INFO  17:02:51,967 - #4 }
+INFO  17:02:51,967 - #4 }
+INFO  17:02:51,967 - #17 class
+INFO  17:02:51,967 - #50 Table
+INFO  17:02:51,967 - #3 {
+INFO  17:02:51,967 - #50 int
+INFO  17:02:51,967 - #50 pos
+INFO  17:02:51,967 - #7 [
+INFO  17:02:51,967 - #8 ]
+INFO  17:02:51,967 - #27 ,
+INFO  17:02:51,967 - Deklarisan je globalni niz pos - linija: 21
+INFO  17:02:51,967 - #50 neg
+INFO  17:02:51,967 - #7 [
+INFO  17:02:51,967 - #8 ]
+INFO  17:02:51,967 - #12 ;
+INFO  17:02:51,968 - Deklarisan je globalni niz neg - linija: 21
+INFO  17:02:51,968 - #3 {
+INFO  17:02:51,968 - #50 int
+INFO  17:02:51,968 - #50 putp
+INFO  17:02:51,968 - #5 (
+INFO  17:02:51,968 - Obradjuje se funkcija putp - linija: 23
+INFO  17:02:51,968 - #50 int
+INFO  17:02:51,968 - #50 a
+INFO  17:02:51,968 - #27 ,
+INFO  17:02:51,968 - #50 int
+INFO  17:02:51,968 - #50 idx
+INFO  17:02:51,968 - #6 )
+INFO  17:02:51,968 - #3 {
+INFO  17:02:51,968 - #50 this
+INFO  17:02:51,968 - #28 .
+INFO  17:02:51,968 - #50 pos
+INFO  17:02:51,968 - #7 [
+INFO  17:02:51,968 - #50 idx
+INFO  17:02:51,968 - #8 ]
+INFO  17:02:51,969 - #11 =
+INFO  17:02:51,969 - #50 a
+INFO  17:02:51,969 - #12 ;
+INFO  17:02:51,969 - #16 return
+INFO  17:02:51,970 - #47 1
+INFO  17:02:51,970 - #12 ;
+ERROR 17:02:51,970 - Pogresna povratna vrednost u metodi putp linija - 23
+INFO  17:02:51,970 - #4 }
+INFO  17:02:51,970 - #50 int
+INFO  17:02:51,970 - #50 putn
+INFO  17:02:51,970 - #5 (
+INFO  17:02:51,970 - Obradjuje se funkcija putn - linija: 24
+INFO  17:02:51,970 - #50 int
+INFO  17:02:51,970 - #50 a
+INFO  17:02:51,970 - #27 ,
+INFO  17:02:51,970 - #50 int
+INFO  17:02:51,970 - #50 idx
+INFO  17:02:51,970 - #6 )
+INFO  17:02:51,970 - #3 {
+INFO  17:02:51,970 - #50 this
+INFO  17:02:51,970 - #28 .
+INFO  17:02:51,970 - #50 neg
+INFO  17:02:51,970 - #7 [
+INFO  17:02:51,970 - #50 idx
+INFO  17:02:51,970 - #8 ]
+INFO  17:02:51,971 - #11 =
+INFO  17:02:51,971 - #50 a
+INFO  17:02:51,971 - #12 ;
+INFO  17:02:51,971 - #16 return
+INFO  17:02:51,971 - #47 1
+INFO  17:02:51,971 - #12 ;
+ERROR 17:02:51,971 - Pogresna povratna vrednost u metodi putn linija - 24
+INFO  17:02:51,971 - #4 }
+INFO  17:02:51,971 - #50 int
+INFO  17:02:51,971 - #50 getp
+INFO  17:02:51,971 - #5 (
+INFO  17:02:51,971 - Obradjuje se funkcija getp - linija: 25
+INFO  17:02:51,971 - #50 int
+INFO  17:02:51,972 - #50 idx
+INFO  17:02:51,972 - #6 )
+INFO  17:02:51,972 - #3 {
+INFO  17:02:51,972 - #16 return
+INFO  17:02:51,972 - #50 pos
+INFO  17:02:51,972 - #7 [
+INFO  17:02:51,972 - #50 idx
+INFO  17:02:51,972 - #8 ]
+INFO  17:02:51,972 - #12 ;
+ERROR 17:02:51,972 - Pogresna povratna vrednost u metodi getp linija - 25
+INFO  17:02:51,972 - #4 }
+INFO  17:02:51,972 - #50 int
+INFO  17:02:51,972 - #50 getn
+INFO  17:02:51,972 - #5 (
+INFO  17:02:51,972 - Obradjuje se funkcija getn - linija: 26
+INFO  17:02:51,972 - #50 int
+INFO  17:02:51,972 - #50 idx
+INFO  17:02:51,972 - #6 )
+INFO  17:02:51,972 - #3 {
+INFO  17:02:51,973 - #16 return
+INFO  17:02:51,973 - #50 neg
+INFO  17:02:51,973 - #7 [
+INFO  17:02:51,973 - #50 idx
+INFO  17:02:51,973 - #8 ]
+INFO  17:02:51,973 - #12 ;
+ERROR 17:02:51,973 - Pogresna povratna vrednost u metodi getn linija - 26
+INFO  17:02:51,973 - #4 }
+INFO  17:02:51,973 - #4 }
+INFO  17:02:51,973 - #4 }
+INFO  17:02:51,973 - #17 class
+INFO  17:02:51,973 - #50 Z
+INFO  17:02:51,973 - #23 extends
+INFO  17:02:51,973 - #50 Table
+INFO  17:02:51,973 - #3 {
+INFO  17:02:51,973 - #50 int
+INFO  17:02:51,973 - #50 i
+INFO  17:02:51,973 - #12 ;
+INFO  17:02:51,973 - Deklarisana je globalna promenljiva i - linija: 31
+INFO  17:02:51,973 - #50 int
+INFO  17:02:51,973 - #50 x
+INFO  17:02:51,973 - #7 [
+INFO  17:02:51,973 - #8 ]
+INFO  17:02:51,974 - #12 ;
+INFO  17:02:51,974 - Deklarisan je globalni niz x - linija: 31
+INFO  17:02:51,974 - #3 {
+INFO  17:02:51,974 - #50 int
+INFO  17:02:51,974 - #50 getValue
+INFO  17:02:51,974 - #5 (
+INFO  17:02:51,974 - Obradjuje se funkcija getValue - linija: 33
+INFO  17:02:51,974 - #50 int
+INFO  17:02:51,974 - #50 a
+INFO  17:02:51,974 - #6 )
+INFO  17:02:51,974 - #50 int
+INFO  17:02:51,974 - #50 b
+INFO  17:02:51,974 - #12 ;
+INFO  17:02:51,974 - Deklarisana je lokalna promenljiva b - linija: 34
+INFO  17:02:51,974 - #50 bool
+INFO  17:02:51,974 - #50 c
+INFO  17:02:51,974 - #12 ;
+INFO  17:02:51,974 - Deklarisana je lokalna promenljiva c - linija: 34
+INFO  17:02:51,974 - #3 {
+INFO  17:02:51,974 - #50 x
+INFO  17:02:51,974 - #7 [
+INFO  17:02:51,974 - #50 i
+INFO  17:02:51,974 - #8 ]
+INFO  17:02:51,975 - #11 =
+INFO  17:02:51,975 - #50 i
+INFO  17:02:51,975 - #12 ;
+INFO  17:02:51,975 - #16 return
+INFO  17:02:51,975 - #50 this
+INFO  17:02:51,975 - #28 .
+INFO  17:02:51,975 - #50 i
+INFO  17:02:51,975 - #36 +
+INFO  17:02:51,975 - #50 this
+INFO  17:02:51,975 - #28 .
+INFO  17:02:51,975 - #50 x
+INFO  17:02:51,975 - #7 [
+INFO  17:02:51,975 - #47 0
+INFO  17:02:51,975 - #8 ]
+INFO  17:02:51,975 - #12 ;
+ERROR 17:02:51,975 - Pogresna povratna vrednost u metodi getValue linija - 37
+INFO  17:02:51,975 - #4 }
+INFO  17:02:51,975 - #4 }
+INFO  17:02:51,975 - #4 }
+INFO  17:02:51,975 - #17 class
+INFO  17:02:51,975 - #50 B
+INFO  17:02:51,975 - #23 extends
+INFO  17:02:51,975 - #50 Table
+INFO  17:02:51,975 - #3 {
+INFO  17:02:51,976 - #50 int
+INFO  17:02:51,976 - #50 i
+INFO  17:02:51,976 - #12 ;
+INFO  17:02:51,976 - Deklarisana je globalna promenljiva i - linija: 43
+INFO  17:02:51,976 - #50 int
+INFO  17:02:51,976 - #50 x
+INFO  17:02:51,976 - #7 [
+INFO  17:02:51,976 - #8 ]
+INFO  17:02:51,976 - #12 ;
+INFO  17:02:51,976 - Deklarisan je globalni niz x - linija: 43
+INFO  17:02:51,976 - #3 {
+INFO  17:02:51,976 - #50 int
+INFO  17:02:51,976 - #50 getValue
+INFO  17:02:51,976 - #5 (
+INFO  17:02:51,976 - Obradjuje se funkcija getValue - linija: 45
+INFO  17:02:51,976 - #50 int
+INFO  17:02:51,976 - #50 a
+INFO  17:02:51,977 - #6 )
+INFO  17:02:51,977 - #50 int
+INFO  17:02:51,977 - #50 b
+INFO  17:02:51,977 - #12 ;
+INFO  17:02:51,977 - Deklarisana je lokalna promenljiva b - linija: 46
+INFO  17:02:51,977 - #50 bool
+INFO  17:02:51,977 - #50 c
+INFO  17:02:51,977 - #12 ;
+INFO  17:02:51,977 - Deklarisana je lokalna promenljiva c - linija: 46
+INFO  17:02:51,977 - #3 {
+INFO  17:02:51,977 - #14 print
+INFO  17:02:51,977 - #5 (
+INFO  17:02:51,977 - #50 c
+INFO  17:02:51,977 - #28 .
+INFO  17:02:51,977 - #50 getValue
+INFO  17:02:51,977 - #5 (
+INFO  17:02:51,977 - #50 c
+INFO  17:02:51,978 - #28 .
+INFO  17:02:51,978 - #50 theA
+INFO  17:02:51,978 - #28 .
+INFO  17:02:51,978 - #50 x
+INFO  17:02:51,978 - #7 [
+INFO  17:02:51,978 - #47 0
+INFO  17:02:51,978 - #8 ]
+INFO  17:02:51,978 - #6 )
+INFO  17:02:51,978 - #6 )
+INFO  17:02:51,978 - #12 ;
+INFO  17:02:51,978 - #16 return
+INFO  17:02:51,978 - #50 this
+INFO  17:02:51,978 - #28 .
+INFO  17:02:51,978 - #50 i
+INFO  17:02:51,978 - #36 +
+INFO  17:02:51,978 - #50 this
+INFO  17:02:51,978 - #28 .
+INFO  17:02:51,978 - #50 x
+INFO  17:02:51,978 - #7 [
+INFO  17:02:51,978 - #47 0
+INFO  17:02:51,979 - #8 ]
+INFO  17:02:51,979 - #36 +
+INFO  17:02:51,979 - #50 a
+INFO  17:02:51,979 - #12 ;
+ERROR 17:02:51,979 - Pogresna povratna vrednost u metodi getValue linija - 49
+INFO  17:02:51,979 - #4 }
+INFO  17:02:51,979 - #10 void
+INFO  17:02:51,979 - #50 getTable
+INFO  17:02:51,979 - #5 (
+INFO  17:02:51,979 - Obradjuje se funkcija getTable - linija: 52
+INFO  17:02:51,979 - #6 )
+INFO  17:02:51,979 - #50 int
+INFO  17:02:51,979 - #50 a
+INFO  17:02:51,979 - #12 ;
+INFO  17:02:51,979 - Deklarisana je lokalna promenljiva a - linija: 53
+INFO  17:02:51,979 - #3 {
+INFO  17:02:51,979 - #16 return
+INFO  17:02:51,980 - #47 1
+INFO  17:02:51,980 - #12 ;

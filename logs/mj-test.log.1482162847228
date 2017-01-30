@@ -1,0 +1,29 @@
+INFO  16:45:29,377 - Compiling source file: C:\Users\Nikola\Desktop\pp1 Projekat\projekat\workspace\PP1Project\test\program.mj
+INFO  16:45:29,384 - #2 program
+INFO  16:45:29,385 - #50 myProgram
+INFO  16:45:29,385 - #17 class
+INFO  16:45:29,385 - #50 Integer
+INFO  16:45:29,385 - #3 {
+INFO  16:45:29,385 - #50 int
+INFO  16:45:29,385 - #50 myInt
+INFO  16:45:29,385 - #12 ;
+INFO  16:45:29,385 - #3 {
+INFO  16:45:29,385 - #10 void
+INFO  16:45:29,385 - #50 setInt
+INFO  16:45:29,385 - #5 (
+INFO  16:45:29,385 - #50 int
+INFO  16:45:29,385 - #50 myInt
+INFO  16:45:29,385 - #6 )
+INFO  16:45:29,385 - #3 {
+INFO  16:45:29,385 - #50 this
+INFO  16:45:29,386 - #28 .
+INFO  16:45:29,386 - #50 myInt
+INFO  16:45:29,386 - #11 =
+INFO  16:45:29,386 - #50 myInt
+INFO  16:45:29,386 - #12 ;
+INFO  16:45:29,386 - #4 }
+INFO  16:45:29,386 - #50 int
+ERROR 16:45:29,386 - 
+Sintaksna greska na liniji 12
+ERROR 16:45:29,386 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 12
+INFO  16:45:29,386 - Print calls = 0

@@ -1,0 +1,773 @@
+INFO  13:53:34,004 - Compiling source file: C:\Users\Nikola\Desktop\pp1 Projekat\projekat\workspace\PP1Project\test\program.mj
+INFO  13:53:34,023 - #2 program
+INFO  13:53:34,024 - #50 myProgram
+INFO  13:53:34,024 - #17 class
+INFO  13:53:34,024 - #50 Integer
+INFO  13:53:34,024 - #3 {
+INFO  13:53:34,024 - #50 int
+INFO  13:53:34,025 - #50 myInt
+INFO  13:53:34,025 - #12 ;
+INFO  13:53:34,025 - Deklarisana je globalna promenljiva myInt - linija: 6
+INFO  13:53:34,025 - #3 {
+INFO  13:53:34,025 - #10 void
+INFO  13:53:34,025 - #50 setInt
+INFO  13:53:34,025 - #5 (
+INFO  13:53:34,025 - Obradjuje se funkcija setInt - linija: 8
+INFO  13:53:34,026 - #50 int
+INFO  13:53:34,026 - #50 my
+INFO  13:53:34,026 - #6 )
+INFO  13:53:34,026 - #3 {
+INFO  13:53:34,026 - #50 myInt
+INFO  13:53:34,028 - #11 =
+INFO  13:53:34,028 - #50 my
+INFO  13:53:34,028 - #12 ;
+INFO  13:53:34,028 - #4 }
+INFO  13:53:34,028 - #50 int
+INFO  13:53:34,028 - #50 getInt
+INFO  13:53:34,029 - #5 (
+INFO  13:53:34,029 - Obradjuje se funkcija getInt - linija: 12
+INFO  13:53:34,029 - #6 )
+INFO  13:53:34,029 - #3 {
+INFO  13:53:34,029 - #16 return
+INFO  13:53:34,029 - #50 myInt
+INFO  13:53:34,029 - #12 ;
+INFO  13:53:34,029 - U pitanju je void funkcija
+INFO  13:53:34,029 - #4 }
+INFO  13:53:34,029 - #4 }
+INFO  13:53:34,029 - #4 }
+INFO  13:53:34,030 - #17 class
+INFO  13:53:34,030 - #50 Table
+INFO  13:53:34,030 - #3 {
+INFO  13:53:34,030 - #50 int
+INFO  13:53:34,030 - #50 pos
+INFO  13:53:34,030 - #7 [
+INFO  13:53:34,030 - #8 ]
+INFO  13:53:34,030 - #27 ,
+INFO  13:53:34,030 - Deklarisan je globalni niz pos - linija: 22
+INFO  13:53:34,031 - #50 neg
+INFO  13:53:34,031 - #7 [
+INFO  13:53:34,031 - #8 ]
+INFO  13:53:34,031 - #12 ;
+INFO  13:53:34,031 - Deklarisan je globalni niz neg - linija: 22
+INFO  13:53:34,031 - #3 {
+INFO  13:53:34,031 - #50 int
+INFO  13:53:34,031 - #50 putp
+INFO  13:53:34,031 - #5 (
+INFO  13:53:34,031 - Obradjuje se funkcija putp - linija: 24
+INFO  13:53:34,031 - #50 int
+INFO  13:53:34,032 - #50 a
+INFO  13:53:34,032 - #27 ,
+INFO  13:53:34,032 - #50 int
+INFO  13:53:34,032 - #50 idx
+INFO  13:53:34,032 - #6 )
+INFO  13:53:34,032 - #3 {
+INFO  13:53:34,032 - #50 this
+INFO  13:53:34,033 - #28 .
+ERROR 13:53:34,033 - Promenljiva this nije definisana - linija: 24
+INFO  13:53:34,033 - #50 pos
+INFO  13:53:34,033 - #7 [
+INFO  13:53:34,033 - #50 idx
+INFO  13:53:34,033 - #8 ]
+INFO  13:53:34,033 - #11 =
+INFO  13:53:34,033 - #50 a
+INFO  13:53:34,033 - #12 ;
+INFO  13:53:34,033 - #16 return
+INFO  13:53:34,034 - #47 1
+INFO  13:53:34,034 - #12 ;
+INFO  13:53:34,034 - U pitanju je void funkcija
+INFO  13:53:34,034 - #4 }
+INFO  13:53:34,034 - #50 int
+INFO  13:53:34,034 - #50 putn
+INFO  13:53:34,034 - #5 (
+INFO  13:53:34,034 - Obradjuje se funkcija putn - linija: 25
+INFO  13:53:34,034 - #50 int
+INFO  13:53:34,035 - #50 a
+INFO  13:53:34,035 - #27 ,
+INFO  13:53:34,035 - #50 int
+INFO  13:53:34,036 - #50 idx
+INFO  13:53:34,036 - #6 )
+INFO  13:53:34,036 - #3 {
+INFO  13:53:34,036 - #50 this
+INFO  13:53:34,036 - #28 .
+ERROR 13:53:34,036 - Promenljiva this nije definisana - linija: 25
+INFO  13:53:34,036 - #50 neg
+INFO  13:53:34,036 - #7 [
+INFO  13:53:34,036 - #50 idx
+INFO  13:53:34,036 - #8 ]
+INFO  13:53:34,037 - #11 =
+INFO  13:53:34,037 - #50 a
+INFO  13:53:34,037 - #12 ;
+INFO  13:53:34,037 - #16 return
+INFO  13:53:34,037 - #47 1
+INFO  13:53:34,037 - #12 ;
+INFO  13:53:34,037 - U pitanju je void funkcija
+INFO  13:53:34,037 - #4 }
+INFO  13:53:34,037 - #50 int
+INFO  13:53:34,037 - #50 getp
+INFO  13:53:34,037 - #5 (
+INFO  13:53:34,038 - Obradjuje se funkcija getp - linija: 26
+INFO  13:53:34,038 - #50 int
+INFO  13:53:34,038 - #50 idx
+INFO  13:53:34,038 - #6 )
+INFO  13:53:34,038 - #3 {
+INFO  13:53:34,038 - #16 return
+INFO  13:53:34,038 - #50 pos
+INFO  13:53:34,038 - #7 [
+INFO  13:53:34,038 - #50 idx
+INFO  13:53:34,038 - #8 ]
+INFO  13:53:34,039 - #12 ;
+INFO  13:53:34,039 - U pitanju je void funkcija
+INFO  13:53:34,039 - #4 }
+INFO  13:53:34,039 - #50 int
+INFO  13:53:34,039 - #50 getn
+INFO  13:53:34,039 - #5 (
+INFO  13:53:34,039 - Obradjuje se funkcija getn - linija: 27
+INFO  13:53:34,039 - #50 int
+INFO  13:53:34,039 - #50 idx
+INFO  13:53:34,039 - #6 )
+INFO  13:53:34,039 - #3 {
+INFO  13:53:34,040 - #16 return
+INFO  13:53:34,040 - #50 neg
+INFO  13:53:34,040 - #7 [
+INFO  13:53:34,040 - #50 idx
+INFO  13:53:34,040 - #8 ]
+INFO  13:53:34,040 - #12 ;
+INFO  13:53:34,040 - U pitanju je void funkcija
+INFO  13:53:34,040 - #4 }
+INFO  13:53:34,040 - #4 }
+INFO  13:53:34,040 - #4 }
+INFO  13:53:34,040 - #17 class
+INFO  13:53:34,040 - #50 Z
+INFO  13:53:34,040 - #23 extends
+INFO  13:53:34,040 - #50 Table
+INFO  13:53:34,041 - #3 {
+INFO  13:53:34,041 - #50 int
+INFO  13:53:34,041 - #50 i
+INFO  13:53:34,041 - #12 ;
+INFO  13:53:34,041 - Deklarisana je globalna promenljiva i - linija: 32
+INFO  13:53:34,041 - #50 int
+INFO  13:53:34,041 - #50 x
+INFO  13:53:34,041 - #7 [
+INFO  13:53:34,041 - #8 ]
+INFO  13:53:34,041 - #12 ;
+INFO  13:53:34,041 - Deklarisan je globalni niz x - linija: 32
+INFO  13:53:34,041 - #3 {
+INFO  13:53:34,041 - #50 int
+INFO  13:53:34,042 - #50 getValue
+INFO  13:53:34,042 - #5 (
+INFO  13:53:34,042 - Obradjuje se funkcija getValue - linija: 34
+INFO  13:53:34,042 - #50 int
+INFO  13:53:34,042 - #50 a
+INFO  13:53:34,042 - #6 )
+INFO  13:53:34,042 - #50 int
+INFO  13:53:34,042 - #50 b
+INFO  13:53:34,042 - #12 ;
+INFO  13:53:34,042 - Deklarisana je lokalna promenljiva b - linija: 35
+INFO  13:53:34,042 - #50 bool
+INFO  13:53:34,042 - #50 c
+INFO  13:53:34,042 - #12 ;
+INFO  13:53:34,042 - Deklarisana je lokalna promenljiva c - linija: 35
+INFO  13:53:34,043 - #3 {
+INFO  13:53:34,043 - #50 x
+INFO  13:53:34,043 - #7 [
+INFO  13:53:34,043 - #50 i
+INFO  13:53:34,043 - #8 ]
+INFO  13:53:34,043 - #11 =
+INFO  13:53:34,043 - #50 i
+INFO  13:53:34,043 - #12 ;
+INFO  13:53:34,043 - #16 return
+INFO  13:53:34,043 - #50 this
+INFO  13:53:34,043 - #28 .
+ERROR 13:53:34,043 - Promenljiva this nije definisana - linija: 38
+INFO  13:53:34,043 - #50 i
+INFO  13:53:34,043 - #36 +
+INFO  13:53:34,044 - #50 this
+INFO  13:53:34,044 - #28 .
+ERROR 13:53:34,044 - Promenljiva this nije definisana - linija: 38
+INFO  13:53:34,044 - #50 x
+INFO  13:53:34,044 - #7 [
+INFO  13:53:34,044 - #47 0
+INFO  13:53:34,044 - #8 ]
+INFO  13:53:34,044 - #12 ;
+INFO  13:53:34,044 - U pitanju je void funkcija
+INFO  13:53:34,044 - #4 }
+INFO  13:53:34,044 - #4 }
+INFO  13:53:34,044 - #4 }
+INFO  13:53:34,046 - #17 class
+INFO  13:53:34,046 - #50 B
+INFO  13:53:34,046 - #23 extends
+INFO  13:53:34,046 - #50 Table
+INFO  13:53:34,046 - #3 {
+INFO  13:53:34,047 - #50 int
+INFO  13:53:34,047 - #50 i
+INFO  13:53:34,047 - #12 ;
+INFO  13:53:34,047 - Deklarisana je globalna promenljiva i - linija: 44
+INFO  13:53:34,047 - #50 int
+INFO  13:53:34,047 - #50 x
+INFO  13:53:34,047 - #7 [
+INFO  13:53:34,047 - #8 ]
+INFO  13:53:34,047 - #12 ;
+INFO  13:53:34,047 - Deklarisan je globalni niz x - linija: 44
+INFO  13:53:34,047 - #3 {
+INFO  13:53:34,047 - #50 int
+INFO  13:53:34,047 - #50 getValue
+INFO  13:53:34,047 - #5 (
+INFO  13:53:34,047 - Obradjuje se funkcija getValue - linija: 46
+INFO  13:53:34,047 - #50 int
+INFO  13:53:34,047 - #50 a
+INFO  13:53:34,047 - #6 )
+INFO  13:53:34,047 - #50 int
+INFO  13:53:34,047 - #50 b
+INFO  13:53:34,048 - #12 ;
+INFO  13:53:34,048 - Deklarisana je lokalna promenljiva b - linija: 47
+INFO  13:53:34,048 - #50 bool
+INFO  13:53:34,048 - #50 c
+INFO  13:53:34,048 - #12 ;
+INFO  13:53:34,048 - Deklarisana je lokalna promenljiva c - linija: 47
+INFO  13:53:34,048 - #3 {
+INFO  13:53:34,048 - #14 print
+INFO  13:53:34,048 - #5 (
+INFO  13:53:34,048 - #50 c
+INFO  13:53:34,048 - #28 .
+INFO  13:53:34,048 - #50 getValue
+INFO  13:53:34,048 - #5 (
+INFO  13:53:34,048 - #50 c
+INFO  13:53:34,048 - #28 .
+INFO  13:53:34,048 - #50 theA
+INFO  13:53:34,048 - #28 .
+INFO  13:53:34,048 - #50 x
+INFO  13:53:34,048 - #7 [
+INFO  13:53:34,049 - #47 0
+INFO  13:53:34,049 - #8 ]
+INFO  13:53:34,049 - #6 )
+INFO  13:53:34,049 - #6 )
+ERROR 13:53:34,049 - Funkcija c nije definisana linija - 49
+INFO  13:53:34,049 - #12 ;
+INFO  13:53:34,049 - #16 return
+ERROR 13:53:34,049 - Operand instruckije PRINT mora biti int ili char linija - 49
+INFO  13:53:34,049 - #50 this
+INFO  13:53:34,049 - #28 .
+ERROR 13:53:34,049 - Promenljiva this nije definisana - linija: 50
+INFO  13:53:34,049 - #50 i
+INFO  13:53:34,049 - #36 +
+INFO  13:53:34,049 - #50 this
+INFO  13:53:34,049 - #28 .
+ERROR 13:53:34,049 - Promenljiva this nije definisana - linija: 50
+INFO  13:53:34,050 - #50 x
+INFO  13:53:34,053 - #7 [
+INFO  13:53:34,053 - #47 0
+INFO  13:53:34,053 - #8 ]
+INFO  13:53:34,053 - #36 +
+INFO  13:53:34,053 - #50 a
+INFO  13:53:34,053 - #12 ;
+INFO  13:53:34,053 - U pitanju je void funkcija
+INFO  13:53:34,053 - #4 }
+INFO  13:53:34,053 - #10 void
+INFO  13:53:34,053 - #50 getTable
+INFO  13:53:34,053 - #5 (
+INFO  13:53:34,053 - Obradjuje se funkcija getTable - linija: 53
+INFO  13:53:34,053 - #6 )
+INFO  13:53:34,053 - #50 int
+INFO  13:53:34,054 - #50 a
+INFO  13:53:34,054 - #12 ;
+INFO  13:53:34,054 - Deklarisana je lokalna promenljiva a - linija: 54
+INFO  13:53:34,054 - #3 {
+INFO  13:53:34,054 - #16 return
+INFO  13:53:34,054 - #47 1
+INFO  13:53:34,054 - #12 ;
+INFO  13:53:34,054 - U pitanju je void funkcija
+INFO  13:53:34,054 - #4 }
+INFO  13:53:34,054 - #4 }
+INFO  13:53:34,054 - #4 }
+INFO  13:53:34,054 - #17 class
+INFO  13:53:34,054 - #50 Beta
+INFO  13:53:34,054 - #3 {
+INFO  13:53:34,054 - #50 int
+INFO  13:53:34,054 - #50 a
+INFO  13:53:34,055 - #27 ,
+INFO  13:53:34,055 - Deklarisana je globalna promenljiva a - linija: 63
+INFO  13:53:34,055 - #50 b
+INFO  13:53:34,055 - #27 ,
+INFO  13:53:34,055 - Deklarisana je globalna promenljiva b - linija: 63
+INFO  13:53:34,055 - #50 c
+INFO  13:53:34,055 - #27 ,
+INFO  13:53:34,055 - Deklarisana je globalna promenljiva c - linija: 63
+INFO  13:53:34,055 - #50 d
+INFO  13:53:34,055 - #12 ;
+INFO  13:53:34,055 - Deklarisana je globalna promenljiva d - linija: 63
+INFO  13:53:34,055 - #50 Table
+INFO  13:53:34,055 - #50 t
+INFO  13:53:34,055 - #12 ;
+INFO  13:53:34,055 - Deklarisana je globalna promenljiva t - linija: 64
+INFO  13:53:34,055 - #3 {
+INFO  13:53:34,055 - #50 int
+INFO  13:53:34,055 - #50 getVal
+INFO  13:53:34,056 - #5 (
+INFO  13:53:34,056 - Obradjuje se funkcija getVal - linija: 68
+INFO  13:53:34,056 - #6 )
+INFO  13:53:34,056 - #3 {
+INFO  13:53:34,056 - #16 return
+INFO  13:53:34,056 - #12 ;
+INFO  13:53:34,056 - U pitanju je void funkcija
+INFO  13:53:34,056 - #4 }
+INFO  13:53:34,056 - #50 int
+INFO  13:53:34,056 - #50 aaa
+INFO  13:53:34,056 - #5 (
+INFO  13:53:34,056 - Obradjuje se funkcija aaa - linija: 71
+INFO  13:53:34,056 - #50 int
+INFO  13:53:34,056 - #50 a
+INFO  13:53:34,056 - #6 )
+INFO  13:53:34,056 - #3 {
+INFO  13:53:34,056 - #16 return
+INFO  13:53:34,056 - #12 ;
+INFO  13:53:34,057 - U pitanju je void funkcija
+INFO  13:53:34,057 - #4 }
+INFO  13:53:34,057 - #4 }
+INFO  13:53:34,057 - #4 }
+INFO  13:53:34,057 - #18 const
+INFO  13:53:34,057 - #50 int
+INFO  13:53:34,057 - #50 a
+INFO  13:53:34,057 - #11 =
+INFO  13:53:34,057 - #47 23
+INFO  13:53:34,057 - #27 ,
+INFO  13:53:34,057 - Deklarisana je konstanta a - linija: 78
+INFO  13:53:34,057 - #50 b
+INFO  13:53:34,057 - #11 =
+INFO  13:53:34,057 - #47 32
+INFO  13:53:34,057 - #27 ,
+INFO  13:53:34,057 - Deklarisana je konstanta b - linija: 78
+INFO  13:53:34,057 - #50 c
+INFO  13:53:34,057 - #11 =
+INFO  13:53:34,058 - #48 a
+INFO  13:53:34,058 - #12 ;
+INFO  13:53:34,058 - Deklarisana je konstanta c - linija: 78
+INFO  13:53:34,058 - #18 const
+INFO  13:53:34,058 - #50 bool
+INFO  13:53:34,058 - #50 p
+INFO  13:53:34,058 - #11 =
+INFO  13:53:34,058 - #49 true
+INFO  13:53:34,058 - #27 ,
+INFO  13:53:34,058 - Deklarisana je konstanta p - linija: 79
+INFO  13:53:34,058 - #50 z
+INFO  13:53:34,058 - #11 =
+INFO  13:53:34,058 - #49 false
+INFO  13:53:34,058 - #27 ,
+INFO  13:53:34,058 - Deklarisana je konstanta z - linija: 79
+INFO  13:53:34,059 - #50 g
+INFO  13:53:34,059 - #11 =
+INFO  13:53:34,059 - #48 a
+INFO  13:53:34,059 - #12 ;
+INFO  13:53:34,059 - Deklarisana je konstanta g - linija: 79
+INFO  13:53:34,059 - #50 int
+INFO  13:53:34,059 - #50 asdv
+INFO  13:53:34,059 - #7 [
+INFO  13:53:34,059 - #8 ]
+INFO  13:53:34,059 - #12 ;
+INFO  13:53:34,059 - Deklarisan je globalni niz asdv - linija: 81
+INFO  13:53:34,059 - #50 Table
+INFO  13:53:34,059 - #50 aa
+INFO  13:53:34,059 - #27 ,
+INFO  13:53:34,059 - Deklarisana je globalna promenljiva aa - linija: 82
+INFO  13:53:34,059 - #50 opa
+INFO  13:53:34,059 - #12 ;
+INFO  13:53:34,059 - Deklarisana je globalna promenljiva opa - linija: 82
+INFO  13:53:34,060 - #18 const
+INFO  13:53:34,060 - #50 int
+INFO  13:53:34,060 - #50 size
+INFO  13:53:34,062 - #11 =
+INFO  13:53:34,062 - #47 10
+INFO  13:53:34,062 - #12 ;
+INFO  13:53:34,062 - Deklarisana je konstanta size - linija: 86
+INFO  13:53:34,062 - #50 Table
+INFO  13:53:34,062 - #50 val
+INFO  13:53:34,062 - #12 ;
+INFO  13:53:34,062 - Deklarisana je globalna promenljiva val - linija: 89
+INFO  13:53:34,062 - #3 {
+INFO  13:53:34,062 - #10 void
+INFO  13:53:34,062 - #50 main
+INFO  13:53:34,062 - #5 (
+INFO  13:53:34,063 - Obradjuje se funkcija main - linija: 101
+INFO  13:53:34,063 - #6 )
+INFO  13:53:34,063 - #50 int
+INFO  13:53:34,063 - #50 x
+INFO  13:53:34,063 - #27 ,
+INFO  13:53:34,063 - Deklarisana je lokalna promenljiva x - linija: 103
+INFO  13:53:34,063 - #50 s
+INFO  13:53:34,063 - #12 ;
+INFO  13:53:34,063 - Deklarisana je lokalna promenljiva s - linija: 103
+INFO  13:53:34,063 - #50 int
+INFO  13:53:34,063 - #50 i
+INFO  13:53:34,063 - #12 ;
+INFO  13:53:34,063 - Deklarisana je lokalna promenljiva i - linija: 104
+INFO  13:53:34,063 - #3 {
+INFO  13:53:34,063 - #50 x
+INFO  13:53:34,063 - #19 ++
+INFO  13:53:34,063 - #12 ;
+INFO  13:53:34,063 - #21 if
+INFO  13:53:34,064 - #5 (
+INFO  13:53:34,064 - #50 i
+INFO  13:53:34,064 - #33 <
+INFO  13:53:34,064 - #47 2
+INFO  13:53:34,064 - #25 &&
+INFO  13:53:34,064 - #50 z
+INFO  13:53:34,064 - #30 ==
+INFO  13:53:34,064 - #47 0
+INFO  13:53:34,064 - #6 )
+INFO  13:53:34,064 - #3 {
+INFO  13:53:34,064 - #50 a
+INFO  13:53:34,064 - #11 =
+INFO  13:53:34,064 - #13 new
+INFO  13:53:34,064 - #50 Beta
+INFO  13:53:34,068 - #12 ;
+INFO  13:53:34,068 - #50 a
+INFO  13:53:34,068 - #28 .
+INFO  13:53:34,068 - #50 x
+INFO  13:53:34,068 - #11 =
+INFO  13:53:34,068 - #13 new
+INFO  13:53:34,068 - #50 int
+INFO  13:53:34,068 - #7 [
+INFO  13:53:34,068 - #47 5
+INFO  13:53:34,068 - #8 ]
+INFO  13:53:34,068 - #12 ;
+INFO  13:53:34,068 - #50 a
+INFO  13:53:34,069 - #28 .
+INFO  13:53:34,069 - #50 y
+INFO  13:53:34,069 - #11 =
+INFO  13:53:34,069 - #13 new
+INFO  13:53:34,069 - #50 int
+INFO  13:53:34,069 - #7 [
+INFO  13:53:34,069 - #47 5
+INFO  13:53:34,069 - #8 ]
+INFO  13:53:34,069 - #12 ;
+INFO  13:53:34,069 - #50 c
+INFO  13:53:34,069 - #11 =
+INFO  13:53:34,069 - #13 new
+INFO  13:53:34,069 - #50 B
+INFO  13:53:34,069 - #12 ;
+INFO  13:53:34,070 - #50 c
+INFO  13:53:34,070 - #28 .
+INFO  13:53:34,070 - #50 theA
+INFO  13:53:34,070 - #11 =
+INFO  13:53:34,070 - #50 a
+INFO  13:53:34,070 - #12 ;
+INFO  13:53:34,070 - #50 c
+INFO  13:53:34,070 - #28 .
+INFO  13:53:34,070 - #50 x
+INFO  13:53:34,070 - #11 =
+INFO  13:53:34,070 - #13 new
+INFO  13:53:34,070 - #50 int
+INFO  13:53:34,070 - #7 [
+INFO  13:53:34,070 - #47 5
+INFO  13:53:34,070 - #8 ]
+INFO  13:53:34,070 - #12 ;
+INFO  13:53:34,070 - #50 x
+INFO  13:53:34,070 - #11 =
+INFO  13:53:34,070 - #13 new
+INFO  13:53:34,070 - #50 int
+INFO  13:53:34,070 - #7 [
+INFO  13:53:34,070 - #47 3
+INFO  13:53:34,070 - #8 ]
+INFO  13:53:34,071 - #12 ;
+INFO  13:53:34,071 - #50 i
+INFO  13:53:34,071 - #11 =
+INFO  13:53:34,071 - #47 0
+INFO  13:53:34,071 - #12 ;
+INFO  13:53:34,071 - #15 read
+INFO  13:53:34,071 - #5 (
+INFO  13:53:34,071 - #50 c
+INFO  13:53:34,071 - #28 .
+INFO  13:53:34,071 - #50 i
+INFO  13:53:34,071 - #6 )
+INFO  13:53:34,071 - #12 ;
+INFO  13:53:34,071 - #22 for
+INFO  13:53:34,071 - #5 (
+INFO  13:53:34,071 - #12 ;
+INFO  13:53:34,071 - #50 i
+INFO  13:53:34,071 - #33 <
+INFO  13:53:34,071 - #47 5
+INFO  13:53:34,071 - #12 ;
+INFO  13:53:34,071 - #50 i
+INFO  13:53:34,071 - #19 ++
+INFO  13:53:34,071 - #6 )
+INFO  13:53:34,072 - #3 {
+INFO  13:53:34,072 - #15 read
+INFO  13:53:34,072 - #5 (
+INFO  13:53:34,072 - #50 c
+INFO  13:53:34,072 - #28 .
+INFO  13:53:34,072 - #50 x
+INFO  13:53:34,072 - #7 [
+INFO  13:53:34,072 - #50 i
+INFO  13:53:34,072 - #8 ]
+INFO  13:53:34,072 - #6 )
+INFO  13:53:34,072 - #12 ;
+INFO  13:53:34,072 - #15 read
+INFO  13:53:34,072 - #5 (
+INFO  13:53:34,072 - #50 c
+INFO  13:53:34,072 - #28 .
+INFO  13:53:34,072 - #50 theA
+INFO  13:53:34,072 - #28 .
+INFO  13:53:34,072 - #50 x
+INFO  13:53:34,072 - #7 [
+INFO  13:53:34,072 - #50 i
+INFO  13:53:34,072 - #8 ]
+INFO  13:53:34,073 - #6 )
+INFO  13:53:34,073 - #12 ;
+INFO  13:53:34,073 - #4 }
+INFO  13:53:34,073 - #14 print
+INFO  13:53:34,073 - #5 (
+INFO  13:53:34,073 - #50 c
+INFO  13:53:34,073 - #28 .
+INFO  13:53:34,073 - #50 getValue
+INFO  13:53:34,073 - #5 (
+INFO  13:53:34,073 - #50 c
+INFO  13:53:34,073 - #28 .
+INFO  13:53:34,073 - #50 theA
+INFO  13:53:34,073 - #28 .
+INFO  13:53:34,073 - #50 x
+INFO  13:53:34,073 - #7 [
+INFO  13:53:34,073 - #47 0
+INFO  13:53:34,073 - #8 ]
+INFO  13:53:34,073 - #6 )
+INFO  13:53:34,073 - #6 )
+ERROR 13:53:34,073 - Funkcija c nije definisana linija - 126
+INFO  13:53:34,073 - #12 ;
+INFO  13:53:34,073 - #50 z
+ERROR 13:53:34,074 - Operand instruckije PRINT mora biti int ili char linija - 126
+INFO  13:53:34,074 - #19 ++
+INFO  13:53:34,074 - #12 ;
+ERROR 13:53:34,074 - Identifikator mora biti tipa int linija - 127
+INFO  13:53:34,074 - #14 print
+INFO  13:53:34,074 - #5 (
+INFO  13:53:34,074 - #50 c
+INFO  13:53:34,074 - #28 .
+INFO  13:53:34,074 - #50 getValue
+INFO  13:53:34,074 - #5 (
+INFO  13:53:34,074 - #50 c
+INFO  13:53:34,074 - #28 .
+INFO  13:53:34,074 - #50 theA
+INFO  13:53:34,074 - #28 .
+INFO  13:53:34,074 - #50 x
+INFO  13:53:34,074 - #7 [
+INFO  13:53:34,074 - #47 0
+INFO  13:53:34,074 - #8 ]
+INFO  13:53:34,074 - #6 )
+INFO  13:53:34,074 - #6 )
+ERROR 13:53:34,074 - Funkcija c nije definisana linija - 128
+INFO  13:53:34,074 - #12 ;
+INFO  13:53:34,075 - #50 z
+ERROR 13:53:34,075 - Operand instruckije PRINT mora biti int ili char linija - 128
+INFO  13:53:34,075 - #11 =
+INFO  13:53:34,075 - #50 z
+INFO  13:53:34,075 - #36 +
+INFO  13:53:34,075 - #5 (
+INFO  13:53:34,075 - #50 i
+INFO  13:53:34,075 - #36 +
+INFO  13:53:34,075 - #47 2
+INFO  13:53:34,075 - #6 )
+INFO  13:53:34,075 - #12 ;
+INFO  13:53:34,075 - #16 return
+INFO  13:53:34,075 - #12 ;
+INFO  13:53:34,075 - U pitanju je void funkcija
+INFO  13:53:34,075 - #4 }
+INFO  13:53:34,075 - #46 else
+INFO  13:53:34,075 - #3 {
+INFO  13:53:34,076 - #21 if
+INFO  13:53:34,076 - #5 (
+INFO  13:53:34,076 - #50 c
+INFO  13:53:34,076 - #32 >
+INFO  13:53:34,076 - #47 3
+INFO  13:53:34,076 - #6 )
+INFO  13:53:34,076 - #29 break
+INFO  13:53:34,076 - #12 ;
+INFO  13:53:34,076 - #46 else
+INFO  13:53:34,076 - #21 if
+INFO  13:53:34,076 - #5 (
+INFO  13:53:34,076 - #50 c
+INFO  13:53:34,076 - #34 >=
+INFO  13:53:34,076 - #47 2
+INFO  13:53:34,076 - #6 )
+INFO  13:53:34,076 - #16 return
+INFO  13:53:34,076 - #12 ;
+INFO  13:53:34,076 - U pitanju je void funkcija
+INFO  13:53:34,076 - #46 else
+INFO  13:53:34,076 - #24 continue
+INFO  13:53:34,076 - #12 ;
+INFO  13:53:34,077 - #4 }
+INFO  13:53:34,077 - #22 for
+INFO  13:53:34,077 - #5 (
+INFO  13:53:34,077 - #50 i
+INFO  13:53:34,077 - #11 =
+INFO  13:53:34,077 - #47 0
+INFO  13:53:34,077 - #12 ;
+INFO  13:53:34,077 - #50 i
+INFO  13:53:34,077 - #33 <
+INFO  13:53:34,077 - #47 5
+INFO  13:53:34,077 - #12 ;
+INFO  13:53:34,077 - #50 i
+INFO  13:53:34,077 - #19 ++
+INFO  13:53:34,077 - #6 )
+INFO  13:53:34,077 - #3 {
+INFO  13:53:34,077 - #24 continue
+INFO  13:53:34,077 - #12 ;
+INFO  13:53:34,077 - #4 }
+INFO  13:53:34,077 - #4 }
+INFO  13:53:34,077 - #50 int
+INFO  13:53:34,077 - #50 main2
+INFO  13:53:34,078 - #5 (
+INFO  13:53:34,078 - Obradjuje se funkcija main2 - linija: 143
+INFO  13:53:34,078 - #6 )
+INFO  13:53:34,078 - #50 int
+INFO  13:53:34,078 - #50 x
+INFO  13:53:34,078 - #27 ,
+INFO  13:53:34,078 - Deklarisana je lokalna promenljiva x - linija: 144
+INFO  13:53:34,078 - #50 i
+INFO  13:53:34,078 - #12 ;
+INFO  13:53:34,078 - Deklarisana je lokalna promenljiva i - linija: 144
+INFO  13:53:34,078 - #3 {
+INFO  13:53:34,078 - #50 val
+INFO  13:53:34,078 - #11 =
+INFO  13:53:34,078 - #13 new
+INFO  13:53:34,079 - #50 Table
+INFO  13:53:34,079 - #12 ;
+INFO  13:53:34,079 - #50 val
+INFO  13:53:34,079 - #28 .
+INFO  13:53:34,079 - #50 pos
+INFO  13:53:34,079 - #11 =
+INFO  13:53:34,079 - #13 new
+INFO  13:53:34,079 - #50 int
+INFO  13:53:34,079 - #7 [
+INFO  13:53:34,079 - #50 size
+INFO  13:53:34,079 - #8 ]
+INFO  13:53:34,079 - #12 ;
+INFO  13:53:34,079 - #50 val
+INFO  13:53:34,079 - #28 .
+INFO  13:53:34,079 - #50 neg
+INFO  13:53:34,079 - #11 =
+INFO  13:53:34,079 - #13 new
+INFO  13:53:34,079 - #50 int
+INFO  13:53:34,079 - #7 [
+INFO  13:53:34,079 - #50 size
+INFO  13:53:34,079 - #8 ]
+INFO  13:53:34,079 - #12 ;
+INFO  13:53:34,079 - #22 for
+INFO  13:53:34,079 - #5 (
+INFO  13:53:34,080 - #50 i
+INFO  13:53:34,080 - #11 =
+INFO  13:53:34,080 - #47 0
+INFO  13:53:34,080 - #12 ;
+INFO  13:53:34,080 - #50 i
+INFO  13:53:34,080 - #33 <
+INFO  13:53:34,080 - #50 size
+INFO  13:53:34,080 - #12 ;
+INFO  13:53:34,080 - #50 i
+INFO  13:53:34,080 - #19 ++
+INFO  13:53:34,080 - #6 )
+INFO  13:53:34,080 - #3 {
+INFO  13:53:34,080 - #50 val
+INFO  13:53:34,080 - #28 .
+INFO  13:53:34,080 - #50 putp
+INFO  13:53:34,080 - #5 (
+INFO  13:53:34,080 - #47 0
+INFO  13:53:34,080 - #27 ,
+INFO  13:53:34,080 - #50 i
+INFO  13:53:34,080 - #6 )
+INFO  13:53:34,080 - #12 ;
+INFO  13:53:34,080 - #50 val
+INFO  13:53:34,080 - #28 .
+INFO  13:53:34,081 - #50 putn
+INFO  13:53:34,081 - #5 (
+INFO  13:53:34,081 - #47 0
+INFO  13:53:34,081 - #27 ,
+INFO  13:53:34,081 - #50 i
+INFO  13:53:34,081 - #6 )
+INFO  13:53:34,081 - #12 ;
+INFO  13:53:34,081 - #4 }
+INFO  13:53:34,081 - #15 read
+INFO  13:53:34,081 - #5 (
+INFO  13:53:34,081 - #50 x
+INFO  13:53:34,081 - #6 )
+INFO  13:53:34,081 - #12 ;
+INFO  13:53:34,081 - #22 for
+INFO  13:53:34,081 - #5 (
+INFO  13:53:34,081 - #12 ;
+INFO  13:53:34,081 - #50 x
+INFO  13:53:34,081 - #32 >
+INFO  13:53:34,081 - #47 0
+INFO  13:53:34,081 - #12 ;
+INFO  13:53:34,081 - #6 )
+INFO  13:53:34,081 - #3 {
+INFO  13:53:34,082 - #21 if
+INFO  13:53:34,082 - #5 (
+INFO  13:53:34,082 - #47 0
+INFO  13:53:34,082 - #35 <=
+INFO  13:53:34,082 - #50 x
+INFO  13:53:34,082 - #25 &&
+INFO  13:53:34,082 - #50 x
+INFO  13:53:34,082 - #33 <
+INFO  13:53:34,082 - #50 size
+INFO  13:53:34,082 - #6 )
+INFO  13:53:34,082 - #3 {
+INFO  13:53:34,082 - #50 val
+INFO  13:53:34,082 - #28 .
+INFO  13:53:34,082 - #50 putp
+INFO  13:53:34,082 - #5 (
+INFO  13:53:34,082 - #50 val
+INFO  13:53:34,082 - #28 .
+INFO  13:53:34,082 - #50 getp
+INFO  13:53:34,082 - #5 (
+INFO  13:53:34,083 - #50 x
+INFO  13:53:34,083 - #6 )
+INFO  13:53:34,083 - #36 +
+ERROR 13:53:34,083 - Funkcija val nije definisana linija - 161
+INFO  13:53:34,083 - #47 1
+INFO  13:53:34,083 - #6 )
+INFO  13:53:34,083 - #12 ;
+INFO  13:53:34,083 - #4 }
+INFO  13:53:34,083 - #46 else
+INFO  13:53:34,083 - #21 if
+INFO  13:53:34,083 - #5 (
+INFO  13:53:34,083 - #37 -
+INFO  13:53:34,083 - #50 size
+INFO  13:53:34,083 - #33 <
+INFO  13:53:34,083 - #50 x
+INFO  13:53:34,083 - #25 &&
+INFO  13:53:34,083 - #50 x
+INFO  13:53:34,083 - #33 <
+INFO  13:53:34,083 - #47 0
+INFO  13:53:34,083 - #6 )
+INFO  13:53:34,083 - #3 {
+INFO  13:53:34,083 - #50 val
+INFO  13:53:34,084 - #28 .
+INFO  13:53:34,084 - #50 putn
+INFO  13:53:34,084 - #5 (
+INFO  13:53:34,084 - #50 val
+INFO  13:53:34,084 - #28 .
+INFO  13:53:34,084 - #50 getn
+INFO  13:53:34,084 - #5 (
+INFO  13:53:34,084 - #37 -
+INFO  13:53:34,084 - #50 x
+INFO  13:53:34,084 - #6 )
+INFO  13:53:34,084 - #36 +
+ERROR 13:53:34,084 - Funkcija val nije definisana linija - 165
+INFO  13:53:34,084 - #47 1
+INFO  13:53:34,084 - #6 )
+INFO  13:53:34,084 - #12 ;
+INFO  13:53:34,084 - #4 }
+INFO  13:53:34,084 - #15 read
+INFO  13:53:34,084 - #5 (
+INFO  13:53:34,084 - #50 x
+INFO  13:53:34,084 - #6 )
+INFO  13:53:34,084 - #12 ;
+INFO  13:53:34,084 - #4 }
+INFO  13:53:34,084 - #16 return
+INFO  13:53:34,085 - #12 ;
+INFO  13:53:34,085 - U pitanju je void funkcija
+INFO  13:53:34,085 - #4 }
+INFO  13:53:34,085 - #4 }
+INFO  13:53:34,085 - Global vars: 11
+INFO  13:53:34,085 - Local vars: 10
+INFO  13:53:34,085 - Global arrays: 5
+INFO  13:53:34,085 - Local arrays: 0
+INFO  13:53:34,085 - Global constants: 7
+INFO  13:53:34,085 - Print calls = 3
+INFO  13:53:34,092 - Parsiranje uspesno zavrseno!

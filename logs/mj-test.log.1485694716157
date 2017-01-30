@@ -1,0 +1,119 @@
+INFO  13:58:10,530 - Compiling source file: F:\pp1 Projekat\projekat\workspace\PP1Project\test\program.mj
+INFO  13:58:10,560 - #2 program
+INFO  13:58:10,560 - #50 P
+INFO  13:58:10,560 - #18 const
+INFO  13:58:10,560 - #50 int
+INFO  13:58:10,560 - #50 size
+INFO  13:58:10,560 - #11 =
+INFO  13:58:10,560 - #47 10
+INFO  13:58:10,560 - #12 ;
+INFO  13:58:10,561 - Deklarisana je konstanta size - linija: 2
+INFO  13:58:10,561 - #17 class
+INFO  13:58:10,561 - #50 Table
+INFO  13:58:10,561 - #3 {
+INFO  13:58:10,561 - #50 int
+INFO  13:58:10,561 - #50 pos
+INFO  13:58:10,561 - #7 [
+INFO  13:58:10,561 - #8 ]
+INFO  13:58:10,561 - #27 ,
+INFO  13:58:10,561 - Deklarisan je globalni niz pos - linija: 4
+INFO  13:58:10,561 - #50 neg
+INFO  13:58:10,562 - #7 [
+INFO  13:58:10,562 - #8 ]
+INFO  13:58:10,562 - #12 ;
+INFO  13:58:10,562 - Deklarisan je globalni niz neg - linija: 4
+INFO  13:58:10,562 - #3 {
+INFO  13:58:10,562 - #50 putp
+INFO  13:58:10,562 - #5 (
+ERROR 13:58:10,562 - 
+Sintaksna greska na liniji 6
+INFO  13:58:10,562 - #50 int
+INFO  13:58:10,562 - #50 a
+INFO  13:58:10,562 - #27 ,
+INFO  13:58:10,563 - #50 int
+INFO  13:58:10,563 - #50 idx
+INFO  13:58:10,563 - #6 )
+INFO  13:58:10,564 - #3 {
+INFO  13:58:10,564 - #50 this
+INFO  13:58:10,564 - #28 .
+INFO  13:58:10,564 - #50 pos
+INFO  13:58:10,564 - #7 [
+INFO  13:58:10,564 - #50 idx
+INFO  13:58:10,564 - #8 ]
+INFO  13:58:10,564 - #11 =
+INFO  13:58:10,564 - #50 a
+INFO  13:58:10,564 - #12 ;
+INFO  13:58:10,564 - #4 }
+INFO  13:58:10,564 - #50 putn
+INFO  13:58:10,565 - #5 (
+DEBUG 13:58:10,565 - Uspesan oporavak od greske pri deklarisanju globalne promenljive.
+ERROR 13:58:10,565 - 
+Sintaksna greska na liniji 7
+INFO  13:58:10,565 - #50 int
+INFO  13:58:10,565 - #50 a
+INFO  13:58:10,565 - #27 ,
+INFO  13:58:10,565 - #50 int
+INFO  13:58:10,565 - #50 idx
+INFO  13:58:10,565 - #6 )
+INFO  13:58:10,565 - #3 {
+INFO  13:58:10,565 - #50 this
+INFO  13:58:10,566 - #28 .
+INFO  13:58:10,566 - #50 neg
+INFO  13:58:10,566 - #7 [
+INFO  13:58:10,566 - #50 idx
+INFO  13:58:10,566 - #8 ]
+INFO  13:58:10,566 - #11 =
+INFO  13:58:10,566 - #50 a
+INFO  13:58:10,566 - #12 ;
+INFO  13:58:10,566 - #4 }
+INFO  13:58:10,566 - #50 getp
+INFO  13:58:10,566 - #5 (
+INFO  13:58:10,566 - #50 int
+INFO  13:58:10,567 - #50 idx
+INFO  13:58:10,567 - #6 )
+INFO  13:58:10,567 - #3 {
+INFO  13:58:10,567 - #16 return
+INFO  13:58:10,567 - #50 pos
+INFO  13:58:10,567 - #7 [
+INFO  13:58:10,567 - #50 idx
+INFO  13:58:10,567 - #8 ]
+INFO  13:58:10,567 - #12 ;
+INFO  13:58:10,567 - #4 }
+INFO  13:58:10,567 - #50 getn
+INFO  13:58:10,567 - #5 (
+INFO  13:58:10,567 - #50 int
+INFO  13:58:10,567 - #50 idx
+INFO  13:58:10,568 - #6 )
+INFO  13:58:10,568 - #3 {
+INFO  13:58:10,568 - #16 return
+INFO  13:58:10,568 - #50 neg
+INFO  13:58:10,568 - #7 [
+INFO  13:58:10,568 - #50 idx
+INFO  13:58:10,568 - #8 ]
+INFO  13:58:10,568 - #12 ;
+INFO  13:58:10,568 - #4 }
+INFO  13:58:10,568 - #4 }
+INFO  13:58:10,568 - #4 }
+INFO  13:58:10,568 - #50 Table
+INFO  13:58:10,569 - #50 val
+INFO  13:58:10,569 - #12 ;
+INFO  13:58:10,569 - #3 {
+INFO  13:58:10,569 - #10 void
+INFO  13:58:10,569 - #50 main
+DEBUG 13:58:10,569 - Uspesan oporavak od greske pri deklarisanju globalne promenljive.
+INFO  13:58:10,569 - #5 (
+INFO  13:58:10,569 - Obradjuje se funkcija main - linija: 14
+INFO  13:58:10,569 - #6 )
+INFO  13:58:10,569 - #50 int
+INFO  13:58:10,569 - #50 x
+INFO  13:58:10,570 - #27 ,
+INFO  13:58:10,570 - Deklarisana je lokalna promenljiva x - linija: 14
+INFO  13:58:10,570 - #50 i
+INFO  13:58:10,570 - #12 ;
+INFO  13:58:10,570 - Deklarisana je lokalna promenljiva i - linija: 14
+INFO  13:58:10,570 - #3 {
+INFO  13:58:10,570 - #50 val
+INFO  13:58:10,572 - #11 =
+INFO  13:58:10,572 - #13 new
+INFO  13:58:10,572 - #50 Table
+INFO  13:58:10,572 - #12 ;

@@ -1,0 +1,250 @@
+INFO  12:53:13,741 - Compiling source file: C:\Users\Nikola\Desktop\pp1 Projekat\projekat\workspace\PP1Project\test\program.mj
+INFO  12:53:13,752 - #2 program
+INFO  12:53:13,753 - #50 myProgram
+INFO  12:53:13,753 - #17 class
+INFO  12:53:13,753 - #50 Integer
+INFO  12:53:13,753 - #3 {
+INFO  12:53:13,753 - #50 int
+INFO  12:53:13,753 - #50 myInt
+INFO  12:53:13,753 - #12 ;
+INFO  12:53:13,753 - Deklarisana je promenljiva myInt
+INFO  12:53:13,753 - #3 {
+INFO  12:53:13,753 - #10 void
+INFO  12:53:13,753 - #50 setInt
+INFO  12:53:13,753 - #5 (
+INFO  12:53:13,753 - Obradjuje se funkcija setInt ,linija: 8
+INFO  12:53:13,753 - #50 int
+INFO  12:53:13,754 - #50 myInt
+INFO  12:53:13,754 - #6 )
+INFO  12:53:13,754 - #3 {
+INFO  12:53:13,754 - #4 }
+INFO  12:53:13,754 - #50 int
+INFO  12:53:13,754 - #50 getInt
+INFO  12:53:13,754 - #5 (
+INFO  12:53:13,754 - Obradjuje se funkcija getInt ,linija: 11
+INFO  12:53:13,754 - #6 )
+INFO  12:53:13,754 - #3 {
+INFO  12:53:13,754 - #16 return
+INFO  12:53:13,754 - #50 myInt
+INFO  12:53:13,754 - #12 ;
+INFO  12:53:13,754 - #4 }
+INFO  12:53:13,754 - #4 }
+INFO  12:53:13,754 - #4 }
+INFO  12:53:13,755 - #17 class
+INFO  12:53:13,755 - #50 Table
+INFO  12:53:13,755 - #3 {
+INFO  12:53:13,755 - #50 int
+INFO  12:53:13,755 - #50 pos
+INFO  12:53:13,755 - #7 [
+INFO  12:53:13,755 - #8 ]
+INFO  12:53:13,755 - #27 ,
+INFO  12:53:13,755 - Deklarisan je niz pos
+INFO  12:53:13,755 - #50 neg
+INFO  12:53:13,755 - #7 [
+INFO  12:53:13,755 - #8 ]
+INFO  12:53:13,755 - #12 ;
+INFO  12:53:13,755 - Deklarisan je niz neg
+INFO  12:53:13,755 - #3 {
+INFO  12:53:13,755 - #50 int
+INFO  12:53:13,755 - #50 putp
+INFO  12:53:13,755 - #5 (
+INFO  12:53:13,755 - Obradjuje se funkcija putp ,linija: 23
+INFO  12:53:13,756 - #50 int
+INFO  12:53:13,756 - #50 a
+INFO  12:53:13,756 - #27 ,
+INFO  12:53:13,756 - #50 int
+INFO  12:53:13,756 - #50 idx
+INFO  12:53:13,756 - #6 )
+INFO  12:53:13,756 - #3 {
+INFO  12:53:13,756 - #50 this
+INFO  12:53:13,756 - #28 .
+INFO  12:53:13,756 - #50 pos
+INFO  12:53:13,756 - #7 [
+INFO  12:53:13,756 - #50 idx
+INFO  12:53:13,756 - #8 ]
+INFO  12:53:13,756 - #11 =
+INFO  12:53:13,756 - #50 a
+INFO  12:53:13,756 - #12 ;
+INFO  12:53:13,756 - #16 return
+INFO  12:53:13,756 - #47 1
+INFO  12:53:13,756 - #12 ;
+INFO  12:53:13,757 - #4 }
+INFO  12:53:13,757 - #50 int
+INFO  12:53:13,757 - #50 putn
+INFO  12:53:13,757 - #5 (
+INFO  12:53:13,757 - Obradjuje se funkcija putn ,linija: 24
+INFO  12:53:13,757 - #50 int
+INFO  12:53:13,757 - #50 a
+INFO  12:53:13,757 - #27 ,
+INFO  12:53:13,757 - #50 int
+INFO  12:53:13,757 - #50 idx
+INFO  12:53:13,757 - #6 )
+INFO  12:53:13,757 - #3 {
+INFO  12:53:13,757 - #50 this
+INFO  12:53:13,757 - #28 .
+INFO  12:53:13,757 - #50 neg
+INFO  12:53:13,757 - #7 [
+INFO  12:53:13,757 - #50 idx
+INFO  12:53:13,757 - #8 ]
+INFO  12:53:13,757 - #11 =
+INFO  12:53:13,757 - #50 a
+INFO  12:53:13,758 - #12 ;
+INFO  12:53:13,758 - #16 return
+INFO  12:53:13,758 - #47 1
+INFO  12:53:13,758 - #12 ;
+INFO  12:53:13,758 - #4 }
+INFO  12:53:13,758 - #50 int
+INFO  12:53:13,758 - #50 getp
+INFO  12:53:13,758 - #5 (
+INFO  12:53:13,758 - Obradjuje se funkcija getp ,linija: 25
+INFO  12:53:13,758 - #50 int
+INFO  12:53:13,758 - #50 idx
+INFO  12:53:13,758 - #6 )
+INFO  12:53:13,758 - #3 {
+INFO  12:53:13,758 - #16 return
+INFO  12:53:13,758 - #50 pos
+INFO  12:53:13,758 - #7 [
+INFO  12:53:13,758 - #50 idx
+INFO  12:53:13,758 - #8 ]
+INFO  12:53:13,758 - #12 ;
+INFO  12:53:13,759 - #4 }
+INFO  12:53:13,759 - #50 int
+INFO  12:53:13,759 - #50 getn
+INFO  12:53:13,759 - #5 (
+INFO  12:53:13,759 - Obradjuje se funkcija getn ,linija: 26
+INFO  12:53:13,759 - #50 int
+INFO  12:53:13,759 - #50 idx
+INFO  12:53:13,759 - #6 )
+INFO  12:53:13,759 - #3 {
+INFO  12:53:13,759 - #16 return
+INFO  12:53:13,759 - #50 neg
+INFO  12:53:13,759 - #7 [
+INFO  12:53:13,759 - #50 idx
+INFO  12:53:13,759 - #8 ]
+INFO  12:53:13,759 - #12 ;
+INFO  12:53:13,759 - #4 }
+INFO  12:53:13,759 - #4 }
+INFO  12:53:13,759 - #4 }
+INFO  12:53:13,759 - #17 class
+INFO  12:53:13,759 - #50 Z
+INFO  12:53:13,760 - #23 extends
+INFO  12:53:13,760 - #50 Table
+INFO  12:53:13,760 - #3 {
+ERROR 12:53:13,760 - Nije pronadjen tip Table u tabeli simbola, linija: 30
+INFO  12:53:13,760 - #50 int
+INFO  12:53:13,760 - #50 i
+INFO  12:53:13,760 - #12 ;
+INFO  12:53:13,760 - Deklarisana je promenljiva i
+INFO  12:53:13,760 - #50 int
+INFO  12:53:13,760 - #50 x
+INFO  12:53:13,760 - #7 [
+INFO  12:53:13,760 - #8 ]
+INFO  12:53:13,760 - #12 ;
+INFO  12:53:13,760 - Deklarisan je niz x
+INFO  12:53:13,760 - #3 {
+INFO  12:53:13,760 - #50 int
+INFO  12:53:13,760 - #50 getValue
+INFO  12:53:13,761 - #5 (
+INFO  12:53:13,761 - Obradjuje se funkcija getValue ,linija: 33
+INFO  12:53:13,761 - #50 int
+INFO  12:53:13,761 - #50 a
+INFO  12:53:13,761 - #6 )
+INFO  12:53:13,761 - #50 int
+INFO  12:53:13,761 - #50 b
+INFO  12:53:13,761 - #12 ;
+INFO  12:53:13,761 - Deklarisana je promenljiva b
+INFO  12:53:13,761 - #50 bool
+INFO  12:53:13,761 - #50 c
+ERROR 12:53:13,761 - Nije pronadjen tip bool u tabeli simbola, linija: 34
+INFO  12:53:13,761 - #12 ;
+INFO  12:53:13,761 - Deklarisana je promenljiva c
+INFO  12:53:13,761 - #3 {
+INFO  12:53:13,761 - #50 x
+INFO  12:53:13,761 - #7 [
+INFO  12:53:13,761 - #50 i
+INFO  12:53:13,761 - #8 ]
+INFO  12:53:13,761 - #11 =
+INFO  12:53:13,761 - #50 i
+INFO  12:53:13,761 - #12 ;
+INFO  12:53:13,761 - #16 return
+INFO  12:53:13,762 - #50 this
+INFO  12:53:13,762 - #28 .
+INFO  12:53:13,762 - #50 i
+INFO  12:53:13,762 - #36 +
+INFO  12:53:13,762 - #50 this
+INFO  12:53:13,762 - #28 .
+INFO  12:53:13,762 - #50 x
+INFO  12:53:13,762 - #7 [
+INFO  12:53:13,762 - #47 0
+INFO  12:53:13,762 - #8 ]
+INFO  12:53:13,762 - #12 ;
+INFO  12:53:13,762 - #4 }
+INFO  12:53:13,762 - #4 }
+INFO  12:53:13,762 - #4 }
+INFO  12:53:13,763 - #17 class
+INFO  12:53:13,763 - #50 B
+INFO  12:53:13,763 - #23 extends
+INFO  12:53:13,763 - #50 Table
+INFO  12:53:13,763 - #3 {
+ERROR 12:53:13,763 - Nije pronadjen tip Table u tabeli simbola, linija: 42
+INFO  12:53:13,763 - #50 int
+INFO  12:53:13,763 - #50 i
+INFO  12:53:13,763 - #12 ;
+ERROR 12:53:13,763 - Promenljiva i je vec definisana 
+INFO  12:53:13,763 - #50 int
+INFO  12:53:13,763 - #50 x
+INFO  12:53:13,763 - #7 [
+INFO  12:53:13,763 - #8 ]
+INFO  12:53:13,764 - #12 ;
+ERROR 12:53:13,764 - Niz x je vec definisan 
+INFO  12:53:13,764 - #3 {
+INFO  12:53:13,764 - #50 int
+INFO  12:53:13,764 - #50 getValue
+INFO  12:53:13,764 - #5 (
+ERROR 12:53:13,764 - Metoda getValue je vec definisana, linija: 45
+INFO  12:53:13,764 - #50 int
+INFO  12:53:13,764 - #50 a
+INFO  12:53:13,764 - #6 )
+INFO  12:53:13,764 - #50 int
+INFO  12:53:13,764 - #50 b
+INFO  12:53:13,764 - #12 ;
+INFO  12:53:13,765 - Deklarisana je promenljiva b
+INFO  12:53:13,765 - #50 bool
+INFO  12:53:13,765 - #50 c
+ERROR 12:53:13,765 - Nije pronadjen tip bool u tabeli simbola, linija: 46
+INFO  12:53:13,765 - #12 ;
+INFO  12:53:13,765 - Deklarisana je promenljiva c
+INFO  12:53:13,765 - #3 {
+INFO  12:53:13,765 - #14 print
+INFO  12:53:13,765 - #5 (
+INFO  12:53:13,765 - #50 c
+INFO  12:53:13,765 - #28 .
+INFO  12:53:13,765 - #50 getValue
+INFO  12:53:13,765 - #5 (
+INFO  12:53:13,765 - #50 c
+INFO  12:53:13,765 - #28 .
+INFO  12:53:13,765 - #50 theA
+INFO  12:53:13,765 - #28 .
+INFO  12:53:13,765 - #50 x
+INFO  12:53:13,765 - #7 [
+INFO  12:53:13,765 - #47 0
+INFO  12:53:13,765 - #8 ]
+INFO  12:53:13,765 - #6 )
+INFO  12:53:13,765 - #6 )
+INFO  12:53:13,765 - #12 ;
+INFO  12:53:13,765 - #16 return
+INFO  12:53:13,765 - #50 this
+INFO  12:53:13,765 - #28 .
+INFO  12:53:13,765 - #50 i
+INFO  12:53:13,766 - #36 +
+INFO  12:53:13,766 - #50 this
+INFO  12:53:13,766 - #28 .
+INFO  12:53:13,766 - #50 x
+INFO  12:53:13,766 - #7 [
+INFO  12:53:13,766 - #47 0
+INFO  12:53:13,766 - #8 ]
+INFO  12:53:13,766 - #36 +
+INFO  12:53:13,766 - #50 a
+INFO  12:53:13,766 - #12 ;
+INFO  12:53:13,766 - #4 }
+INFO  12:53:13,766 - #10 void

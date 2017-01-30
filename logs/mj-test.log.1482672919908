@@ -1,0 +1,68 @@
+INFO  14:34:50,404 - Compiling source file: C:\Users\Nikola\Desktop\pp1 Projekat\projekat\workspace\PP1Project\test\program.mj
+INFO  14:34:50,426 - #2 program
+INFO  14:34:50,426 - #50 myProgram
+INFO  14:34:50,426 - #17 class
+INFO  14:34:50,427 - #50 Integer
+INFO  14:34:50,427 - #3 {
+INFO  14:34:50,427 - #50 int
+INFO  14:34:50,427 - #50 myInt
+INFO  14:34:50,427 - #12 ;
+INFO  14:34:50,427 - Deklarisana je globalna promenljiva myInt - linija: 6
+INFO  14:34:50,427 - #3 {
+INFO  14:34:50,427 - #10 void
+INFO  14:34:50,428 - #50 setInt
+INFO  14:34:50,428 - #5 (
+INFO  14:34:50,428 - Obradjuje se funkcija setInt - linija: 8
+INFO  14:34:50,428 - #50 int
+INFO  14:34:50,428 - #50 myInt
+INFO  14:34:50,428 - #6 )
+INFO  14:34:50,428 - #3 {
+INFO  14:34:50,428 - #4 }
+INFO  14:34:50,430 - #50 int
+INFO  14:34:50,430 - #50 getInt
+INFO  14:34:50,430 - #5 (
+INFO  14:34:50,430 - Obradjuje se funkcija getInt - linija: 11
+INFO  14:34:50,430 - #6 )
+INFO  14:34:50,430 - #3 {
+INFO  14:34:50,430 - #16 return
+INFO  14:34:50,430 - #50 myInt
+INFO  14:34:50,430 - #12 ;
+INFO  14:34:50,430 - U pitanju je void funkcija
+INFO  14:34:50,431 - #4 }
+INFO  14:34:50,431 - #4 }
+INFO  14:34:50,431 - #4 }
+INFO  14:34:50,431 - #17 class
+INFO  14:34:50,431 - #50 Table
+INFO  14:34:50,431 - #3 {
+INFO  14:34:50,431 - #50 int
+INFO  14:34:50,431 - #50 pos
+INFO  14:34:50,431 - #7 [
+INFO  14:34:50,432 - #8 ]
+INFO  14:34:50,432 - #27 ,
+INFO  14:34:50,432 - Deklarisan je globalni niz pos - linija: 21
+INFO  14:34:50,432 - #50 neg
+INFO  14:34:50,432 - #7 [
+INFO  14:34:50,432 - #8 ]
+INFO  14:34:50,432 - #12 ;
+INFO  14:34:50,432 - Deklarisan je globalni niz neg - linija: 21
+INFO  14:34:50,432 - #3 {
+INFO  14:34:50,433 - #50 int
+INFO  14:34:50,433 - #50 putp
+INFO  14:34:50,433 - #5 (
+INFO  14:34:50,434 - Obradjuje se funkcija putp - linija: 23
+INFO  14:34:50,434 - #50 int
+INFO  14:34:50,434 - #50 a
+INFO  14:34:50,434 - #27 ,
+INFO  14:34:50,434 - #50 int
+INFO  14:34:50,434 - #50 idx
+INFO  14:34:50,434 - #6 )
+INFO  14:34:50,434 - #3 {
+INFO  14:34:50,434 - #50 this
+INFO  14:34:50,434 - #28 .
+INFO  14:34:50,434 - #50 pos
+INFO  14:34:50,434 - #7 [
+INFO  14:34:50,434 - #50 idx
+INFO  14:34:50,435 - #8 ]
+INFO  14:34:50,435 - #11 =
+INFO  14:34:50,435 - #50 a
+INFO  14:34:50,435 - #12 ;

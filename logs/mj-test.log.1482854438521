@@ -1,0 +1,68 @@
+INFO  16:10:36,129 - Compiling source file: C:\Users\Nikola\Desktop\pp1 Projekat(1)\projekat\workspace\PP1Project\test\program.mj
+INFO  16:10:36,261 - #2 program
+INFO  16:10:36,261 - #50 myProgram
+INFO  16:10:36,262 - #17 class
+INFO  16:10:36,262 - #50 Integer
+INFO  16:10:36,262 - #3 {
+INFO  16:10:36,262 - #50 int
+INFO  16:10:36,262 - #50 myInt
+INFO  16:10:36,262 - #12 ;
+INFO  16:10:36,262 - Deklarisana je globalna promenljiva myInt - linija: 6
+INFO  16:10:36,262 - #3 {
+INFO  16:10:36,262 - #10 void
+INFO  16:10:36,262 - #50 setInt
+INFO  16:10:36,262 - #5 (
+INFO  16:10:36,262 - Obradjuje se funkcija setInt - linija: 8
+INFO  16:10:36,262 - #50 int
+INFO  16:10:36,263 - #50 myInt
+INFO  16:10:36,263 - #6 )
+INFO  16:10:36,263 - #3 {
+INFO  16:10:36,263 - #4 }
+INFO  16:10:36,264 - #50 int
+INFO  16:10:36,264 - #50 getInt
+INFO  16:10:36,264 - #5 (
+INFO  16:10:36,264 - Obradjuje se funkcija getInt - linija: 11
+INFO  16:10:36,264 - #6 )
+INFO  16:10:36,264 - #3 {
+INFO  16:10:36,264 - #16 return
+INFO  16:10:36,264 - #50 myInt
+INFO  16:10:36,264 - #12 ;
+INFO  16:10:36,264 - U pitanju je void funkcija
+INFO  16:10:36,264 - #4 }
+INFO  16:10:36,264 - #4 }
+INFO  16:10:36,264 - #4 }
+INFO  16:10:36,265 - #17 class
+INFO  16:10:36,265 - #50 Table
+INFO  16:10:36,265 - #3 {
+INFO  16:10:36,265 - #50 int
+INFO  16:10:36,265 - #50 pos
+INFO  16:10:36,265 - #7 [
+INFO  16:10:36,265 - #8 ]
+INFO  16:10:36,265 - #27 ,
+INFO  16:10:36,265 - Deklarisan je globalni niz pos - linija: 21
+INFO  16:10:36,265 - #50 neg
+INFO  16:10:36,265 - #7 [
+INFO  16:10:36,265 - #8 ]
+INFO  16:10:36,265 - #12 ;
+INFO  16:10:36,265 - Deklarisan je globalni niz neg - linija: 21
+INFO  16:10:36,265 - #3 {
+INFO  16:10:36,265 - #50 int
+INFO  16:10:36,265 - #50 putp
+INFO  16:10:36,265 - #5 (
+INFO  16:10:36,265 - Obradjuje se funkcija putp - linija: 23
+INFO  16:10:36,265 - #50 int
+INFO  16:10:36,266 - #50 a
+INFO  16:10:36,266 - #27 ,
+INFO  16:10:36,266 - #50 int
+INFO  16:10:36,266 - #50 idx
+INFO  16:10:36,266 - #6 )
+INFO  16:10:36,266 - #3 {
+INFO  16:10:36,266 - #50 this
+INFO  16:10:36,266 - #28 .
+INFO  16:10:36,266 - #50 pos
+INFO  16:10:36,266 - #7 [
+INFO  16:10:36,266 - #50 idx
+INFO  16:10:36,266 - #8 ]
+INFO  16:10:36,266 - #11 =
+INFO  16:10:36,266 - #50 a
+INFO  16:10:36,266 - #12 ;

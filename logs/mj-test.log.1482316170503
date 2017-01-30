@@ -1,0 +1,767 @@
+INFO  11:20:48,749 - Compiling source file: C:\Users\Nikola\Desktop\pp1 Projekat\projekat\workspace\PP1Project\test\program.mj
+INFO  11:20:48,777 - #2 program
+INFO  11:20:48,777 - #50 myProgram
+INFO  11:20:48,777 - #17 class
+INFO  11:20:48,777 - #50 Integer
+INFO  11:20:48,777 - #3 {
+INFO  11:20:48,777 - #50 int
+INFO  11:20:48,777 - #50 myInt
+ERROR 11:20:48,778 - Postojani tip: int
+INFO  11:20:48,778 - #12 ;
+INFO  11:20:48,778 - Deklarisana promenljiva na liniji 6
+INFO  11:20:48,778 - #3 {
+INFO  11:20:48,778 - #10 void
+INFO  11:20:48,778 - #50 setInt
+INFO  11:20:48,778 - #5 (
+INFO  11:20:48,778 - #50 int
+INFO  11:20:48,778 - #50 myInt
+ERROR 11:20:48,778 - Postojani tip: int
+INFO  11:20:48,778 - #6 )
+INFO  11:20:48,778 - #3 {
+INFO  11:20:48,778 - #4 }
+INFO  11:20:48,778 - #50 int
+INFO  11:20:48,778 - #50 getInt
+ERROR 11:20:48,778 - Postojani tip: int
+INFO  11:20:48,779 - #5 (
+INFO  11:20:48,779 - #6 )
+INFO  11:20:48,779 - #3 {
+INFO  11:20:48,779 - #16 return
+INFO  11:20:48,779 - #50 myInt
+INFO  11:20:48,779 - #12 ;
+INFO  11:20:48,779 - #4 }
+INFO  11:20:48,779 - #4 }
+INFO  11:20:48,779 - #4 }
+INFO  11:20:48,779 - #17 class
+INFO  11:20:48,779 - #50 Table
+INFO  11:20:48,779 - #3 {
+INFO  11:20:48,779 - #50 int
+INFO  11:20:48,779 - #50 pos
+ERROR 11:20:48,779 - Postojani tip: int
+INFO  11:20:48,779 - #7 [
+INFO  11:20:48,779 - #8 ]
+INFO  11:20:48,779 - #27 ,
+INFO  11:20:48,779 - Deklarisan niz na liniji 21
+INFO  11:20:48,780 - #50 neg
+INFO  11:20:48,780 - #7 [
+INFO  11:20:48,780 - #8 ]
+INFO  11:20:48,780 - #12 ;
+INFO  11:20:48,780 - Deklarisan niz na liniji 21
+INFO  11:20:48,780 - #3 {
+INFO  11:20:48,780 - #50 int
+INFO  11:20:48,780 - #50 putp
+ERROR 11:20:48,780 - Postojani tip: int
+INFO  11:20:48,780 - #5 (
+INFO  11:20:48,780 - #50 int
+INFO  11:20:48,780 - #50 a
+ERROR 11:20:48,780 - Postojani tip: int
+INFO  11:20:48,780 - #27 ,
+INFO  11:20:48,780 - #50 int
+INFO  11:20:48,780 - #50 idx
+ERROR 11:20:48,780 - Postojani tip: int
+INFO  11:20:48,780 - #6 )
+INFO  11:20:48,780 - #3 {
+INFO  11:20:48,780 - #50 this
+INFO  11:20:48,780 - #28 .
+INFO  11:20:48,781 - #50 pos
+INFO  11:20:48,781 - #7 [
+INFO  11:20:48,781 - #50 idx
+INFO  11:20:48,781 - #8 ]
+INFO  11:20:48,781 - #11 =
+INFO  11:20:48,781 - #50 a
+INFO  11:20:48,781 - #12 ;
+INFO  11:20:48,781 - #16 return
+INFO  11:20:48,781 - #47 1
+INFO  11:20:48,781 - #12 ;
+INFO  11:20:48,781 - #4 }
+INFO  11:20:48,781 - #50 int
+INFO  11:20:48,781 - #50 putn
+ERROR 11:20:48,781 - Postojani tip: int
+INFO  11:20:48,781 - #5 (
+INFO  11:20:48,781 - #50 int
+INFO  11:20:48,781 - #50 a
+ERROR 11:20:48,781 - Postojani tip: int
+INFO  11:20:48,782 - #27 ,
+INFO  11:20:48,782 - #50 int
+INFO  11:20:48,782 - #50 idx
+ERROR 11:20:48,782 - Postojani tip: int
+INFO  11:20:48,782 - #6 )
+INFO  11:20:48,782 - #3 {
+INFO  11:20:48,782 - #50 this
+INFO  11:20:48,782 - #28 .
+INFO  11:20:48,782 - #50 neg
+INFO  11:20:48,782 - #7 [
+INFO  11:20:48,782 - #50 idx
+INFO  11:20:48,782 - #8 ]
+INFO  11:20:48,782 - #11 =
+INFO  11:20:48,782 - #50 a
+INFO  11:20:48,782 - #12 ;
+INFO  11:20:48,782 - #16 return
+INFO  11:20:48,782 - #47 1
+INFO  11:20:48,782 - #12 ;
+INFO  11:20:48,782 - #4 }
+INFO  11:20:48,782 - #50 int
+INFO  11:20:48,783 - #50 getp
+ERROR 11:20:48,783 - Postojani tip: int
+INFO  11:20:48,783 - #5 (
+INFO  11:20:48,783 - #50 int
+INFO  11:20:48,783 - #50 idx
+ERROR 11:20:48,783 - Postojani tip: int
+INFO  11:20:48,783 - #6 )
+INFO  11:20:48,783 - #3 {
+INFO  11:20:48,783 - #16 return
+INFO  11:20:48,783 - #50 pos
+INFO  11:20:48,783 - #7 [
+INFO  11:20:48,783 - #50 idx
+INFO  11:20:48,783 - #8 ]
+INFO  11:20:48,783 - #12 ;
+INFO  11:20:48,783 - #4 }
+INFO  11:20:48,783 - #50 int
+INFO  11:20:48,783 - #50 getn
+ERROR 11:20:48,783 - Postojani tip: int
+INFO  11:20:48,783 - #5 (
+INFO  11:20:48,783 - #50 int
+INFO  11:20:48,783 - #50 idx
+ERROR 11:20:48,784 - Postojani tip: int
+INFO  11:20:48,784 - #6 )
+INFO  11:20:48,784 - #3 {
+INFO  11:20:48,784 - #16 return
+INFO  11:20:48,784 - #50 neg
+INFO  11:20:48,784 - #7 [
+INFO  11:20:48,784 - #50 idx
+INFO  11:20:48,784 - #8 ]
+INFO  11:20:48,784 - #12 ;
+INFO  11:20:48,784 - #4 }
+INFO  11:20:48,785 - #4 }
+INFO  11:20:48,785 - #4 }
+INFO  11:20:48,785 - #17 class
+INFO  11:20:48,785 - #50 Z
+INFO  11:20:48,785 - #23 extends
+INFO  11:20:48,785 - #50 Table
+INFO  11:20:48,785 - #3 {
+ERROR 11:20:48,785 - Nepostojani tip: Table
+INFO  11:20:48,785 - #50 int
+INFO  11:20:48,785 - #50 i
+ERROR 11:20:48,785 - Postojani tip: int
+INFO  11:20:48,785 - #12 ;
+INFO  11:20:48,785 - Deklarisana promenljiva na liniji 31
+INFO  11:20:48,786 - #50 int
+INFO  11:20:48,786 - #50 x
+ERROR 11:20:48,786 - Postojani tip: int
+INFO  11:20:48,786 - #7 [
+INFO  11:20:48,786 - #8 ]
+INFO  11:20:48,786 - #12 ;
+INFO  11:20:48,786 - Deklarisan niz na liniji 31
+INFO  11:20:48,786 - #3 {
+INFO  11:20:48,786 - #50 int
+INFO  11:20:48,786 - #50 getValue
+ERROR 11:20:48,786 - Postojani tip: int
+INFO  11:20:48,786 - #5 (
+INFO  11:20:48,786 - #50 int
+INFO  11:20:48,786 - #50 a
+ERROR 11:20:48,786 - Postojani tip: int
+INFO  11:20:48,786 - #6 )
+INFO  11:20:48,786 - #50 int
+INFO  11:20:48,786 - #50 b
+ERROR 11:20:48,786 - Postojani tip: int
+INFO  11:20:48,786 - #12 ;
+INFO  11:20:48,786 - Deklarisana promenljiva na liniji 34
+INFO  11:20:48,786 - #50 bool
+INFO  11:20:48,786 - #50 c
+ERROR 11:20:48,786 - Nepostojani tip: bool
+INFO  11:20:48,786 - #12 ;
+INFO  11:20:48,787 - Deklarisana promenljiva na liniji 34
+INFO  11:20:48,787 - #3 {
+INFO  11:20:48,787 - #50 x
+INFO  11:20:48,787 - #7 [
+INFO  11:20:48,787 - #50 i
+INFO  11:20:48,787 - #8 ]
+INFO  11:20:48,787 - #11 =
+INFO  11:20:48,787 - #50 i
+INFO  11:20:48,787 - #12 ;
+INFO  11:20:48,787 - #16 return
+INFO  11:20:48,787 - #50 this
+INFO  11:20:48,787 - #28 .
+INFO  11:20:48,787 - #50 i
+INFO  11:20:48,787 - #36 +
+INFO  11:20:48,787 - #50 this
+INFO  11:20:48,787 - #28 .
+INFO  11:20:48,787 - #50 x
+INFO  11:20:48,787 - #7 [
+INFO  11:20:48,787 - #47 0
+INFO  11:20:48,787 - #8 ]
+INFO  11:20:48,787 - #12 ;
+INFO  11:20:48,788 - #4 }
+INFO  11:20:48,788 - #4 }
+INFO  11:20:48,788 - #4 }
+INFO  11:20:48,788 - #17 class
+INFO  11:20:48,788 - #50 B
+INFO  11:20:48,788 - #23 extends
+INFO  11:20:48,788 - #50 Table
+INFO  11:20:48,788 - #3 {
+ERROR 11:20:48,788 - Nepostojani tip: Table
+INFO  11:20:48,788 - #50 int
+INFO  11:20:48,788 - #50 i
+ERROR 11:20:48,788 - Postojani tip: int
+INFO  11:20:48,788 - #12 ;
+INFO  11:20:48,788 - Deklarisana promenljiva na liniji 43
+INFO  11:20:48,788 - #50 int
+INFO  11:20:48,788 - #50 x
+ERROR 11:20:48,788 - Postojani tip: int
+INFO  11:20:48,788 - #7 [
+INFO  11:20:48,788 - #8 ]
+INFO  11:20:48,788 - #12 ;
+INFO  11:20:48,788 - Deklarisan niz na liniji 43
+INFO  11:20:48,788 - #3 {
+INFO  11:20:48,788 - #50 int
+INFO  11:20:48,788 - #50 getValue
+ERROR 11:20:48,789 - Postojani tip: int
+INFO  11:20:48,789 - #5 (
+INFO  11:20:48,789 - #50 int
+INFO  11:20:48,789 - #50 a
+ERROR 11:20:48,789 - Postojani tip: int
+INFO  11:20:48,789 - #6 )
+INFO  11:20:48,789 - #50 int
+INFO  11:20:48,789 - #50 b
+ERROR 11:20:48,789 - Postojani tip: int
+INFO  11:20:48,789 - #12 ;
+INFO  11:20:48,789 - Deklarisana promenljiva na liniji 46
+INFO  11:20:48,789 - #50 bool
+INFO  11:20:48,789 - #50 c
+ERROR 11:20:48,789 - Nepostojani tip: bool
+INFO  11:20:48,789 - #12 ;
+INFO  11:20:48,789 - Deklarisana promenljiva na liniji 46
+INFO  11:20:48,789 - #3 {
+INFO  11:20:48,789 - #14 print
+INFO  11:20:48,789 - #5 (
+INFO  11:20:48,789 - #50 c
+INFO  11:20:48,789 - #28 .
+INFO  11:20:48,789 - #50 getValue
+INFO  11:20:48,789 - #5 (
+INFO  11:20:48,789 - #50 c
+INFO  11:20:48,789 - #28 .
+INFO  11:20:48,789 - #50 theA
+INFO  11:20:48,790 - #28 .
+INFO  11:20:48,790 - #50 x
+INFO  11:20:48,790 - #7 [
+INFO  11:20:48,790 - #47 0
+INFO  11:20:48,790 - #8 ]
+INFO  11:20:48,790 - #6 )
+INFO  11:20:48,790 - #6 )
+INFO  11:20:48,790 - #12 ;
+INFO  11:20:48,790 - #16 return
+INFO  11:20:48,790 - #50 this
+INFO  11:20:48,790 - #28 .
+INFO  11:20:48,790 - #50 i
+INFO  11:20:48,790 - #36 +
+INFO  11:20:48,790 - #50 this
+INFO  11:20:48,791 - #28 .
+INFO  11:20:48,791 - #50 x
+INFO  11:20:48,791 - #7 [
+INFO  11:20:48,791 - #47 0
+INFO  11:20:48,791 - #8 ]
+INFO  11:20:48,791 - #36 +
+INFO  11:20:48,791 - #50 a
+INFO  11:20:48,791 - #12 ;
+INFO  11:20:48,791 - #4 }
+INFO  11:20:48,791 - #10 void
+INFO  11:20:48,791 - #50 getTable
+INFO  11:20:48,791 - #5 (
+INFO  11:20:48,791 - #6 )
+INFO  11:20:48,791 - #50 int
+INFO  11:20:48,791 - #50 a
+ERROR 11:20:48,791 - Postojani tip: int
+INFO  11:20:48,791 - #12 ;
+INFO  11:20:48,791 - Deklarisana promenljiva na liniji 53
+INFO  11:20:48,791 - #3 {
+INFO  11:20:48,791 - #16 return
+INFO  11:20:48,791 - #47 1
+INFO  11:20:48,791 - #12 ;
+INFO  11:20:48,792 - #4 }
+INFO  11:20:48,792 - #4 }
+INFO  11:20:48,792 - #4 }
+INFO  11:20:48,792 - #17 class
+INFO  11:20:48,792 - #50 Beta
+INFO  11:20:48,792 - #3 {
+INFO  11:20:48,792 - #50 int
+INFO  11:20:48,792 - #50 a
+ERROR 11:20:48,792 - Postojani tip: int
+INFO  11:20:48,792 - #27 ,
+INFO  11:20:48,792 - Deklarisana promenljiva na liniji 62
+INFO  11:20:48,792 - #50 b
+INFO  11:20:48,792 - #27 ,
+INFO  11:20:48,792 - Deklarisana promenljiva na liniji 62
+INFO  11:20:48,792 - #50 c
+INFO  11:20:48,792 - #27 ,
+INFO  11:20:48,792 - Deklarisana promenljiva na liniji 62
+INFO  11:20:48,792 - #50 d
+INFO  11:20:48,792 - #12 ;
+INFO  11:20:48,792 - Deklarisana promenljiva na liniji 62
+INFO  11:20:48,792 - #50 Table
+INFO  11:20:48,792 - #50 t
+ERROR 11:20:48,792 - Nepostojani tip: Table
+INFO  11:20:48,792 - #12 ;
+INFO  11:20:48,792 - Deklarisana promenljiva na liniji 63
+INFO  11:20:48,792 - #3 {
+INFO  11:20:48,792 - #50 int
+INFO  11:20:48,792 - #50 getVal
+ERROR 11:20:48,792 - Postojani tip: int
+INFO  11:20:48,792 - #5 (
+INFO  11:20:48,792 - #6 )
+INFO  11:20:48,793 - #3 {
+INFO  11:20:48,793 - #16 return
+INFO  11:20:48,793 - #12 ;
+INFO  11:20:48,793 - #4 }
+INFO  11:20:48,793 - #50 int
+INFO  11:20:48,793 - #50 aaa
+ERROR 11:20:48,793 - Postojani tip: int
+INFO  11:20:48,793 - #5 (
+INFO  11:20:48,793 - #50 int
+INFO  11:20:48,793 - #50 a
+ERROR 11:20:48,793 - Postojani tip: int
+INFO  11:20:48,793 - #6 )
+INFO  11:20:48,793 - #3 {
+INFO  11:20:48,793 - #16 return
+INFO  11:20:48,793 - #12 ;
+INFO  11:20:48,793 - #4 }
+INFO  11:20:48,793 - #4 }
+INFO  11:20:48,793 - #4 }
+INFO  11:20:48,793 - #18 const
+INFO  11:20:48,793 - #50 int
+INFO  11:20:48,793 - #50 a
+ERROR 11:20:48,793 - Postojani tip: int
+INFO  11:20:48,793 - #11 =
+INFO  11:20:48,793 - #47 23
+INFO  11:20:48,793 - #27 ,
+INFO  11:20:48,793 - #50 b
+INFO  11:20:48,793 - #11 =
+INFO  11:20:48,793 - #47 32
+INFO  11:20:48,793 - #27 ,
+INFO  11:20:48,794 - #50 c
+INFO  11:20:48,794 - #11 =
+INFO  11:20:48,794 - #48 a
+INFO  11:20:48,794 - #12 ;
+INFO  11:20:48,794 - #18 const
+INFO  11:20:48,794 - #50 bool
+INFO  11:20:48,794 - #50 p
+ERROR 11:20:48,794 - Nepostojani tip: bool
+INFO  11:20:48,794 - #11 =
+INFO  11:20:48,794 - #49 true
+INFO  11:20:48,794 - #27 ,
+INFO  11:20:48,794 - #50 z
+INFO  11:20:48,794 - #11 =
+INFO  11:20:48,794 - #49 false
+INFO  11:20:48,794 - #27 ,
+INFO  11:20:48,794 - #50 g
+INFO  11:20:48,794 - #11 =
+INFO  11:20:48,794 - #48 a
+INFO  11:20:48,794 - #12 ;
+INFO  11:20:48,794 - #50 int
+INFO  11:20:48,794 - #50 asdv
+ERROR 11:20:48,795 - Postojani tip: int
+INFO  11:20:48,795 - #7 [
+INFO  11:20:48,795 - #8 ]
+INFO  11:20:48,795 - #12 ;
+INFO  11:20:48,795 - Deklarisan niz na liniji 80
+INFO  11:20:48,795 - #50 Table
+INFO  11:20:48,795 - #50 aa
+ERROR 11:20:48,795 - Nepostojani tip: Table
+INFO  11:20:48,795 - #27 ,
+INFO  11:20:48,795 - Deklarisana promenljiva na liniji 81
+INFO  11:20:48,795 - #50 opa
+INFO  11:20:48,795 - #12 ;
+INFO  11:20:48,795 - Deklarisana promenljiva na liniji 81
+INFO  11:20:48,795 - #18 const
+INFO  11:20:48,795 - #50 int
+INFO  11:20:48,795 - #50 size
+ERROR 11:20:48,795 - Postojani tip: int
+INFO  11:20:48,795 - #11 =
+INFO  11:20:48,795 - #47 10
+INFO  11:20:48,795 - #12 ;
+INFO  11:20:48,795 - #50 Table
+INFO  11:20:48,795 - #50 val
+ERROR 11:20:48,795 - Nepostojani tip: Table
+INFO  11:20:48,795 - #12 ;
+INFO  11:20:48,795 - Deklarisana promenljiva na liniji 88
+INFO  11:20:48,795 - #3 {
+INFO  11:20:48,796 - #10 void
+INFO  11:20:48,797 - #50 main
+INFO  11:20:48,797 - #5 (
+INFO  11:20:48,797 - #6 )
+INFO  11:20:48,797 - #50 int
+INFO  11:20:48,797 - #50 x
+ERROR 11:20:48,797 - Postojani tip: int
+INFO  11:20:48,797 - #27 ,
+INFO  11:20:48,797 - Deklarisana promenljiva na liniji 102
+INFO  11:20:48,797 - #50 s
+INFO  11:20:48,797 - #12 ;
+INFO  11:20:48,797 - Deklarisana promenljiva na liniji 102
+INFO  11:20:48,797 - #50 int
+INFO  11:20:48,797 - #50 i
+ERROR 11:20:48,797 - Postojani tip: int
+INFO  11:20:48,797 - #12 ;
+INFO  11:20:48,797 - Deklarisana promenljiva na liniji 103
+INFO  11:20:48,797 - #3 {
+INFO  11:20:48,797 - #50 x
+INFO  11:20:48,797 - #19 ++
+INFO  11:20:48,797 - #12 ;
+INFO  11:20:48,797 - #21 if
+INFO  11:20:48,797 - #5 (
+INFO  11:20:48,797 - #50 i
+INFO  11:20:48,797 - #33 <
+INFO  11:20:48,797 - #47 2
+INFO  11:20:48,797 - #25 &&
+INFO  11:20:48,797 - #50 z
+INFO  11:20:48,797 - #30 ==
+INFO  11:20:48,797 - #47 0
+INFO  11:20:48,797 - #6 )
+INFO  11:20:48,797 - #3 {
+INFO  11:20:48,798 - #50 a
+INFO  11:20:48,798 - #11 =
+INFO  11:20:48,798 - #13 new
+INFO  11:20:48,798 - #50 Beta
+INFO  11:20:48,798 - #12 ;
+ERROR 11:20:48,798 - Nepostojani tip: Beta
+INFO  11:20:48,798 - #50 a
+INFO  11:20:48,798 - #28 .
+INFO  11:20:48,798 - #50 x
+INFO  11:20:48,798 - #11 =
+INFO  11:20:48,798 - #13 new
+INFO  11:20:48,798 - #50 int
+INFO  11:20:48,798 - #7 [
+ERROR 11:20:48,798 - Postojani tip: int
+INFO  11:20:48,798 - #47 5
+INFO  11:20:48,798 - #8 ]
+INFO  11:20:48,798 - #12 ;
+INFO  11:20:48,798 - #50 a
+INFO  11:20:48,798 - #28 .
+INFO  11:20:48,798 - #50 y
+INFO  11:20:48,798 - #11 =
+INFO  11:20:48,798 - #13 new
+INFO  11:20:48,798 - #50 int
+INFO  11:20:48,798 - #7 [
+ERROR 11:20:48,798 - Postojani tip: int
+INFO  11:20:48,798 - #47 5
+INFO  11:20:48,798 - #8 ]
+INFO  11:20:48,798 - #12 ;
+INFO  11:20:48,799 - #50 c
+INFO  11:20:48,799 - #11 =
+INFO  11:20:48,799 - #13 new
+INFO  11:20:48,799 - #50 B
+INFO  11:20:48,799 - #12 ;
+ERROR 11:20:48,799 - Nepostojani tip: B
+INFO  11:20:48,799 - #50 c
+INFO  11:20:48,799 - #28 .
+INFO  11:20:48,799 - #50 theA
+INFO  11:20:48,799 - #11 =
+INFO  11:20:48,799 - #50 a
+INFO  11:20:48,799 - #12 ;
+INFO  11:20:48,799 - #50 c
+INFO  11:20:48,799 - #28 .
+INFO  11:20:48,799 - #50 x
+INFO  11:20:48,799 - #11 =
+INFO  11:20:48,799 - #13 new
+INFO  11:20:48,799 - #50 int
+INFO  11:20:48,799 - #7 [
+ERROR 11:20:48,800 - Postojani tip: int
+INFO  11:20:48,800 - #47 5
+INFO  11:20:48,800 - #8 ]
+INFO  11:20:48,800 - #12 ;
+INFO  11:20:48,800 - #50 x
+INFO  11:20:48,800 - #11 =
+INFO  11:20:48,800 - #13 new
+INFO  11:20:48,801 - #50 int
+INFO  11:20:48,801 - #7 [
+ERROR 11:20:48,801 - Postojani tip: int
+INFO  11:20:48,801 - #47 3
+INFO  11:20:48,801 - #8 ]
+INFO  11:20:48,801 - #12 ;
+INFO  11:20:48,801 - #50 i
+INFO  11:20:48,801 - #11 =
+INFO  11:20:48,801 - #47 0
+INFO  11:20:48,801 - #12 ;
+INFO  11:20:48,801 - #15 read
+INFO  11:20:48,801 - #5 (
+INFO  11:20:48,801 - #50 c
+INFO  11:20:48,801 - #28 .
+INFO  11:20:48,801 - #50 i
+INFO  11:20:48,801 - #6 )
+INFO  11:20:48,801 - #12 ;
+INFO  11:20:48,801 - #22 for
+INFO  11:20:48,801 - #5 (
+INFO  11:20:48,801 - #12 ;
+INFO  11:20:48,801 - #50 i
+INFO  11:20:48,801 - #33 <
+INFO  11:20:48,801 - #47 5
+INFO  11:20:48,801 - #12 ;
+INFO  11:20:48,801 - #50 i
+INFO  11:20:48,801 - #19 ++
+INFO  11:20:48,801 - #6 )
+INFO  11:20:48,801 - #3 {
+INFO  11:20:48,802 - #15 read
+INFO  11:20:48,802 - #5 (
+INFO  11:20:48,802 - #50 c
+INFO  11:20:48,802 - #28 .
+INFO  11:20:48,802 - #50 x
+INFO  11:20:48,802 - #7 [
+INFO  11:20:48,802 - #50 i
+INFO  11:20:48,802 - #8 ]
+INFO  11:20:48,802 - #6 )
+INFO  11:20:48,802 - #12 ;
+INFO  11:20:48,802 - #15 read
+INFO  11:20:48,802 - #5 (
+INFO  11:20:48,802 - #50 c
+INFO  11:20:48,802 - #28 .
+INFO  11:20:48,802 - #50 theA
+INFO  11:20:48,802 - #28 .
+INFO  11:20:48,802 - #50 x
+INFO  11:20:48,802 - #7 [
+INFO  11:20:48,802 - #50 i
+INFO  11:20:48,802 - #8 ]
+INFO  11:20:48,802 - #6 )
+INFO  11:20:48,802 - #12 ;
+INFO  11:20:48,802 - #4 }
+INFO  11:20:48,802 - #14 print
+INFO  11:20:48,802 - #5 (
+INFO  11:20:48,802 - #50 c
+INFO  11:20:48,802 - #28 .
+INFO  11:20:48,802 - #50 getValue
+INFO  11:20:48,802 - #5 (
+INFO  11:20:48,802 - #50 c
+INFO  11:20:48,802 - #28 .
+INFO  11:20:48,803 - #50 theA
+INFO  11:20:48,803 - #28 .
+INFO  11:20:48,803 - #50 x
+INFO  11:20:48,803 - #7 [
+INFO  11:20:48,803 - #47 0
+INFO  11:20:48,803 - #8 ]
+INFO  11:20:48,803 - #6 )
+INFO  11:20:48,803 - #6 )
+INFO  11:20:48,803 - #12 ;
+INFO  11:20:48,803 - #50 z
+INFO  11:20:48,803 - #19 ++
+INFO  11:20:48,803 - #12 ;
+INFO  11:20:48,803 - #14 print
+INFO  11:20:48,803 - #5 (
+INFO  11:20:48,803 - #50 c
+INFO  11:20:48,803 - #28 .
+INFO  11:20:48,803 - #50 getValue
+INFO  11:20:48,803 - #5 (
+INFO  11:20:48,803 - #50 c
+INFO  11:20:48,803 - #28 .
+INFO  11:20:48,803 - #50 theA
+INFO  11:20:48,803 - #28 .
+INFO  11:20:48,803 - #50 x
+INFO  11:20:48,803 - #7 [
+INFO  11:20:48,803 - #47 0
+INFO  11:20:48,803 - #8 ]
+INFO  11:20:48,803 - #6 )
+INFO  11:20:48,803 - #6 )
+INFO  11:20:48,803 - #12 ;
+INFO  11:20:48,803 - #50 z
+INFO  11:20:48,803 - #11 =
+INFO  11:20:48,803 - #50 z
+INFO  11:20:48,803 - #36 +
+INFO  11:20:48,803 - #5 (
+INFO  11:20:48,804 - #50 i
+INFO  11:20:48,804 - #36 +
+INFO  11:20:48,804 - #47 2
+INFO  11:20:48,804 - #6 )
+INFO  11:20:48,804 - #12 ;
+INFO  11:20:48,804 - #16 return
+INFO  11:20:48,804 - #12 ;
+INFO  11:20:48,804 - #4 }
+INFO  11:20:48,804 - #46 else
+INFO  11:20:48,804 - #3 {
+INFO  11:20:48,804 - #21 if
+INFO  11:20:48,804 - #5 (
+INFO  11:20:48,804 - #50 c
+INFO  11:20:48,804 - #32 >
+INFO  11:20:48,804 - #47 3
+INFO  11:20:48,804 - #6 )
+INFO  11:20:48,804 - #29 break
+INFO  11:20:48,804 - #12 ;
+INFO  11:20:48,804 - #46 else
+INFO  11:20:48,804 - #21 if
+INFO  11:20:48,804 - #5 (
+INFO  11:20:48,804 - #50 c
+INFO  11:20:48,804 - #34 >=
+INFO  11:20:48,804 - #47 2
+INFO  11:20:48,804 - #6 )
+INFO  11:20:48,804 - #16 return
+INFO  11:20:48,804 - #12 ;
+INFO  11:20:48,804 - #46 else
+INFO  11:20:48,804 - #24 continue
+INFO  11:20:48,804 - #12 ;
+INFO  11:20:48,804 - #4 }
+INFO  11:20:48,804 - #22 for
+INFO  11:20:48,804 - #5 (
+INFO  11:20:48,804 - #50 i
+INFO  11:20:48,804 - #11 =
+INFO  11:20:48,804 - #47 0
+INFO  11:20:48,804 - #12 ;
+INFO  11:20:48,805 - #50 i
+INFO  11:20:48,805 - #33 <
+INFO  11:20:48,805 - #47 5
+INFO  11:20:48,805 - #12 ;
+INFO  11:20:48,805 - #50 i
+INFO  11:20:48,805 - #19 ++
+INFO  11:20:48,805 - #6 )
+INFO  11:20:48,805 - #3 {
+INFO  11:20:48,805 - #24 continue
+INFO  11:20:48,805 - #12 ;
+INFO  11:20:48,805 - #4 }
+INFO  11:20:48,805 - #4 }
+INFO  11:20:48,805 - #50 int
+INFO  11:20:48,805 - #50 main2
+ERROR 11:20:48,805 - Postojani tip: int
+INFO  11:20:48,805 - #5 (
+INFO  11:20:48,805 - #6 )
+INFO  11:20:48,805 - #50 int
+INFO  11:20:48,805 - #50 x
+ERROR 11:20:48,805 - Postojani tip: int
+INFO  11:20:48,805 - #27 ,
+INFO  11:20:48,805 - Deklarisana promenljiva na liniji 143
+INFO  11:20:48,805 - #50 i
+INFO  11:20:48,805 - #12 ;
+INFO  11:20:48,805 - Deklarisana promenljiva na liniji 143
+INFO  11:20:48,805 - #3 {
+INFO  11:20:48,805 - #50 val
+INFO  11:20:48,805 - #11 =
+INFO  11:20:48,805 - #13 new
+INFO  11:20:48,805 - #50 Table
+INFO  11:20:48,805 - #12 ;
+ERROR 11:20:48,805 - Nepostojani tip: Table
+INFO  11:20:48,805 - #50 val
+INFO  11:20:48,805 - #28 .
+INFO  11:20:48,805 - #50 pos
+INFO  11:20:48,805 - #11 =
+INFO  11:20:48,806 - #13 new
+INFO  11:20:48,806 - #50 int
+INFO  11:20:48,806 - #7 [
+ERROR 11:20:48,806 - Postojani tip: int
+INFO  11:20:48,806 - #50 size
+INFO  11:20:48,806 - #8 ]
+INFO  11:20:48,806 - #12 ;
+INFO  11:20:48,806 - #50 val
+INFO  11:20:48,806 - #28 .
+INFO  11:20:48,806 - #50 neg
+INFO  11:20:48,806 - #11 =
+INFO  11:20:48,806 - #13 new
+INFO  11:20:48,806 - #50 int
+INFO  11:20:48,806 - #7 [
+ERROR 11:20:48,806 - Postojani tip: int
+INFO  11:20:48,806 - #50 size
+INFO  11:20:48,806 - #8 ]
+INFO  11:20:48,806 - #12 ;
+INFO  11:20:48,806 - #22 for
+INFO  11:20:48,806 - #5 (
+INFO  11:20:48,806 - #50 i
+INFO  11:20:48,806 - #11 =
+INFO  11:20:48,806 - #47 0
+INFO  11:20:48,806 - #12 ;
+INFO  11:20:48,806 - #50 i
+INFO  11:20:48,806 - #33 <
+INFO  11:20:48,806 - #50 size
+INFO  11:20:48,806 - #12 ;
+INFO  11:20:48,806 - #50 i
+INFO  11:20:48,806 - #19 ++
+INFO  11:20:48,806 - #6 )
+INFO  11:20:48,806 - #3 {
+INFO  11:20:48,806 - #50 val
+INFO  11:20:48,806 - #28 .
+INFO  11:20:48,807 - #50 putp
+INFO  11:20:48,807 - #5 (
+INFO  11:20:48,808 - #47 0
+INFO  11:20:48,808 - #27 ,
+INFO  11:20:48,808 - #50 i
+INFO  11:20:48,808 - #6 )
+INFO  11:20:48,808 - #12 ;
+INFO  11:20:48,808 - #50 val
+INFO  11:20:48,808 - #28 .
+INFO  11:20:48,808 - #50 putn
+INFO  11:20:48,808 - #5 (
+INFO  11:20:48,808 - #47 0
+INFO  11:20:48,808 - #27 ,
+INFO  11:20:48,808 - #50 i
+INFO  11:20:48,808 - #6 )
+INFO  11:20:48,808 - #12 ;
+INFO  11:20:48,808 - #4 }
+INFO  11:20:48,808 - #15 read
+INFO  11:20:48,808 - #5 (
+INFO  11:20:48,808 - #50 x
+INFO  11:20:48,808 - #6 )
+INFO  11:20:48,808 - #12 ;
+INFO  11:20:48,808 - #22 for
+INFO  11:20:48,808 - #5 (
+INFO  11:20:48,808 - #12 ;
+INFO  11:20:48,808 - #50 x
+INFO  11:20:48,808 - #32 >
+INFO  11:20:48,808 - #47 0
+INFO  11:20:48,808 - #12 ;
+INFO  11:20:48,808 - #6 )
+INFO  11:20:48,808 - #3 {
+INFO  11:20:48,808 - #21 if
+INFO  11:20:48,808 - #5 (
+INFO  11:20:48,808 - #47 0
+INFO  11:20:48,809 - #35 <=
+INFO  11:20:48,809 - #50 x
+INFO  11:20:48,809 - #25 &&
+INFO  11:20:48,809 - #50 x
+INFO  11:20:48,809 - #33 <
+INFO  11:20:48,809 - #50 size
+INFO  11:20:48,809 - #6 )
+INFO  11:20:48,809 - #3 {
+INFO  11:20:48,809 - #50 val
+INFO  11:20:48,809 - #28 .
+INFO  11:20:48,809 - #50 putp
+INFO  11:20:48,809 - #5 (
+INFO  11:20:48,809 - #50 val
+INFO  11:20:48,809 - #28 .
+INFO  11:20:48,809 - #50 getp
+INFO  11:20:48,809 - #5 (
+INFO  11:20:48,809 - #50 x
+INFO  11:20:48,809 - #6 )
+INFO  11:20:48,809 - #36 +
+INFO  11:20:48,809 - #47 1
+INFO  11:20:48,809 - #6 )
+INFO  11:20:48,809 - #12 ;
+INFO  11:20:48,809 - #4 }
+INFO  11:20:48,809 - #46 else
+INFO  11:20:48,809 - #21 if
+INFO  11:20:48,809 - #5 (
+INFO  11:20:48,809 - #37 -
+INFO  11:20:48,809 - #50 size
+INFO  11:20:48,809 - #33 <
+INFO  11:20:48,809 - #50 x
+INFO  11:20:48,809 - #25 &&
+INFO  11:20:48,809 - #50 x
+INFO  11:20:48,809 - #33 <
+INFO  11:20:48,809 - #47 0
+INFO  11:20:48,810 - #6 )
+INFO  11:20:48,810 - #3 {
+INFO  11:20:48,810 - #50 val
+INFO  11:20:48,810 - #28 .
+INFO  11:20:48,810 - #50 putn
+INFO  11:20:48,810 - #5 (
+INFO  11:20:48,810 - #50 val
+INFO  11:20:48,810 - #28 .
+INFO  11:20:48,810 - #50 getn
+INFO  11:20:48,810 - #5 (
+INFO  11:20:48,810 - #37 -
+INFO  11:20:48,810 - #50 x
+INFO  11:20:48,810 - #6 )
+INFO  11:20:48,810 - #36 +
+INFO  11:20:48,810 - #47 1
+INFO  11:20:48,810 - #6 )
+INFO  11:20:48,810 - #12 ;
+INFO  11:20:48,810 - #4 }
+INFO  11:20:48,810 - #15 read
+INFO  11:20:48,810 - #5 (
+INFO  11:20:48,810 - #50 x
+INFO  11:20:48,810 - #6 )
+INFO  11:20:48,810 - #12 ;
+INFO  11:20:48,810 - #4 }
+INFO  11:20:48,810 - #16 return
+INFO  11:20:48,810 - #12 ;
+INFO  11:20:48,810 - #4 }
+INFO  11:20:48,810 - #4 }

@@ -1,0 +1,23 @@
+INFO  14:36:45,441 - Compiling source file: F:\pp1 Projekat\projekat\workspace\PP1Project\test\program.mj
+INFO  14:36:45,487 - #2 program
+INFO  14:36:45,488 - #50 myProgram
+INFO  14:36:45,488 - #17 class
+INFO  14:36:45,488 - #50 Integer
+INFO  14:36:45,489 - #3 {
+INFO  14:36:45,489 - #50 int
+INFO  14:36:45,489 - #50 myInt
+INFO  14:36:45,489 - #12 ;
+INFO  14:36:45,489 - Deklarisana je globalna promenljiva myInt - linija: 6
+INFO  14:36:45,489 - #3 {
+INFO  14:36:45,490 - #10 void
+INFO  14:36:45,490 - #50 setInt
+INFO  14:36:45,490 - #5 (
+INFO  14:36:45,490 - Obradjuje se funkcija setInt - linija: 8
+INFO  14:36:45,490 - #50 int
+INFO  14:36:45,490 - #50 my
+INFO  14:36:45,490 - #6 )
+INFO  14:36:45,491 - #3 {
+INFO  14:36:45,491 - #50 myInt
+INFO  14:36:45,493 - #11 =
+INFO  14:36:45,494 - #50 my
+INFO  14:36:45,494 - #12 ;
