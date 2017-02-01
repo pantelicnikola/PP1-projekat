@@ -13,9 +13,14 @@ public class CompilerImpl {
 	private static Obj currentProgram;
 	private static Obj currentMethod;
 	private static String currentMethodName;
+	private static boolean returned;
 	private static Obj currentClass;
 	private static Struct currentType;
 	private static Struct currentReturnType;
+	
+	public static boolean designatorIsArray;
+	
+	private static Scope universeScope;
 	
 	private static int globalVars;
 	private static int localVars;
@@ -66,7 +71,10 @@ public class CompilerImpl {
 		Tab.insert(Obj.Type, "bool", boolType);
 		
 		currentProgram = Tab.insert(Obj.Prog, pName, Tab.noType);
+		
 		Tab.openScope();
+		
+		universeScope = Tab.currentScope();
 	}
 
 	public void endProgram() {
@@ -131,10 +139,34 @@ public class CompilerImpl {
 		
 	}
 
-	
-	
-	public void insertMethod(Object retType, String methName, int retTypeleft){
+	public void insertConstant(String constName, Object constValue, int constNameleft){
 		
+		if(Tab.currentScope().findSymbol(constName) == null){
+			int adr = 0;
+			
+			if (constValue instanceof Integer && currentType.getKind() == Struct.Int) {
+				adr = (Integer) constValue;
+			} else if (constValue instanceof Character && currentType.getKind() == Struct.Char) {
+				adr = (int) ((Character) (constValue));
+			} else if (constValue instanceof Boolean && currentType.getKind() == Struct.Bool) {
+				adr =  1;
+			} else {
+				log.error("Vrednost " + constValue + " nije komaptibilna sa tipom konstante - linija: " + constNameleft);
+				return;
+			}
+			
+			globalConstants++;
+			Tab.insert(Obj.Var, constName, currentType).setAdr(adr);
+			
+			log.info("Deklarisana je konstanta " + constName + " - linija: " + constNameleft);
+		} else {
+			log.error("Konstanta " + constName + " je vec definisana - linija: " + constNameleft);
+		}
+	}
+
+	
+	public void insertMethod(Struct retType, String methName, int retTypeleft){
+		returned = false;
 		if(Tab.currentScope().findSymbol(methName) != null){
 			log.error("Metoda " + methName + " je vec definisana - linija: " + retTypeleft);
 		} else  {
@@ -142,8 +174,8 @@ public class CompilerImpl {
 				currentReturnType = Tab.noType;
 				currentMethod = Tab.insert(Obj.Meth, methName, Tab.noType);
 			} else {
-				currentMethod = Tab.insert(Obj.Meth, methName, (Struct)retType);
-				currentReturnType = (Struct) retType;
+				currentMethod = Tab.insert(Obj.Meth, methName, retType);
+				currentReturnType = retType;
 			}
 			
 			
@@ -154,50 +186,48 @@ public class CompilerImpl {
 		
 	}
 	
-	public void startMethod(){
-		currentMethod.setAdr(Code.pc);
-		if(currentMethodName.equals("main")){
-			Code.mainPc = currentMethod.getAdr();
-		}
-		Code.put(Code.enter);
-		Code.put(currentMethod.getLevel()); // broj argumenata
-		Code.put(Tab.currentScope().getnVars()); // broj lok. promenljivih
-	}
 	
 	
-	public void checkReturn(Object expr, int line){
-		Struct type = (Struct)expr;
-		if(expr == null){
-			type = Tab.noType;
-		} else {
-			type = (Struct) expr;
-		}
-
+	
+	public void checkReturn(Obj expr, int line){
+		returned = true;
 		
-		if(type == Tab.noType){
-			log.info("U pitanju je void funkcija");
-		} else {
-			
-			if(!type.assignableTo(currentMethod.getType())){
-				log.error("Pogresna povratna vrednost u metodi " + currentMethod.getName() + " linija - " + line);
+		if(currentReturnType == Tab.noType){
+			if (expr != null) {
+				log.error("VOID funkcija ne moze da vraca vrednost - linija: " + line);
+				return;
 			}
+		} else {
+			if (expr.getType().getKind() != currentReturnType.getKind()) {
+				log.error("Povratna vrednost metode ne odgovara vracenoj vrednosti - linija: " + line);
+				return;
+			}			
 		}
 	}
 	
 	
 	public void insertMethodArg(Struct type, String name, int line){
-		Tab.insert(Obj.Var, name, type);
+		if (Tab.currentScope().findSymbol(name) == null) {
+			Tab.insert(Obj.Var, name, type);
+		} else {
+			log.error("Duplikat imena argumenata - linija: " + line);
+		}
+				
 	}
 	
 	
 	
 	public void endMethod(){
-		Code.put(Code.exit);
-		Code.put(Code.return_);
-		Tab.chainLocalSymbols(currentMethod);
-		Tab.closeScope();
-		currentMethod = null;
-		currentMethodName = null;
+		if (currentReturnType != Tab.noType && !returned) {
+			log.error("Metoda " + currentMethod.getName() + " nema RETURN iskaz");
+		} else {
+			Tab.chainLocalSymbols(currentMethod);
+			Tab.closeScope();
+			currentMethod = null;
+			currentMethodName = null;
+			currentReturnType = null;
+		}
+		
 	}
 	
 	
@@ -206,7 +236,7 @@ public class CompilerImpl {
 	
 	public void insertClass(String className,int classNameleft){
 		if(Tab.currentScope().findSymbol(className) == null){
-			currentClass = Tab.insert(Obj.Type, className, Tab.noType); // ovo mozda ne valja
+			currentClass = Tab.insert(Obj.Type, className, new Struct(Struct.Class)); // ovo mozda ne valja
 			Tab.openScope();
 			
 		} else {
@@ -221,37 +251,19 @@ public class CompilerImpl {
 		currentClass = null;
 	}
 	
-	public void insertConstant(String constName, Object constValue, int constNameleft){
+	
+	
+	
+	
+	public Obj findDesignator(String name, int nameleft){
 		
-		if(Tab.currentScope().findSymbol(constName) == null){
-			int adr = 0;
-			
-			if (constValue instanceof Integer && currentType.getKind() == Struct.Int) {
-				adr = (Integer) constValue;
-			} else if (constValue instanceof Character && currentType.getKind() == Struct.Char) {
-				adr = (int) ((Character) (constValue));
-			} else if (constValue instanceof Boolean && currentType.getKind() == Struct.Bool) {
-				adr =  1;
-			} else {
-				log.error("Vrednost " + constValue + " nije komaptibilna sa tipom konstante, linija: " + constNameleft);
-				return;
+		Obj obj = Tab.currentScope().findSymbol(name);
+		if(obj == Tab.noObj || obj == null){
+			obj = universeScope.findSymbol(name);
+			if (obj == Tab.noObj || obj == null){
+				log.error("Promenljiva " + name + " nije definisana - linija: " + nameleft);
+				return null;
 			}
-			
-			globalConstants++;
-			Tab.insert(Obj.Var, constName, currentType).setAdr(adr);
-			
-			log.info("Deklarisana je konstanta " + constName + " - linija: " + constNameleft);
-		} else {
-			log.error("Konstanta " + constName + " je vec definisana - linija: " + constNameleft);
-		}
-	}
-	
-	
-	
-	public Obj checkIfExists(String name, int nameleft){
-		Obj obj = Tab.find(name);
-		if(obj == Tab.noObj){
-			log.error("Promenljiva " + name + " nije definisana - linija: " + nameleft);
 		}
 		return obj;
 	}
@@ -265,13 +277,13 @@ public class CompilerImpl {
 			Code.put(Code.bread);
 			Code.store(d);
 		} else {
-			log.error("Operand instrukcije READ mora bili int, char ili bool linija - " + line);
+			log.error("Operand instrukcije READ mora bili int, char ili bool - linija: " + line);
 		}
 	}
 	
 	public void print(Object e, int line){
 		if (e != Tab.intType && e != Tab.charType){
-	  		log.error("Operand instruckije PRINT mora biti int ili char linija - " + line);
+	  		log.error("Operand instruckije PRINT mora biti int ili char - linija: " + line);
 	  	} 
 	  	if (e == Tab.intType){
 	  		Code.loadConst(5);
@@ -286,7 +298,7 @@ public class CompilerImpl {
 	
 	public void printN(Object e, int num, int line){
 		if (e != Tab.intType && e != Tab.charType){
-	  		log.error("Operand instruckije PRINT mora biti int ili char linija - " + line);
+	  		log.error("Operand instruckije PRINT mora biti int ili char - linija: " + line);
 	  	} 
 	  	if (e == Tab.intType){
 	  		Code.loadConst(num);
@@ -304,19 +316,9 @@ public class CompilerImpl {
 	
 	
 	
-	public Struct factorInsertDesignator(Object des){
-		Obj d = (Obj) des;
-		Struct ret = null;
-		Code.load(d);
-		if(d == Tab.noObj){
-			return Tab.noType;
-		} else {
-			ret = d.getType();
-			return ret;
-		}
-	}
 	
-	public Struct factorInsertFunc(Object des, int line){
+	
+	public Obj factorInsertFunc(Obj des, int line){
 		Obj d = (Obj) des;
 		if(Obj.Meth == d.getKind()){
 			if(d.getType() != Tab.noType){
@@ -324,70 +326,69 @@ public class CompilerImpl {
 				Code.put(Code.call);
 				Code.put2(adr);
 			}
-			return d.getType();
+			return d;
 		} else {
-			log.error("Funkcija " + d.getName() + " nije definisana linija - " + line);
-			return Tab.noType;
+			log.error("Funkcija " + d.getName() + " nije definisana - linija: " + line);
+			return Tab.noObj;
 		}
 	}
 	
 	
 	
-	public Struct factorInsertNum(Integer num){
-		Obj o = Tab.insert(Obj.Con, "", Tab.intType);
+	public Obj factorInsertNum(Integer num){
+		Obj o = new Obj(Obj.Con,"",new Struct(Struct.Int));
 		o.setAdr(num.intValue());
-		Code.load(o);
-		return Tab.intType;		
+		return o;		
 	}
 	
-	public Struct factorInsertChar(Character chr){
-		Obj o = Tab.insert(Obj.Con, "", Tab.charType);
+	public Obj factorInsertChar(Character chr){
+		Obj o = new Obj(Obj.Con,"",new Struct(Struct.Char));
 		o.setAdr(chr.charValue());
-		Code.load(o);
-		return Tab.charType;
+		return o;
 	}
 
-	public Struct factorInsertBool(Boolean bool){
-		Obj o = Tab.insert(Obj.Con, "", new Struct(Struct.Bool));
+	public Obj factorInsertBool(Boolean bool){
+		Obj o = new Obj(Obj.Con,"",new Struct(Struct.Bool));
 		o.setAdr(bool.booleanValue() ? 1:0);
-		Code.load(o);
-		return new Struct(Struct.Bool);
+		return o;
 	}
 	
+	public void execAssign(Obj des, Obj expr, Integer op, int line) {
+		checkComaptibility(des, expr, op, line);
+	}
+
+	public Obj execAddopLeft(Obj terms, Obj term, Integer op, int line) {
+		return checkComaptibility(terms, term, op, line);
+	}
+
+	public Obj execMulopRight(Obj terms, Obj termsWrapper, Integer op, int line) {
+		return checkComaptibility(terms, termsWrapper, op, line);
+	}
+
+	public Obj execAddopRight(Obj terms, Obj termsWrapper, Integer op, int line) {
+		return checkComaptibility(terms, termsWrapper, op, line);
+	}
+
+	public Obj execMulopLeft(Obj term, Obj factor, Integer op, int line) {
+		return checkComaptibility(term, factor, op, line);
+	}
 	
-	
-	
-	
-	
-	
-	public void increment (Object des, int line){
-		Obj d = (Obj) des;
-		if (d.getType() == Tab.intType){
-			if(d.getKind() == Obj.Elem){
-				Code.put(Code.dup2);
-			}
-			Code.load(d);
-			Code.loadConst(1);
-			Code.put(Code.add);
-			Code.store(d);
-			
+	public Obj checkComaptibility(Obj first, Obj second, Integer op, int line) {
+		
+		if (first.getType().getKind() != Struct.Int && op != 0) {
+			log.error("Ilegalna operacija - linija: " + line);
+			return Tab.noObj;
+		}
+		
+		if (first.getType().getKind() == second.getType().getKind()) {
+			log.info("Tipovi su kompatibilni - linija: " + line);
+			return first;
 		} else {
-			log.error("Identifikator mora biti tipa int linija - " + line);
+			log.error("Tipovi nisu kompatibilni - linija: " + line);
+			return Tab.noObj;
 		}
 	}
+
 	
-	public void decrement (Object des, int line){
-		Obj d = (Obj) des;
-		if (d.getType() == Tab.intType){
-			
-			Code.load(d);
-			Code.loadConst(1);
-			Code.put(Code.sub);
-			Code.store(d);
-			
-		} else {
-			log.error("Identifikator mora biti tipa int linija - " + line);
-		}
-	}
 
 }

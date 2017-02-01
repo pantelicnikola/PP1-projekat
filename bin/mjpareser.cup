@@ -85,10 +85,12 @@ non terminal ConstDecl, Const, ConstDecls, ConstPar;
 non terminal Statement, StatementList, ForDesignatorStatement, ForCondition;
 non terminal DesignatorStatement, DesignatorAssignStatement ;
 non terminal Condition, CondTerm, CondFact ;
-non terminal ActPars, Expr, AddopTermList, Term, MulopFactorList ;
-non terminal Factor ;
-non terminal Designator, DesignatorNesto ;
-non terminal Assignop, Relop, Addop, AddopLeft, AddopRight, Mulop, MulopLeft, MulopRight ;
+non terminal ActPars ;
+non terminal Obj Term, Terms, TermsWrapper, Expr;
+non terminal Obj Factor ;
+non terminal Obj Designator ;
+non terminal DesignatorNesto ;
+non terminal Integer Assignop, Relop, AddopLeft, AddopRight, MulopLeft, MulopRight ;
 non terminal Struct Type ;
 
 
@@ -204,7 +206,7 @@ ClassMethods ::= LBRACE MethodDeclList RBRACE
 		 
 		 
 
-MethodDecl ::= MethodReturnType LPAREN MethodFormPars RPAREN LocalVarDeclList LBRACE {: impl.startMethod(); :} StatementList RBRACE {: impl.endMethod(); :} ;
+MethodDecl ::= MethodReturnType LPAREN MethodFormPars RPAREN LocalVarDeclList LBRACE StatementList RBRACE {: impl.endMethod(); :} ;
 
 MethodReturnType ::= Type:retType IDENT:methName  {: impl.insertMethod(retType,methName,methNameleft); :}
 					 |
@@ -228,9 +230,9 @@ FormPars ::= FormPar COMMA FormPars
 			 |
 			 FormPar ;
 
-FormPar ::= Type:formType IDENT:formVar {: impl.insertMethodArg(formType, formVar, formVarleft); :}
+FormPar ::= Type:argType IDENT:argVar {: impl.insertMethodArg(argType, argVar, argVarleft); :}
 			|
-			Type:formType IDENT:formVar {: impl.insertMethodArg(formType, formVar, formVarleft); :} LBRACKET RBRACKET;  
+			Type:argType IDENT:argVar {: impl.insertMethodArg(argType, argVar, argVarleft); :} LBRACKET RBRACKET;  
 
 				  
 
@@ -314,11 +316,11 @@ DesignatorStatement ::= DesignatorAssignStatement
 						|
 						Designator LPAREN ActPars RPAREN
 						|
-						Designator:des INC {: impl.increment(des,desleft); :}
+						Designator INC
 						|
-						Designator:des DEC {: impl.decrement(des,desleft); :} ;
+						Designator DEC ;
 
-DesignatorAssignStatement ::= Designator:des Assignop Expr:expr
+DesignatorAssignStatement ::= Designator:des Assignop:op Expr:expr {: impl.execAssign(des, expr, op, opleft); :}
 							  |
 							  error
 							  {: parser.log.debug("Uspesan oporavak od greske pri dodeli vrednosti."); :};
@@ -346,21 +348,28 @@ CondFact ::= Expr Relop Expr
 			 Expr ;
 
 
-Expr ::= MINUS Term AddopTermList 
+
+
+
+Expr ::= MINUS TermsWrapper:termsWrapper {: RESULT = termsWrapper; :}
 		 |
-		 Term AddopTermList ;
+		 TermsWrapper:termsWrapper {: RESULT = termsWrapper; :} ;
 
-AddopTermList ::= AddopTermList Addop Term 
-				  |
-				  /* epsilon */
-			      ;
 
-Term ::= Factor MulopFactorList ;
+Term ::= Factor:factor {: RESULT = factor; :}
+		 |
+		 Term:term MulopLeft:op Factor:factor {: RESULT = impl.execMulopLeft(term, factor, op, opleft); :} ;
+		 
+Terms ::= Term:term {: RESULT = term; :}
+		  |
+		  Terms:terms AddopLeft:op Term:term {: RESULT = impl.execAddopLeft(terms, term, op, opleft); :} ;
+		  
+TermsWrapper ::= Terms:terms {: RESULT = terms; :}
+				 |
+				 Terms:terms AddopRight:op TermsWrapper:termsWrapper {: RESULT = impl.execAddopRight(terms, termsWrapper, op, opleft); :}
+				 |
+				 Terms:terms MulopRight:op TermsWrapper:termsWrapper {: RESULT = impl.execMulopRight(terms, termsWrapper, op, opleft); :} ;
 
-MulopFactorList ::= MulopFactorList Mulop Factor
-					|
-					/* epsilon */
-		 			;
 
 
 
@@ -374,7 +383,7 @@ MulopFactorList ::= MulopFactorList Mulop Factor
 
 //r-value
 
-Factor ::= Designator:des {: RESULT = impl.factorInsertDesignator(des); :}
+Factor ::= Designator:des {: RESULT = des; :}
 		 | 
 		 Designator:des LPAREN ActPars RPAREN {: RESULT = impl.factorInsertFunc(des,desleft); :}
 		 |
@@ -400,12 +409,11 @@ Factor ::= Designator:des {: RESULT = impl.factorInsertDesignator(des); :}
 
 
 
-Designator ::= IDENT:name {: RESULT = impl.checkIfExists(name, nameleft); :} 
-			   DesignatorNesto ;
+Designator ::= {: impl.designatorIsArray = false; :} IDENT:name DesignatorNesto {: RESULT = impl.findDesignator(name, nameleft); :} ;
 
-DesignatorNesto ::= DOT IDENT:ident {: RESULT = ident; :} DesignatorNesto
+DesignatorNesto ::= DOT IDENT DesignatorNesto
 					|
-					LBRACKET Expr RBRACKET DesignatorNesto
+					LBRACKET Expr RBRACKET {: impl.designatorIsArray = true; :} DesignatorNesto	
 					|
 					/* epsilon */ 
 					;
@@ -430,10 +438,6 @@ Relop ::= IS_EQUAL {: RESULT = new Integer(Code.eq); :}
 		  LOWER {: RESULT = new Integer(Code.lt); :}
 		  |
 		  LOWER_EQUAL {: RESULT = new Integer(Code.le); :};
-
-Addop ::= AddopLeft
-		  |
-		  AddopRight ;
 		  
 AddopLeft ::= PLUS {: RESULT = new Integer(Code.add); :}
 			  |
@@ -442,10 +446,6 @@ AddopLeft ::= PLUS {: RESULT = new Integer(Code.add); :}
 AddopRight ::= PLUS_EQUAL {: RESULT = new Integer(Code.add); :}
 			   |
 			   MINUS_EQUAL {: RESULT = new Integer(Code.sub); :} ;
-			   
-Mulop ::= MulopLeft
-		  |
-		  MulopRight ;
 		  
 MulopLeft ::= TIMES {: RESULT = new Integer(Code.mul); :}
 			  |

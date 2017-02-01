@@ -1,171 +1,19 @@
 program myProgram
-
-	int arr[];
-	char brr[];
-
-    class Integer {
-        int myInt;
-        {
-            void setInt(int my){
-            	myInt = my;
-            }
-
-            int getInt(){
-            	
-                return myInt;
-            }
-            
-            
-        }
-    }
-
-    class Table {
-        int pos[], neg[];
-        {
-            int putp (int a, int idx) { this.pos[idx]=a; return 1; }
-            int putn (int a, int idx) { this.neg[idx]=a; return 1;}
-            int getp (int idx) { return pos[idx]; }
-            int getn (int idx) { return neg[idx]; }
-        }
-    }
-
-    class Z extends Table{
-        int i; int x[];
-        {
-            int getValue(int a) 
-            int b; bool c;
-            { 
-                x[i] = i;
-                return this.i + this.x[0];
-            }
-        }
-    }
-    
-    class B extends Table{
-        int i; int x[];
-        {
-            int getValue(int a) 
-                int b; bool c;
-                { 
-                    print(c.getValue(c.theA.x[0]));
-                    return this.i + this.x[0] + a; 
-                }
-
-            void getTable()
-                int a;
-                {
-                    return 1;
-                }
-        }
-    }
-
-    class Beta {
-        int a,b,c,d;
-        Table t;
-        
-       
-        {
-            int getVal(  ){
-                return;
-            }
-            int aaa( int a ) {
-                return;
-            }
-
-        }
-    }
-
-    const int a=23,b=32;
-    const bool p = true, z = false;
-
-    int asdv[];
-    Table aa, opa;
-
-    //class definition
-
-    const int size = 10;
-
-
-    Table val;
-
-
-
-
-
-    //method declaration list
-
+	
+	int b;
+	bool c;
     {
-
-
-        //method declaration
+    	int func (char a)
+		{
+			b = true;
+			c *= b;
+			return 5+5+2;
+		}
+        
         void main ()
-            //local variables definition
-            int x, s;
-            int i;
-            
-            //method body
-            {
-                x++;
-                if(i<2 && z==0 ){
-                    a = new Beta;
-                    a.x = new int[5];
-                    a.y = new int[5];
-                    c = new B;
-                    c.theA = a;
-                    c.x = new int[5];
-                    x = new int[3];
-                    i=0;
-                    read(c.i);
-                    
-                    for(; i<5; i++)
-                    {
-	                    read(c.x[i]);
-	                    read(c.theA.x[i]);
-	                    
-                    }
-                    print(c.getValue(c.theA.x[0]));
-                    z++;
-                    print(c.getValue(c.theA.x[0]));
-                    z = z + (i + 2);
-                    return;
-                }else{
-                    if(c>3)
-                        break;
-                    else if (c>=2) return; 
-                    else continue;
-                }
-
-                for(i=0;i<5;i++){
-                    continue;
-                }
-            }
-
-        int main2()
-         int x, i;
+        int x, s;
+        int i;
         {
-            //‐‐‐‐‐‐‐‐‐‐ Initialize val
-            val = new Table;
-            val.pos = new int [size];
-            val.neg = new int [size];
-            for (i = 0; i<size; i++)
-            {
-            val.putp(0,i);
-            val.putn(0,i);
-            }
-            //‐‐‐‐‐‐‐‐‐‐ Read values
-            read(x);
-            for (;x > 0;)
-            {
-                if (0 <= x && x < size)
-                {
-                val.putp(val.getp(x)+1);
-                } else
-                if (-size < x && x < 0)
-                {
-                val.putn(val.getn(-x)+1);
-                }
-                read(x);
-            }
-            return ;
+            x = 5;
         }
     }
