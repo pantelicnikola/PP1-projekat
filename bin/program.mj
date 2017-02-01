@@ -1,6 +1,6 @@
 program myProgram
 	
-	int b;
+	int b[];
 	bool c;
     {
     	int func (char a)

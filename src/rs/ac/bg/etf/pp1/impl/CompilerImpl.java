@@ -104,7 +104,7 @@ public class CompilerImpl {
 		if(Tab.currentScope().findSymbol(varName) == null){
 			globalArrays++;
 			Tab.insert(Obj.Var, varName, new Struct(Struct.Array, currentType));
-			log.info("Deklarisan je globalni niz " + varName + " - linija: " + varNameleft);
+			
 		} else {
 			log.error("Niz " + varName + " je vec definisan - linija: " + varNameleft);
 		}
@@ -127,7 +127,7 @@ public class CompilerImpl {
 			Obj var = Tab.insert(Obj.Var, varName, new Struct(Struct.Array, currentType));
 			var.setAdr(localAdr);
 			localAdr++;
-			log.info("Deklarisan je lokalni niz " + varName + " - linija: " + varNameleft);
+			
 		} else {
 			log.error("Niz " + varName + " je vec definisan - linija: " + varNameleft);
 		}
@@ -153,7 +153,7 @@ public class CompilerImpl {
 			globalConstants++;
 			Tab.insert(Obj.Var, constName, currentType).setAdr(adr);
 			
-			log.info("Deklarisana je konstanta " + constName + " - linija: " + constNameleft);
+			
 		} else {
 			log.error("Konstanta " + constName + " je vec definisana - linija: " + constNameleft);
 		}
