@@ -94,9 +94,6 @@ public class CompilerImpl {
 		if(Tab.currentScope().findSymbol(varName) == null) {
 			globalVars++;
 			Tab.insert(Obj.Var, varName, currentType);
-			/*var.setAdr(globalAdr);
-			globalAdr++;*/
-			log.info("Deklarisana je globalna promenljiva " + varName + " - linija: " + varNameleft);
 		} else {
 			log.error("Promenljiva " + varName + " je vec definisana - linija: " + varNameleft);
 		}
@@ -118,8 +115,6 @@ public class CompilerImpl {
 		if(Tab.currentScope().findSymbol(varName) == null){
 			localVars++;
 			Tab.insert(Obj.Var, varName, currentType);
-			
-			log.info("Deklarisana je lokalna promenljiva " + varName + " - linija: " + varNameleft);
 		} else {
 			log.error("Promenljiva " + varName + " je vec definisana - linija: " + varNameleft);
 		}
@@ -180,7 +175,6 @@ public class CompilerImpl {
 			
 			
 			Tab.openScope();
-			log.info("Obradjuje se funkcija " + methName + " - linija: " + retTypeleft);
 			currentMethodName = methName;
 		}	
 		
@@ -381,7 +375,6 @@ public class CompilerImpl {
 		}
 		
 		if (first.getType().getKind() == second.getType().getKind()) {
-			log.info("Tipovi su kompatibilni - linija: " + line);
 			return first;
 		} else {
 			log.error("Tipovi nisu kompatibilni - linija: " + line);
