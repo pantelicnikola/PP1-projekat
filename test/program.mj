@@ -1,13 +1,16 @@
 program myProgram
 	
 	int b[];
+	char g[];
+	int d;
 	bool c;
     {
-    	int func (char a)
+    	char func (char a)
 		{
-			b = true;
-			c *= b;
-			return 5+5+2;
+			d = b[5];
+			g[5] = g[3];
+			b = new int[5]
+			return g[5];
 		}
         
         void main ()

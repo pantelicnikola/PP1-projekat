@@ -18,7 +18,7 @@ public class CompilerImpl {
 	private static Struct currentType;
 	private static Struct currentReturnType;
 	
-	public static boolean designatorIsArray;
+	public static boolean ldesignatorIsDereferenced = false;
 	
 	private static Scope universeScope;
 	
@@ -249,8 +249,29 @@ public class CompilerImpl {
 	
 	
 	
-	public Obj findDesignator(String name, int nameleft){
+	public Obj findDesignator(String name, Object ref, int nameleft){
 		
+		Obj obj = Tab.currentScope().findSymbol(name);
+		if(obj == Tab.noObj || obj == null){
+			obj = universeScope.findSymbol(name);
+			if (obj == Tab.noObj || obj == null){
+				log.error("Promenljiva " + name + " nije definisana - linija: " + nameleft);
+				return Tab.noObj;
+			}
+		}
+		
+		if (ref == null && obj.getType().getKind() != Struct.Array) {
+			return obj;
+		} else if (ref != null && obj.getType().getKind() == Struct.Array){
+			return new Obj(Obj.Con,"",obj.getType().getElemType());
+		} else {
+			log.error("Niz je pogresan!!!!!!!!!!!");
+			return Tab.noObj;
+		}
+		
+	}
+	
+	public Obj findLDesignator(String name,  int nameleft){
 		Obj obj = Tab.currentScope().findSymbol(name);
 		if(obj == Tab.noObj || obj == null){
 			obj = universeScope.findSymbol(name);
@@ -259,7 +280,15 @@ public class CompilerImpl {
 				return null;
 			}
 		}
-		return obj;
+		if (ldesignatorIsDereferenced) {
+			if (obj.getType().getKind() != Struct.Array) {
+				log.error("Dereferencirana promenljiva nije niz");
+				return null;
+			}
+			return new Obj(Obj.Con,"",obj.getType().getElemType());
+		} else {
+			return obj;
+		}
 	}
 	
 	public void read(Object des, int line){
@@ -347,8 +376,12 @@ public class CompilerImpl {
 		return o;
 	}
 	
-	public void execAssign(Obj des, Obj expr, Integer op, int line) {
-		checkComaptibility(des, expr, op, line);
+	public void execAssign(String name, Obj expr, Object ref, Integer op, int line) {
+		Obj des = findLDesignator(name, line);
+		
+		checkAssignComaptibility(des, expr, op, line);
+		
+		ldesignatorIsDereferenced = false;
 	}
 
 	public Obj execAddopLeft(Obj terms, Obj term, Integer op, int line) {
@@ -373,14 +406,35 @@ public class CompilerImpl {
 			log.error("Ilegalna operacija - linija: " + line);
 			return Tab.noObj;
 		}
-		
-		if (first.getType().getKind() == second.getType().getKind()) {
+		if (first.getType().getKind() == second.getType().getKind() && first.getType().getElemType() == second.getType().getElemType()) {
 			return first;
 		} else {
 			log.error("Tipovi nisu kompatibilni - linija: " + line);
 			return Tab.noObj;
 		}
 	}
+	
+	public void checkAssignComaptibility(Obj left, Obj right, Integer op, int line) {
+		if (left.getType().getKind() != Struct.Int && op != 0) {
+			log.error("Ilegalna operacija - linija: " + line);
+			return;
+		}
+		
+		if (left.getType().getKind() != right.getType().getKind()) {
+			log.error("Tipovi nisu kompatibilni - linija: " + line);
+		}
+		
+		ldesignatorIsDereferenced = false;
+	}
+	
+	public void setLDesignatorReference(Object ref) {
+		if (ref != null) {
+			ldesignatorIsDereferenced = true;
+		} else {
+			ldesignatorIsDereferenced = false;
+		}
+	}
+	
 
 	
 

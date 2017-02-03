@@ -320,12 +320,13 @@ DesignatorStatement ::= DesignatorAssignStatement
 						|
 						Designator DEC ;
 
-DesignatorAssignStatement ::= Designator:des Assignop:op Expr:expr {: impl.execAssign(des, expr, op, opleft); :}
+DesignatorAssignStatement ::= IDENT:name DesignatorNesto:ref Assignop:op Expr:expr 
+							  {: impl.setLDesignatorReference(ref); impl.findLDesignator(name, nameleft); impl.execAssign(name, expr, ref, op, opleft); :}
 							  |
 							  error
 							  {: parser.log.debug("Uspesan oporavak od greske pri dodeli vrednosti."); :};
 							 
-			
+
 			
 ActPars ::= Expr COMMA ActPars 
 			|
@@ -409,11 +410,11 @@ Factor ::= Designator:des {: RESULT = des; :}
 
 
 
-Designator ::= {: impl.designatorIsArray = false; :} IDENT:name DesignatorNesto {: RESULT = impl.findDesignator(name, nameleft); :} ;
+Designator ::= IDENT:name DesignatorNesto:ref {: RESULT = impl.findDesignator(name, ref, nameleft); :} ;
 
 DesignatorNesto ::= DOT IDENT DesignatorNesto
 					|
-					LBRACKET Expr RBRACKET {: impl.designatorIsArray = true; :} DesignatorNesto	
+					LBRACKET Expr RBRACKET {: RESULT = "deReferenced"; :} DesignatorNesto	
 					|
 					/* epsilon */ 
 					;
