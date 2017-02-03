@@ -396,9 +396,9 @@ Factor ::= Designator:des {: RESULT = des; :}
 		 |
 		 BOOL_CONST:bool {: RESULT = impl.factorInsertBool(bool); :}
 		 |
-		 NEW Type 
+		 NEW Type:type {: RESULT = new Obj(Obj.Con, "" , type); impl.factorIsNew = true; :}
 		 |
-		 NEW Type:type LBRACKET Expr:expr RBRACKET 
+		 NEW Type:type LBRACKET Expr:expr RBRACKET {: RESULT = new Obj(Obj.Con, "" , type); impl.factorIsNew = true; :} 
 		 |
 		 LPAREN Expr:exp RPAREN {: RESULT = exp; :} ;
 		 

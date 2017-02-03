@@ -19,6 +19,7 @@ public class CompilerImpl {
 	private static Struct currentReturnType;
 	
 	public static boolean ldesignatorIsDereferenced = false;
+	public static boolean factorIsNew = false;
 	
 	private static Scope universeScope;
 	
@@ -382,6 +383,7 @@ public class CompilerImpl {
 		checkAssignComaptibility(des, expr, op, line);
 		
 		ldesignatorIsDereferenced = false;
+		factorIsNew = false;
 	}
 
 	public Obj execAddopLeft(Obj terms, Obj term, Integer op, int line) {
@@ -420,11 +422,24 @@ public class CompilerImpl {
 			return;
 		}
 		
-		if (left.getType().getKind() != right.getType().getKind()) {
-			log.error("Tipovi nisu kompatibilni - linija: " + line);
+		if (factorIsNew) {
+			if (left.getType().getKind() != Struct.Array) {
+				log.error("Promenljiva mora biti niz - linija: " + line);
+			} else {
+				if (left.getType().getElemType().getKind() != right.getType().getKind()) {
+					log.error("Tipovi nisu kompatibilni - linija: " + line);
+				}
+			}
+		} else {
+			if (left.getType().getKind() != right.getType().getKind()) {
+				log.error("Tipovi nisu kompatibilni - linija: " + line);
+			}
 		}
 		
+		
+		
 		ldesignatorIsDereferenced = false;
+		factorIsNew = false;
 	}
 	
 	public void setLDesignatorReference(Object ref) {

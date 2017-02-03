@@ -9,7 +9,7 @@ program myProgram
 		{
 			d = b[5];
 			g[5] = g[3];
-			b = new int[5]
+			b = new int;
 			return g[5];
 		}
         
