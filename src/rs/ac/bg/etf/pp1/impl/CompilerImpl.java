@@ -266,7 +266,7 @@ public class CompilerImpl {
 		} else if (ref != null && obj.getType().getKind() == Struct.Array){
 			return new Obj(Obj.Con,"",obj.getType().getElemType());
 		} else {
-			log.error("Niz je pogresan!!!!!!!!!!!");
+			//log.error("Niz je pogresan!!!!!!!!!!!");
 			return Tab.noObj;
 		}
 		
@@ -292,48 +292,35 @@ public class CompilerImpl {
 		}
 	}
 	
-	public void read(Object des, int line){
-		Obj d = (Obj) des;
-		if(d.getType() == Tab.intType || d.getType().getKind() == Struct.Bool ){
+	public void read(Obj des, int line){
+		int type = des.getType().getKind();
+		if(type == Struct.Int || type == Struct.Char || type == Struct.Bool ){
 			Code.put(Code.read);
-			Code.store(d);
-		} else if (d.getType() == Tab.charType){
+			Code.store(des);
+		} /*else if (type == Struct.Char){
 			Code.put(Code.bread);
-			Code.store(d);
-		} else {
-			log.error("Operand instrukcije READ mora bili int, char ili bool - linija: " + line);
+			Code.store(des);
+		}*/ else {
+			log.error("Operand instrukcije READ mora biti INT, CHAR ili BOOL - linija: " + line);
 		}
 	}
 	
-	public void print(Object e, int line){
-		if (e != Tab.intType && e != Tab.charType){
-	  		log.error("Operand instruckije PRINT mora biti int ili char - linija: " + line);
+	public void print(Obj e, int num, int line){
+		if (e.getType().getKind() != Struct.Int && e.getType().getKind() != Struct.Char){
+	  		log.error("Operand instruckije PRINT mora biti INT ili CHAR - linija: " + line);
 	  	} 
-	  	if (e == Tab.intType){
-	  		Code.loadConst(5);
-	  		Code.put(Code.print);
-	  	}
-	  	
-	  	if (e == Tab.charType){
-	  		Code.loadConst(1);
-	  		Code.put(Code.bprint);
-	  	}
+//	  	if (e == Tab.intType){
+//	  		Code.loadConst(5);
+//	  		Code.put(Code.print);
+//	  	}
+//	  	
+//	  	if (e == Tab.charType){
+//	  		Code.loadConst(1);
+//	  		Code.put(Code.bprint);
+//	  	}
 	}
 	
-	public void printN(Object e, int num, int line){
-		if (e != Tab.intType && e != Tab.charType){
-	  		log.error("Operand instruckije PRINT mora biti int ili char - linija: " + line);
-	  	} 
-	  	if (e == Tab.intType){
-	  		Code.loadConst(num);
-	  		Code.put(Code.print);
-	  	}
-	  	
-	  	if (e == Tab.charType){
-	  		Code.loadConst(num);
-	  		Code.put(Code.bprint);
-	  	}
-	}
+	
 	
 	
 	

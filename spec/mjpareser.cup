@@ -13,7 +13,6 @@ import rs.etf.pp1.mj.runtime.Code;
 
 parser code {:
 	
-	int printCallCount = 0;
 	boolean errorDetected = false;
 	
 	Logger log = Logger.getLogger(getClass());
@@ -271,19 +270,11 @@ Statement ::= DesignatorStatement SEMI_COLON:semi
 			  |
 			  RETURN:a {: impl.checkReturn(null,aleft); :} SEMI_COLON
 			  |
-			  READ LPAREN Designator:des {: impl.read(des,desleft); :}RPAREN SEMI_COLON
+			  READ LPAREN Designator:des RPAREN SEMI_COLON {: impl.read(des,desleft); :}
 			  |
-			  PRINT LPAREN Expr:exp COMMA NUM_CONST:num RPAREN SEMI_COLON
-			  {: 
-			  	parser.printCallCount++; 
-			  	impl.printN(exp,num,expleft);
-			  :}    
+			  PRINT LPAREN Expr:exp COMMA NUM_CONST:num RPAREN SEMI_COLON {: impl.print(exp,num,expleft); :}    
 			  |
-			  PRINT LPAREN Expr:e RPAREN SEMI_COLON
-			  {: 
-			  	parser.printCallCount++; 
-			  	impl.print(e,eleft);
-			  :} 
+			  PRINT LPAREN Expr:exp RPAREN SEMI_COLON {: impl.print(exp,-1,expleft); :}    
 			  |
 			  LBRACE StatementList RBRACE ;
 
