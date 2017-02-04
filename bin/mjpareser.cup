@@ -329,15 +329,15 @@ ActPars ::= Expr COMMA ActPars
 
 Condition ::= CondTerm OR Condition 
 			  |
-			  CondTerm ;
+			  CondTerm:condTerm {: RESULT = condTerm; :} ;
 			  
 CondTerm ::= CondFact AND CondTerm
 			 |
-			 CondFact ;
+			 CondFact:condFact {: RESULT = condFact; :} ;
 			 
-CondFact ::= Expr Relop Expr 
+CondFact ::= Expr:left Relop:relop Expr:right {: RESULT = impl.compare(left,right, relop, rightleft); :}
 			 |
-			 Expr ;
+			 Expr:expr {: RESULT = expr; :} ;
 
 
 

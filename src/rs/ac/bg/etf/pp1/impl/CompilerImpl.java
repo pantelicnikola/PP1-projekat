@@ -436,6 +436,20 @@ public class CompilerImpl {
 			ldesignatorIsDereferenced = false;
 		}
 	}
+
+	public Object compare(Obj left, Obj right, Integer op, int line) {
+		if (left.getType().getKind() == right.getType().getKind()) {
+			if (op != Code.eq && op != Code.ne && left.getType().getKind() != Struct.Int) {
+				log.error("Operandi uporedjivanja za operacije '>, <, >= , <=' moraju biti tipa INT - linija: " + line);
+				return Tab.noObj;
+			} else {
+				return left;
+			}
+		} else {
+			log.error("Operandi uporedjivanja moraju biti istog tipa - linija: " + line);
+			return Tab.noObj;
+		}
+	}
 	
 
 	
