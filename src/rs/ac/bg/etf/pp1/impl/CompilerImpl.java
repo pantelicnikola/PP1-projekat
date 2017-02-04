@@ -20,6 +20,8 @@ public class CompilerImpl {
 	
 	public static boolean ldesignatorIsDereferenced = false;
 	public static boolean factorIsNew = false;
+	public static boolean mainExists = false;
+	public static boolean inForLoop = false;
 	
 	private static Scope universeScope;
 	
@@ -79,6 +81,9 @@ public class CompilerImpl {
 	}
 
 	public void endProgram() {
+		if (mainExists == false) {
+			log.error("Program mora da sadrzi main metodu");
+		}
 		Tab.chainLocalSymbols(currentProgram);
 		Tab.closeScope();
 		currentProgram = null;
@@ -161,11 +166,19 @@ public class CompilerImpl {
 	}
 
 	
-	public void insertMethod(Struct retType, String methName, int retTypeleft){
+	public void insertMethod(Struct retType, String methName, int line){
 		returned = false;
 		if(Tab.currentScope().findSymbol(methName) != null){
-			log.error("Metoda " + methName + " je vec definisana - linija: " + retTypeleft);
+			log.error("Metoda " + methName + " je vec definisana - linija: " + line);
 		} else  {
+			if (methName.equals("main")) {
+				if (retType != null) {
+					log.error("Metoda MAIN ne sme imati povratnu vrednost - linija: " + line);
+					return;
+				} else {
+					mainExists = true;
+				}
+			}
 			if(retType == null){
 				currentReturnType = Tab.noType;
 				currentMethod = Tab.insert(Obj.Meth, methName, Tab.noType);
@@ -194,7 +207,7 @@ public class CompilerImpl {
 			}
 		} else {
 			if (expr.getType().getKind() != currentReturnType.getKind()) {
-				log.error("Povratna vrednost metode ne odgovara vracenoj vrednosti - linija: " + line);
+				log.error("Vracena vrednost ne odgovara povratnoj vrednosti metode - linija: " + line);
 				return;
 			}			
 		}
@@ -227,11 +240,11 @@ public class CompilerImpl {
 	
 	
 	
+	// MOZDA NE TREBA NISTA ZA KLASE
 	
-	
-	public void insertClass(String className,int classNameleft){
+	public void insertClass(String className,int classNameleft){ 
 		if(Tab.currentScope().findSymbol(className) == null){
-			currentClass = Tab.insert(Obj.Type, className, new Struct(Struct.Class)); // ovo mozda ne valja
+			currentClass = Tab.insert(Obj.Type, className, new Struct(Struct.Class)); 
 			Tab.openScope();
 			
 		} else {
@@ -306,8 +319,9 @@ public class CompilerImpl {
 	}
 	
 	public void print(Obj e, int num, int line){
-		if (e.getType().getKind() != Struct.Int && e.getType().getKind() != Struct.Char){
-	  		log.error("Operand instruckije PRINT mora biti INT ili CHAR - linija: " + line);
+		int type = e.getType().getKind();
+		if (type != Struct.Int && type != Struct.Char && type != Struct.Bool){
+	  		log.error("Operand instruckije PRINT mora biti INT, CHAR ili BOOL - linija: " + line);
 	  	} 
 //	  	if (e == Tab.intType){
 //	  		Code.loadConst(5);
@@ -451,7 +465,56 @@ public class CompilerImpl {
 		}
 	}
 	
+	public void checkIfMain() {
+		if (currentMethodName.equals("main")) {
+			log.error("MAIN metoda ne sme da ima parametre");
+		}
+	}
+	
+	public void checkDesignatorInt(Obj des, int line) {
+		if (des.getType().getKind() != Struct.Int) {
+			log.error("Operand inkrementiranja mora biti tipa INT - linija: " + line);
+		}
+	}
+	
+	public void checkDesignatorDec(Obj des, int line) {
+		if (des.getType().getKind() != Struct.Int) {
+			log.error("Operand dekrementiranja mora biti tipa INT - linija: " + line);
+		}
+	}
+	
+	public void checkInForLoopBreak(int line) {
+		if (!inForLoop) {
+			log.error("BREAK moze da se nalazi samo u FOR petlji - linija: " + line);
+		}
+	}
+	
+	public void checkInForLoopContinue(int line) {
+		if (!inForLoop) {
+			log.error("CONTINUE moze da se nalazi samo u FOR petlji - linija: " + line);
+		}
+	}
 
+	public Obj checkNewType(Struct type, Obj expr, int line) {
+		
+		if (expr == null) {
+			if (type != null || type != Tab.noType) {
+				return new Obj(Obj.Con, "" , type);
+			} else {
+				return Tab.noObj;
+			}
+		} else {
+			if (expr.getType().getKind() == Struct.Int) {
+				factorIsNew = true;
+				return new Obj(Obj.Con, "" , type);
+			} else {
+				log.error("Izraz izmedju [ ] mora biti tipa INT - linija: " + line);
+				return Tab.noObj;
+			}
+		}
+		
+		
+	}
 	
 
 }

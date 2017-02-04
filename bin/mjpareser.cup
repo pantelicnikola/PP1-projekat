@@ -220,7 +220,7 @@ MethodDeclList ::= MethodDeclList MethodDecl
 				   /* epsilon */
 				   ;
 				   
-MethodFormPars ::= FormPars
+MethodFormPars ::= FormPars {: impl.checkIfMain(); :}
 				   |
 				   /* epsilon */
 				   ;
@@ -260,11 +260,11 @@ Statement ::= DesignatorStatement SEMI_COLON:semi
 			  |
 			  IF LPAREN Condition RPAREN Statement ELSE Statement 
 			  |
-			  FOR LPAREN ForDesignatorStatement SEMI_COLON ForCondition SEMI_COLON ForDesignatorStatement RPAREN Statement
+			  FOR LPAREN ForDesignatorStatement SEMI_COLON ForCondition SEMI_COLON ForDesignatorStatement RPAREN {: impl.inForLoop = true; :} Statement {: impl.inForLoop = false; :}
 			  |
-			  BREAK SEMI_COLON
+			  BREAK SEMI_COLON:semi {: impl.checkInForLoopBreak(semileft); :}
 			  |
-			  CONTINUE SEMI_COLON
+			  CONTINUE SEMI_COLON:semi {: impl.checkInForLoopContinue(semileft); :}
 			  | 
 			  RETURN:a Expr:expr {: impl.checkReturn(expr,aleft); :} SEMI_COLON
 			  |
@@ -307,9 +307,9 @@ DesignatorStatement ::= DesignatorAssignStatement
 						|
 						Designator LPAREN ActPars RPAREN
 						|
-						Designator INC
+						Designator:des INC {: impl.checkDesignatorInt(des, desleft); :}
 						|
-						Designator DEC ;
+						Designator:des DEC {: impl.checkDesignatorDec(des, desleft); :};
 
 DesignatorAssignStatement ::= IDENT:name DesignatorNesto:ref Assignop:op Expr:expr 
 							  {: impl.setLDesignatorReference(ref); impl.findLDesignator(name, nameleft); impl.execAssign(name, expr, ref, op, opleft); :}
@@ -387,9 +387,9 @@ Factor ::= Designator:des {: RESULT = des; :}
 		 |
 		 BOOL_CONST:bool {: RESULT = impl.factorInsertBool(bool); :}
 		 |
-		 NEW Type:type {: RESULT = new Obj(Obj.Con, "" , type); impl.factorIsNew = true; :}
+		 NEW Type:type {: RESULT = impl.checkNewType(type, null, typeleft); :}
 		 |
-		 NEW Type:type LBRACKET Expr:expr RBRACKET {: RESULT = new Obj(Obj.Con, "" , type); impl.factorIsNew = true; :} 
+		 NEW Type:type LBRACKET Expr:expr RBRACKET {: RESULT = impl.checkNewType(type, expr, typeleft); :} 
 		 |
 		 LPAREN Expr:exp RPAREN {: RESULT = exp; :} ;
 		 

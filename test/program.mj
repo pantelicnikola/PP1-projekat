@@ -4,15 +4,28 @@ program myProgram
 	char g[];
 	int d;
 	bool c;
+	
+	class A{
+		int x[],y[];
+	}
+	
     {
     	char func (char a)
+    	int i;
 		{
+			
+			for (i = 0; i < 5; i++ ) {
+				c = true;
+				if (c == true ) {
+					break;
+				}
+			}
 			if (c != true) {
 				return 'a';
 			}
-			d = b[5];
+			b[5]++;
 			g[5] = g[3];
-			b = new int;
+			
 			read(c);
 			print(b[5]);
 			return g[5];
@@ -21,8 +34,11 @@ program myProgram
         void main ()
         int x, s;
         int i;
+        A a;
         {
+        	a = new A;
             x = 5;
             print(5);
         }
+
     }
