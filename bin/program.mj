@@ -1,44 +1,14 @@
 program myProgram
 	
-	int b[];
-	char g[];
-	int d;
-	bool c;
-	
-	class A{
-		int x[],y[];
-	}
 	
     {
-    	char func (char a)
-    	int i;
-		{
-			
-			for (i = 0; i < 5; i++ ) {
-				c = true;
-				if (c == true ) {
-					break;
-				}
-			}
-			if (c != true) {
-				return 'a';
-			}
-			b[5]++;
-			g[5] = g[3];
-			
-			read(c);
-			print(b[5]);
-			return g[5];
-		}
         
-        void main ()
-        int x, s;
-        int i;
-        A a;
+        void main () int c;
         {
-        	a = new A;
-            x = 5;
-            print(5);
+        	print('c');
+            print(16);
+            read(c);
+            print(c);
         }
 
     }

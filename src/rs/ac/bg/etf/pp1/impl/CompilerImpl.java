@@ -84,6 +84,7 @@ public class CompilerImpl {
 		if (mainExists == false) {
 			log.error("Program mora da sadrzi main metodu");
 		}
+		Code.dataSize = Tab.currentScope().getnVars();
 		Tab.chainLocalSymbols(currentProgram);
 		Tab.closeScope();
 		currentProgram = null;
@@ -223,12 +224,28 @@ public class CompilerImpl {
 				
 	}
 	
-	
+	public void startMethod() {
+		
+		currentMethod.setAdr(Code.pc);
+		
+		if (currentMethodName.equals("main")) {
+			Code.mainPc = currentMethod.getAdr();
+		}
+		
+		
+		Code.put(Code.enter);
+		Code.put(currentMethod.getLevel());
+		Code.put(Tab.currentScope().getnVars());
+
+	}
 	
 	public void endMethod(){
 		if (currentReturnType != Tab.noType && !returned) {
 			log.error("Metoda " + currentMethod.getName() + " nema RETURN iskaz");
 		} else {
+			Code.put(Code.exit);
+	        Code.put(Code.return_);
+	        
 			Tab.chainLocalSymbols(currentMethod);
 			Tab.closeScope();
 			currentMethod = null;
@@ -240,7 +257,6 @@ public class CompilerImpl {
 	
 	
 	
-	// MOZDA NE TREBA NISTA ZA KLASE
 	
 	public void insertClass(String className,int classNameleft){ 
 		if(Tab.currentScope().findSymbol(className) == null){
@@ -291,13 +307,13 @@ public class CompilerImpl {
 			obj = universeScope.findSymbol(name);
 			if (obj == Tab.noObj || obj == null){
 				log.error("Promenljiva " + name + " nije definisana - linija: " + nameleft);
-				return null;
+				return Tab.noObj;
 			}
 		}
 		if (ldesignatorIsDereferenced) {
 			if (obj.getType().getKind() != Struct.Array) {
 				log.error("Dereferencirana promenljiva nije niz");
-				return null;
+				return Tab.noObj;
 			}
 			return new Obj(Obj.Con,"",obj.getType().getElemType());
 		} else {
@@ -307,31 +323,30 @@ public class CompilerImpl {
 	
 	public void read(Obj des, int line){
 		int type = des.getType().getKind();
-		if(type == Struct.Int || type == Struct.Char || type == Struct.Bool ){
+		if(type == Struct.Int){
 			Code.put(Code.read);
 			Code.store(des);
-		} /*else if (type == Struct.Char){
+		} else if (type == Struct.Char){
 			Code.put(Code.bread);
 			Code.store(des);
-		}*/ else {
-			log.error("Operand instrukcije READ mora biti INT, CHAR ili BOOL - linija: " + line);
+		} else {
+			log.error("Operand instrukcije READ mora biti INT ili CHAR - linija: " + line);
 		}
 	}
 	
-	public void print(Obj e, int num, int line){
-		int type = e.getType().getKind();
-		if (type != Struct.Int && type != Struct.Char && type != Struct.Bool){
+	public void print(Obj des, int num, int line){
+		int type = des.getType().getKind();
+	  	if (type == Struct.Int){
+	  		Code.loadConst(5);
+	  		Code.put(Code.print);
+	  	} else if (type == Struct.Char){
+	  		Code.loadConst(1);
+	  		Code.put(Code.bprint);
+	  	} else if (type == Struct.Bool) {
+	  		
+	  	} else {
 	  		log.error("Operand instruckije PRINT mora biti INT, CHAR ili BOOL - linija: " + line);
-	  	} 
-//	  	if (e == Tab.intType){
-//	  		Code.loadConst(5);
-//	  		Code.put(Code.print);
-//	  	}
-//	  	
-//	  	if (e == Tab.charType){
-//	  		Code.loadConst(1);
-//	  		Code.put(Code.bprint);
-//	  	}
+	  	}
 	}
 	
 	
@@ -363,18 +378,21 @@ public class CompilerImpl {
 	public Obj factorInsertNum(Integer num){
 		Obj o = new Obj(Obj.Con,"",new Struct(Struct.Int));
 		o.setAdr(num.intValue());
+		Code.load(o);
 		return o;		
 	}
 	
 	public Obj factorInsertChar(Character chr){
 		Obj o = new Obj(Obj.Con,"",new Struct(Struct.Char));
 		o.setAdr(chr.charValue());
+		Code.load(o);
 		return o;
 	}
 
 	public Obj factorInsertBool(Boolean bool){
 		Obj o = new Obj(Obj.Con,"",new Struct(Struct.Bool));
 		o.setAdr(bool.booleanValue() ? 1:0);
+		Code.load(o);
 		return o;
 	}
 	

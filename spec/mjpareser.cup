@@ -205,7 +205,7 @@ ClassMethods ::= LBRACE MethodDeclList RBRACE
 		 
 		 
 
-MethodDecl ::= MethodReturnType LPAREN MethodFormPars RPAREN LocalVarDeclList LBRACE StatementList RBRACE {: impl.endMethod(); :} ;
+MethodDecl ::= MethodReturnType LPAREN MethodFormPars RPAREN LocalVarDeclList LBRACE {: impl.startMethod(); :} StatementList RBRACE {: impl.endMethod(); :} ;
 
 MethodReturnType ::= Type:retType IDENT:methName  {: impl.insertMethod(retType,methName,methNameleft); :}
 					 |
