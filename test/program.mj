@@ -1,14 +1,15 @@
 program myProgram
-	
-	
+	int x;
+	const int mi = 17;
     {
         
-        void main () int c;
+        void main () int b;
         {
-        	print('c');
-            print(16);
-            read(c);
-            print(c);
+        	x = 2;
+        	b = 4;
+        	b *= x += 3; 
+            print(b);
+            
         }
 
     }

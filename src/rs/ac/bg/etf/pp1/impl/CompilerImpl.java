@@ -12,6 +12,7 @@ public class CompilerImpl {
 
 	private static Obj currentProgram;
 	private static Obj currentMethod;
+	private static Obj leftDesignator;
 	private static String currentMethodName;
 	private static boolean returned;
 	private static Obj currentClass;
@@ -132,13 +133,11 @@ public class CompilerImpl {
 		if(Tab.currentScope().findSymbol(varName) == null){
 			localArrays++;
 			Obj var = Tab.insert(Obj.Var, varName, new Struct(Struct.Array, currentType));
-			var.setAdr(localAdr);
-			localAdr++;
-			
+//			var.setAdr(localAdr);
+//			localAdr++;	
 		} else {
 			log.error("Niz " + varName + " je vec definisan - linija: " + varNameleft);
 		}
-		
 	}
 
 	public void insertConstant(String constName, Object constValue, int constNameleft){
@@ -158,8 +157,8 @@ public class CompilerImpl {
 			}
 			
 			globalConstants++;
-			Tab.insert(Obj.Var, constName, currentType).setAdr(adr);
-			
+			Obj con = Tab.insert(Obj.Con, constName, currentType);
+			con.setAdr(adr);			
 			
 		} else {
 			log.error("Konstanta " + constName + " je vec definisana - linija: " + constNameleft);
@@ -317,6 +316,7 @@ public class CompilerImpl {
 			}
 			return new Obj(Obj.Con,"",obj.getType().getElemType());
 		} else {
+			leftDesignator = obj;
 			return obj;
 		}
 	}
@@ -401,25 +401,59 @@ public class CompilerImpl {
 		
 		checkAssignComaptibility(des, expr, op, line);
 		
+		if (op == 0) {
+			Code.store(des);
+		} else {
+			Obj right = new Obj(Obj.Var,"",Tab.intType);
+			Code.store(right);
+			Code.load(des);
+			Code.load(right);
+			Code.put(op);
+			Code.store(des);
+			
+		}
+		
 		ldesignatorIsDereferenced = false;
 		factorIsNew = false;
 	}
 
 	public Obj execAddopLeft(Obj terms, Obj term, Integer op, int line) {
-		return checkComaptibility(terms, term, op, line);
+		Obj o = checkComaptibility(terms, term, op, line);
+		if (o != Tab.noObj) {
+			Code.put(op);
+		}
+		return o;
+	}
+	
+	public Obj execMulopLeft(Obj term, Obj factor, Integer op, int line) {
+		Obj o = checkComaptibility(term, factor, op, line);
+		if (o != Tab.noObj) {
+			Code.put(op); 
+		}
+		return o;
 	}
 
 	public Obj execMulopRight(Obj terms, Obj termsWrapper, Integer op, int line) {
-		return checkComaptibility(terms, termsWrapper, op, line);
+		Obj o = checkComaptibility(terms, termsWrapper, op, line);
+		if (o != Tab.noObj) {
+			Code.put(op);
+			Code.store(terms);
+			Code.load(terms);
+		}
+		return o;
 	}
 
 	public Obj execAddopRight(Obj terms, Obj termsWrapper, Integer op, int line) {
-		return checkComaptibility(terms, termsWrapper, op, line);
+		Obj o = checkComaptibility(terms, termsWrapper, op, line);
+		if (o != Tab.noObj) {
+			
+			Code.put(op);
+			Code.store(terms);
+			Code.load(terms);
+		}
+		return o;
 	}
-
-	public Obj execMulopLeft(Obj term, Obj factor, Integer op, int line) {
-		return checkComaptibility(term, factor, op, line);
-	}
+	
 	
 	public Obj checkComaptibility(Obj first, Obj second, Integer op, int line) {
 		
@@ -436,8 +470,13 @@ public class CompilerImpl {
 	}
 	
 	public void checkAssignComaptibility(Obj left, Obj right, Integer op, int line) {
-		if (left.getType().getKind() != Struct.Int && op != 0) {
+		if (left.getType().getKind() != Struct.Int && op != Code.eq) {
 			log.error("Ilegalna operacija - linija: " + line);
+			return;
+		}
+		
+		if (left.getKind() == Obj.Con) {
+			log.error("Vrednost se ne moze dodeliti konstanti - linija " + line);
 			return;
 		}
 		
@@ -454,8 +493,6 @@ public class CompilerImpl {
 				log.error("Tipovi nisu kompatibilni - linija: " + line);
 			}
 		}
-		
-		
 		
 		ldesignatorIsDereferenced = false;
 		factorIsNew = false;

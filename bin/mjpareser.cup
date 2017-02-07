@@ -312,7 +312,7 @@ DesignatorStatement ::= DesignatorAssignStatement
 						Designator:des DEC {: impl.checkDesignatorDec(des, desleft); :};
 
 DesignatorAssignStatement ::= IDENT:name DesignatorNesto:ref Assignop:op Expr:expr 
-							  {: impl.setLDesignatorReference(ref); impl.findLDesignator(name, nameleft); impl.execAssign(name, expr, ref, op, opleft); :}
+							  {: impl.setLDesignatorReference(ref); impl.execAssign(name, expr, ref, op, opleft); :}
 							  |
 							  error
 							  {: parser.log.debug("Uspesan oporavak od greske pri dodeli vrednosti."); :};
@@ -375,23 +375,23 @@ TermsWrapper ::= Terms:terms {: RESULT = terms; :}
 
 //r-value
 
-Factor ::= Designator:des {: RESULT = des; :}
-		 | 
-		 Designator:des LPAREN ActPars RPAREN {: RESULT = impl.factorInsertFunc(des,desleft); :}
-		 |
-		 Designator:des LPAREN RPAREN {: RESULT = impl.factorInsertFunc(des,desleft); :}
-		 |
-		 NUM_CONST:num {: RESULT = impl.factorInsertNum(num); :}
-		 |
-		 CHAR_CONST:chr {: RESULT = impl.factorInsertChar(chr); :}
-		 |
-		 BOOL_CONST:bool {: RESULT = impl.factorInsertBool(bool); :}
-		 |
-		 NEW Type:type {: RESULT = impl.checkNewType(type, null, typeleft); :}
-		 |
-		 NEW Type:type LBRACKET Expr:expr RBRACKET {: RESULT = impl.checkNewType(type, expr, typeleft); :} 
-		 |
-		 LPAREN Expr:exp RPAREN {: RESULT = exp; :} ;
+Factor ::= Designator:des {: RESULT = des; Code.load(des); :}
+		   | 
+	 	   Designator:des LPAREN ActPars RPAREN {: RESULT = impl.factorInsertFunc(des,desleft); :}
+		   |
+		   Designator:des LPAREN RPAREN {: RESULT = impl.factorInsertFunc(des,desleft); :}
+		   |
+		   NUM_CONST:num {: RESULT = impl.factorInsertNum(num); :}
+		   |
+		   CHAR_CONST:chr {: RESULT = impl.factorInsertChar(chr); :}
+		   |
+		   BOOL_CONST:bool {: RESULT = impl.factorInsertBool(bool); :}
+		   |
+		   NEW Type:type {: RESULT = impl.checkNewType(type, null, typeleft); :}
+		   |
+		   NEW Type:type LBRACKET Expr:expr RBRACKET {: RESULT = impl.checkNewType(type, expr, typeleft); :} 
+		   |
+		   LPAREN Expr:exp RPAREN {: RESULT = exp; :} ;
 		 
 
 
@@ -412,7 +412,7 @@ DesignatorNesto ::= DOT IDENT DesignatorNesto
 					
 
 
-
+ 
 Assignop ::= EQUALS {: RESULT = new Integer(0); :}  
 			 |
 			 AddopRight:ar {: RESULT = ar; :}
