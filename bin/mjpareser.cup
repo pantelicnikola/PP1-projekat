@@ -311,8 +311,8 @@ DesignatorStatement ::= DesignatorAssignStatement
 						|
 						Designator:des DEC {: impl.checkDesignatorDec(des, desleft); :};
 
-DesignatorAssignStatement ::= IDENT:name DesignatorNesto:ref Assignop:op Expr:expr 
-							  {: impl.setLDesignatorReference(ref); impl.execAssign(name, expr, ref, op, opleft); :}
+DesignatorAssignStatement ::= IDENT:name DesignatorNesto:ref {: impl.setLDesignatorReference(name, ref); :} Assignop:op Expr:expr 
+							  {: impl.execAssign(name, expr, ref, op, opleft); :}
 							  |
 							  error
 							  {: parser.log.debug("Uspesan oporavak od greske pri dodeli vrednosti."); :};
@@ -375,7 +375,7 @@ TermsWrapper ::= Terms:terms {: RESULT = terms; :}
 
 //r-value
 
-Factor ::= Designator:des {: RESULT = des; Code.load(des); :}
+Factor ::= Designator:des {: RESULT = des; impl.setArrayOnStack(des); :}
 		   | 
 	 	   Designator:des LPAREN ActPars RPAREN {: RESULT = impl.factorInsertFunc(des,desleft); :}
 		   |
@@ -403,11 +403,11 @@ Factor ::= Designator:des {: RESULT = des; Code.load(des); :}
 
 Designator ::= IDENT:name DesignatorNesto:ref {: RESULT = impl.findDesignator(name, ref, nameleft); :} ;
 
-DesignatorNesto ::= DOT IDENT DesignatorNesto
+DesignatorNesto ::= DOT IDENT DesignatorNesto {: RESULT = null; :}
 					|
-					LBRACKET Expr RBRACKET {: RESULT = "deReferenced"; :} DesignatorNesto	
+					LBRACKET Expr RBRACKET  DesignatorNesto	{: RESULT = "deReferenced"; :}
 					|
-					/* epsilon */ 
+					/* epsilon */ {: RESULT = null; :}
 					;
 					
 

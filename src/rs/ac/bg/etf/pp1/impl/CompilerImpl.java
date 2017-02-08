@@ -292,12 +292,10 @@ public class CompilerImpl {
 		if (ref == null && obj.getType().getKind() != Struct.Array) {
 			return obj;
 		} else if (ref != null && obj.getType().getKind() == Struct.Array){
-			return new Obj(Obj.Con,"",obj.getType().getElemType());
+			return new Obj(Obj.Elem,name,obj.getType().getElemType());
 		} else {
-			//log.error("Niz je pogresan!!!!!!!!!!!");
 			return Tab.noObj;
 		}
-		
 	}
 	
 	public Obj findLDesignator(String name,  int nameleft){
@@ -314,7 +312,7 @@ public class CompilerImpl {
 				log.error("Dereferencirana promenljiva nije niz");
 				return Tab.noObj;
 			}
-			return new Obj(Obj.Con,"",obj.getType().getElemType());
+			return new Obj(Obj.Var,"",obj.getType().getElemType());
 		} else {
 			leftDesignator = obj;
 			return obj;
@@ -336,6 +334,10 @@ public class CompilerImpl {
 	
 	public void print(Obj des, int num, int line){
 		int type = des.getType().getKind();
+		if (des.getKind() == 5) {
+			Obj obj = new Obj(Obj.Elem, des.getName(), new Struct(Struct.Array, des.getType().getElemType()));
+			Code.load(obj);
+		}
 	  	if (type == Struct.Int){
 	  		Code.loadConst(5);
 	  		Code.put(Code.print);
@@ -396,12 +398,21 @@ public class CompilerImpl {
 		return o;
 	}
 	
+	
+	
 	public void execAssign(String name, Obj expr, Object ref, Integer op, int line) {
 		Obj des = findLDesignator(name, line);
 		
 		checkAssignComaptibility(des, expr, op, line);
 		
 		if (op == 0) {
+			if (ref != null) { // ako je r-value dereferenciran bice postavljen kind na Obj.Elem odn. 5
+				des = new Obj(Obj.Elem, des.getName(), new Struct(Struct.Array, des.getType().getElemType()));
+			} 
+			if (expr.getKind() == 5) {
+				Obj der = new Obj(Obj.Elem, des.getName(), new Struct(Struct.Array, des.getType().getElemType()));
+				Code.load(der);
+			}
 			Code.store(des);
 		} else {
 			Obj right = new Obj(Obj.Var,"",Tab.intType);
@@ -410,7 +421,6 @@ public class CompilerImpl {
 			Code.load(right);
 			Code.put(op);
 			Code.store(des);
-			
 		}
 		
 		ldesignatorIsDereferenced = false;
@@ -498,12 +508,37 @@ public class CompilerImpl {
 		factorIsNew = false;
 	}
 	
-	public void setLDesignatorReference(Object ref) {
+	public void setLDesignatorReference(String name, Object ref) {
 		if (ref != null) {
 			ldesignatorIsDereferenced = true;
+			Obj o = Tab.insert(Obj.Var,"",Tab.intType);
+			Code.store(o);
+			Obj ob = Tab.currentScope().findSymbol(name);
+			if (ob == null) {
+				ob = universeScope.findSymbol(name);
+			}
+			Code.load(ob);
+			Code.load(o);
+			
 		} else {
 			ldesignatorIsDereferenced = false;
 		}
+	}
+	
+	public void setArrayOnStack(Obj des) { // ovo treba raditi samo u slucaju da je niz u pitanju
+		Obj realDes = Tab.currentScope().findSymbol(des.getName());
+		if (realDes == null) {
+			realDes = universeScope.findSymbol(des.getName());
+		}
+		if (realDes != null && realDes.getType().getKind() == Struct.Array) {
+			Obj o = Tab.insert(Obj.Var,"",Tab.intType);
+			Code.store(o);
+			Code.load(realDes);
+			Code.load(o);
+		} else {
+			Code.load(des); 
+		}
+		
 	}
 
 	public Object compare(Obj left, Obj right, Integer op, int line) {
@@ -552,16 +587,22 @@ public class CompilerImpl {
 
 	public Obj checkNewType(Struct type, Obj expr, int line) {
 		
-		if (expr == null) {
+		if (expr == null) { // klasa
 			if (type != null || type != Tab.noType) {
-				return new Obj(Obj.Con, "" , type);
+				return new Obj(Obj.Var, "" , type);
 			} else {
 				return Tab.noObj;
 			}
-		} else {
+		} else { // niz
+			
 			if (expr.getType().getKind() == Struct.Int) {
 				factorIsNew = true;
-				return new Obj(Obj.Con, "" , type);
+				Code.put(Code.newarray);
+				Code.put(1);
+				return new Obj(Obj.Var, "" , type);
+			} 
+			else if (expr.getType().getKind() == Struct.Char) {
+				return Tab.noObj;
 			} else {
 				log.error("Izraz izmedju [ ] mora biti tipa INT - linija: " + line);
 				return Tab.noObj;
