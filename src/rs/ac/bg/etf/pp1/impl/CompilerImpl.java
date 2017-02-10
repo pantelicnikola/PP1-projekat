@@ -312,7 +312,7 @@ public class CompilerImpl {
 				log.error("Dereferencirana promenljiva nije niz");
 				return Tab.noObj;
 			}
-			return new Obj(Obj.Var,"",obj.getType().getElemType());
+			return new Obj(Obj.Elem,"",obj.getType().getElemType());
 		} else {
 			leftDesignator = obj;
 			return obj;
@@ -335,8 +335,8 @@ public class CompilerImpl {
 	public void print(Obj des, int num, int line){
 		int type = des.getType().getKind();
 		if (des.getKind() == 5) {
-			Obj obj = new Obj(Obj.Elem, des.getName(), new Struct(Struct.Array, des.getType().getElemType()));
-			Code.load(obj);
+//			Obj obj = new Obj(Obj.Elem, des.getName(), new Struct(Struct.Array, des.getType().getElemType()));
+//			Code.load(obj);
 		}
 	  	if (type == Struct.Int){
 	  		Code.loadConst(5);
@@ -344,10 +344,8 @@ public class CompilerImpl {
 	  	} else if (type == Struct.Char){
 	  		Code.loadConst(1);
 	  		Code.put(Code.bprint);
-	  	} else if (type == Struct.Bool) {
-	  		
 	  	} else {
-	  		log.error("Operand instruckije PRINT mora biti INT, CHAR ili BOOL - linija: " + line);
+	  		log.error("Operand instruckije PRINT mora biti tipa INT ili CHAR - linija: " + line);
 	  	}
 	}
 	
@@ -408,13 +406,18 @@ public class CompilerImpl {
 		if (op == 0) {
 			if (ref != null) { // ako je r-value dereferenciran bice postavljen kind na Obj.Elem odn. 5
 				des = new Obj(Obj.Elem, des.getName(), new Struct(Struct.Array, des.getType().getElemType()));
+				
 			} 
-			if (expr.getKind() == 5) {
-				Obj der = new Obj(Obj.Elem, des.getName(), new Struct(Struct.Array, des.getType().getElemType()));
-				Code.load(der);
-			}
+//			if (expr.getKind() == 5) {
+//				Obj der = new Obj(Obj.Elem, des.getName(), new Struct(Struct.Array, des.getType().getElemType()));
+//				Code.load(der);
+//			}
 			Code.store(des);
 		} else {
+//			if (expr.getKind() == 5) {
+//				Obj der = new Obj(Obj.Elem, des.getName(), new Struct(Struct.Array, des.getType().getElemType()));
+//				Code.load(der);
+//			}
 			Obj right = new Obj(Obj.Var,"",Tab.intType);
 			Code.store(right);
 			Code.load(des);
@@ -508,7 +511,7 @@ public class CompilerImpl {
 		factorIsNew = false;
 	}
 	
-	public void setLDesignatorReference(String name, Object ref) {
+	public void setLDesignatorReference(String name, Object ref, Integer op) {
 		if (ref != null) {
 			ldesignatorIsDereferenced = true;
 			Obj o = Tab.insert(Obj.Var,"",Tab.intType);
@@ -520,21 +523,30 @@ public class CompilerImpl {
 			Code.load(ob);
 			Code.load(o);
 			
+			if (op != 0) {
+				Code.load(ob);
+				Code.load(o);
+			}
+			
 		} else {
 			ldesignatorIsDereferenced = false;
 		}
 	}
 	
-	public void setArrayOnStack(Obj des) { // ovo treba raditi samo u slucaju da je niz u pitanju
+	public void setArrayOnStack(Obj des) { 
 		Obj realDes = Tab.currentScope().findSymbol(des.getName());
 		if (realDes == null) {
 			realDes = universeScope.findSymbol(des.getName());
 		}
-		if (realDes != null && realDes.getType().getKind() == Struct.Array) {
+		if (realDes != null && realDes.getType().getKind() == Struct.Array) {  // ovo treba raditi samo u slucaju da je niz u pitanju
 			Obj o = Tab.insert(Obj.Var,"",Tab.intType);
 			Code.store(o);
 			Code.load(realDes);
 			Code.load(o);
+			
+			Obj der = new Obj(Obj.Elem, des.getName(), new Struct(Struct.Array, des.getType().getElemType()));
+			Code.load(der);
+			
 		} else {
 			Code.load(des); 
 		}

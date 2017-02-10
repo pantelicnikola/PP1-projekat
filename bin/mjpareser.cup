@@ -311,7 +311,7 @@ DesignatorStatement ::= DesignatorAssignStatement
 						|
 						Designator:des DEC {: impl.checkDesignatorDec(des, desleft); :};
 
-DesignatorAssignStatement ::= IDENT:name DesignatorNesto:ref {: impl.setLDesignatorReference(name, ref); :} Assignop:op Expr:expr 
+DesignatorAssignStatement ::= IDENT:name DesignatorNesto:ref Assignop:op {: impl.setLDesignatorReference(name, ref, op); :} Expr:expr 
 							  {: impl.execAssign(name, expr, ref, op, opleft); :}
 							  |
 							  error
@@ -343,10 +343,9 @@ CondFact ::= Expr:left Relop:relop Expr:right {: RESULT = impl.compare(left,righ
 
 
 
-Expr ::= MINUS TermsWrapper:termsWrapper {: RESULT = termsWrapper; :}
+Expr ::= MINUS TermsWrapper:termsWrapper {: Code.put(Code.neg); RESULT = termsWrapper; :}
 		 |
 		 TermsWrapper:termsWrapper {: RESULT = termsWrapper; :} ;
-
 
 Term ::= Factor:factor {: RESULT = factor; :}
 		 |
