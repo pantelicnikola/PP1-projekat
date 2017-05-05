@@ -15,12 +15,12 @@ program test301
 		bodovi = 0;
 		bodovi++;
 		bodovi = bodovi + jedan;
-		bodovi+= bodovi *= pet;
+		bodovi+=(bodovi *= pet);
 		bodovi--;
 		print(bodovi); 
 			
 		
-		niz = new int[3];
+		niz = new int[2];
 		niz[0] = pet;
 		niz[1] = 10;
 		bodovi = (niz[1]/=niz[0]);
@@ -43,6 +43,8 @@ program test301
 		read(bodovi);
 		bodovi = bodovi + 1;
 		print(bodovi);
+			
+	
 	}
 }
 

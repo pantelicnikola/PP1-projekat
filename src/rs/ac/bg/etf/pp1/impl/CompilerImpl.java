@@ -9,7 +9,10 @@ import rs.etf.pp1.symboltable.Tab;
 import rs.etf.pp1.symboltable.concepts.*;
 
 public class CompilerImpl {
-
+	public Integer addopRightOccured = 0;
+	public Integer mulopRightOccured = 0;
+	public boolean factorComesFromDesignator = false;
+	public boolean inAssign;
 	private static Obj currentProgram;
 	private static Obj currentMethod;
 	private static Obj leftDesignator;
@@ -274,7 +277,11 @@ public class CompilerImpl {
 		currentClass = null;
 	}
 	
-	
+	public void termsWrapperCheckTerm(Obj term) {
+		if(isArray(term)&&(mulopRightOccured==0)&&(addopRightOccured==0)&&inAssign&&factorComesFromDesignator)
+			Code.load(term);
+
+	} 
 	
 	
 	
@@ -292,7 +299,7 @@ public class CompilerImpl {
 		if (ref == null && obj.getType().getKind() != Struct.Array) {
 			return obj;
 		} else if (ref != null && obj.getType().getKind() == Struct.Array){
-			return new Obj(Obj.Elem,name,obj.getType().getElemType());
+				return new Obj(Obj.Elem, name, obj.getType().getElemType());
 		} else {
 			return Tab.noObj;
 		}
@@ -333,20 +340,21 @@ public class CompilerImpl {
 	}
 	
 	public void print(Obj des, int num, int line){
-		int type = des.getType().getKind();
-		if (des.getKind() == 5) {
-//			Obj obj = new Obj(Obj.Elem, des.getName(), new Struct(Struct.Array, des.getType().getElemType()));
-//			Code.load(obj);
-		}
-	  	if (type == Struct.Int){
-	  		Code.loadConst(5);
-	  		Code.put(Code.print);
-	  	} else if (type == Struct.Char){
-	  		Code.loadConst(1);
-	  		Code.put(Code.bprint);
-	  	} else {
-	  		log.error("Operand instruckije PRINT mora biti tipa INT ili CHAR - linija: " + line);
-	  	}
+		Struct typeToCheck = (des.getType().getKind()==Struct.Array)?des.getType().getElemType():des.getType();
+		 
+        if(((typeToCheck != Tab.charType) && (typeToCheck != Tab.intType)&&(typeToCheck.getKind() != Struct.Bool)))
+                log.error("Error! Expression is not of type int, char or bool on line ");
+        else {
+        	if(isArray(des))
+        		Code.load(des);
+            if(typeToCheck == Tab.intType) {
+                Code.loadConst(5);
+                Code.put(Code.print);
+            } else if (typeToCheck == Tab.charType) {
+             	Code.loadConst(1);
+                 Code.put(Code.bprint);
+            }
+        }
 	}
 	
 	
@@ -376,14 +384,14 @@ public class CompilerImpl {
 	
 	
 	public Obj factorInsertNum(Integer num){
-		Obj o = new Obj(Obj.Con,"",new Struct(Struct.Int));
+		Obj o = new Obj(Obj.Con,"",Tab.intType);
 		o.setAdr(num.intValue());
 		Code.load(o);
 		return o;		
 	}
 	
 	public Obj factorInsertChar(Character chr){
-		Obj o = new Obj(Obj.Con,"",new Struct(Struct.Char));
+		Obj o = new Obj(Obj.Con,"",Tab.charType);
 		o.setAdr(chr.charValue());
 		Code.load(o);
 		return o;
@@ -428,11 +436,14 @@ public class CompilerImpl {
 		
 		ldesignatorIsDereferenced = false;
 		factorIsNew = false;
+		inAssign = false;
 	}
 
 	public Obj execAddopLeft(Obj terms, Obj term, Integer op, int line) {
 		Obj o = checkComaptibility(terms, term, op, line);
 		if (o != Tab.noObj) {
+			if(isArray(term))
+				Code.load(term);
 			Code.put(op);
 		}
 		return o;
@@ -441,6 +452,8 @@ public class CompilerImpl {
 	public Obj execMulopLeft(Obj term, Obj factor, Integer op, int line) {
 		Obj o = checkComaptibility(term, factor, op, line);
 		if (o != Tab.noObj) {
+			if(isArray(factor))
+				Code.load(factor);
 			Code.put(op); 
 		}
 		return o;
@@ -449,37 +462,113 @@ public class CompilerImpl {
 	public Obj execMulopRight(Obj terms, Obj termsWrapper, Integer op, int line) {
 		Obj o = checkComaptibility(terms, termsWrapper, op, line);
 		if (o != Tab.noObj) {
-			Code.put(op);
-			Code.store(terms);
-			Code.load(terms);
+			if(isArray(termsWrapper))
+				Code.load(termsWrapper);
+			if(isArray(terms)) {
+				Obj tmp = new Obj(Obj.Var,"",new Struct(Struct.Int));
+				Code.store(tmp);
+				Code.put(Code.dup2);
+				Code.put(Code.dup2);
+				Code.load(terms);
+				Code.load(tmp);
+				Code.put(op);
+				Code.store(terms);
+				Code.load(terms);
+			} else {
+				Code.put(op);
+				Code.store(terms);
+				Code.load(terms);	
+			}
 		}
+		mulopRightOccured--;
 		return o;
+	}
+	
+	public boolean isArray(Obj des) {
+		boolean res = false;
+		if(des.getType().getKind() == Struct.Array) {
+			res = true;
+		}
+		return res;
+	}
+	
+	public void checkForArray(Obj des) {
+		if(isArray(des)) {
+			Code.load(des);
+		}
 	}
 
 	public Obj execAddopRight(Obj terms, Obj termsWrapper, Integer op, int line) {
 		Obj o = checkComaptibility(terms, termsWrapper, op, line);
 		if (o != Tab.noObj) {
-			
-			Code.put(op);
-			Code.store(terms);
-			Code.load(terms);
+			if(op.intValue() == 200) {
+				if(isArray(termsWrapper))
+					Code.load(termsWrapper);
+				if(isArray(terms)) {
+					// add, index, value
+					// add, index
+					// resolved_value
+					// resolved_value, value
+					Obj tmp = new Obj(Obj.Var, "", new Struct(Struct.Int));
+					Code.store(tmp);
+					Code.load(terms);
+					Code.load(tmp);
+				} 
+				// ... a, b - current stacktrace
+				// 1. a 
+				// 2. a a
+				// 3. a a a
+				// 4. a a*a
+				// 5. a*a*a
+				// 6. a*a*a b
+				// 7. a*a*a b b
+				// 8. a*a*a b b b
+				// 9. a*a*a b b*b
+				// 10. a*a*a b*b*b
+				// 11. a*a*a b*b*b -
+				Obj tmp = new Obj(Obj.Var, "", new Struct(Struct.Int));
+				Code.store(tmp);
+				Code.put(Code.dup);
+				Code.put(Code.dup);
+				Code.put(Code.mul);
+				Code.put(Code.mul);
+				Code.load(tmp);
+				Code.put(Code.dup);
+				Code.put(Code.dup);
+				Code.put(Code.mul);
+				Code.put(Code.mul);
+				Code.put(Code.sub);
+			} else {
+				if(isArray(termsWrapper))
+					Code.load(termsWrapper);
+				if(isArray(terms)) {
+					Obj tmp = new Obj(Obj.Var,"",new Struct(Struct.Int));
+					Code.store(tmp);
+					Code.put(Code.dup2);
+					Code.put(Code.dup2);
+					Code.load(terms);
+					Code.load(tmp);
+					Code.put(op);
+					Code.store(terms);
+					Code.load(terms);
+				} else {
+					Code.put(op);
+					Code.store(terms);
+					Code.load(terms);	
+				}
+			}
 		}
+		addopRightOccured--;
 		return o;
 	}
 	
 	
 	public Obj checkComaptibility(Obj first, Obj second, Integer op, int line) {
-		
-		if (first.getType().getKind() != Struct.Int && op != 0) {
-			log.error("Ilegalna operacija - linija: " + line);
-			return Tab.noObj;
-		}
-		if (first.getType().getKind() == second.getType().getKind() && first.getType().getElemType() == second.getType().getElemType()) {
-			return first;
-		} else {
-			log.error("Tipovi nisu kompatibilni - linija: " + line);
-			return Tab.noObj;
-		}
+		Struct firstType = isArray(first)?first.getType().getElemType():first.getType();
+		Struct secondType = isArray(second)?second.getType().getElemType():second.getType();
+		if(firstType.getKind() == secondType.getKind())
+			return new Obj(Obj.Var, "", firstType);
+		return Tab.noObj;
 	}
 	
 	public void checkAssignComaptibility(Obj left, Obj right, Integer op, int line) {
@@ -497,9 +586,9 @@ public class CompilerImpl {
 			if (left.getType().getKind() != Struct.Array) {
 				log.error("Promenljiva mora biti niz - linija: " + line);
 			} else {
-				if (left.getType().getElemType().getKind() != right.getType().getKind()) {
-					log.error("Tipovi nisu kompatibilni - linija: " + line);
-				}
+//				if (left.getType().getElemType().getKind() != right.getType().getKind()) {
+//					log.error("Tipovi nisu kompatibilni - linija: " + line);
+//				}
 			}
 		} else {
 			if (left.getType().getKind() != right.getType().getKind()) {
@@ -533,23 +622,24 @@ public class CompilerImpl {
 		}
 	}
 	
-	public void setArrayOnStack(Obj des) { 
+	public Obj setArrayOnStack(Obj des) { 
+		Obj res = Tab.noObj;
+		factorComesFromDesignator = true;
 		Obj realDes = Tab.currentScope().findSymbol(des.getName());
 		if (realDes == null) {
 			realDes = universeScope.findSymbol(des.getName());
 		}
 		if (realDes != null && realDes.getType().getKind() == Struct.Array) {  // ovo treba raditi samo u slucaju da je niz u pitanju
-			Obj o = Tab.insert(Obj.Var,"",Tab.intType);
-			Code.store(o);
+			Obj tmp = new Obj(Obj.Var, realDes.getName(), new Struct(Struct.Int));
+			Code.store(tmp);
 			Code.load(realDes);
-			Code.load(o);
-			
-			Obj der = new Obj(Obj.Elem, des.getName(), new Struct(Struct.Array, des.getType().getElemType()));
-			Code.load(der);
-			
+			Code.load(tmp);
+			res = new Obj(Obj.Elem,"",realDes.getType());
 		} else {
-			Code.load(des); 
+			Code.load(realDes); 
+			res = realDes;
 		}
+		return res;
 		
 	}
 
@@ -577,12 +667,20 @@ public class CompilerImpl {
 		if (des.getType().getKind() != Struct.Int) {
 			log.error("Operand inkrementiranja mora biti tipa INT - linija: " + line);
 		}
+		Code.load(des);
+		Code.loadConst(1);
+		Code.put(Code.add);
+		Code.store(des);
 	}
 	
 	public void checkDesignatorDec(Obj des, int line) {
 		if (des.getType().getKind() != Struct.Int) {
 			log.error("Operand dekrementiranja mora biti tipa INT - linija: " + line);
 		}
+		Code.load(des);
+		Code.loadConst(1);
+		Code.put(Code.sub);
+		Code.store(des);
 	}
 	
 	public void checkInForLoopBreak(int line) {
@@ -610,8 +708,11 @@ public class CompilerImpl {
 			if (expr.getType().getKind() == Struct.Int) {
 				factorIsNew = true;
 				Code.put(Code.newarray);
-				Code.put(1);
-				return new Obj(Obj.Var, "" , type);
+				if(type == Tab.charType)
+					Code.put(0);
+				else
+					Code.put(1);
+				return new Obj(Obj.Elem, "" , new Struct(Struct.Array, type));
 			} 
 			else if (expr.getType().getKind() == Struct.Char) {
 				return Tab.noObj;

@@ -1,0 +1,15 @@
+program Program 
+{   
+    int b() {return 'z';}
+
+      int main() int a; char b;
+      {     
+            break;
+            continue;
+            if('z')
+                continue;
+            a += b;
+            a = 1+b;
+            a = b+=1;
+      }
+}

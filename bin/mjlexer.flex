@@ -49,6 +49,7 @@ import java_cup.runtime.Symbol;
 "continue"	{return new_symbol(sym.CONTINUE, yytext()); } 
 "static"	{return new_symbol(sym.STATIC, yytext()); }
 
+"#"			{return new_symbol(sym.HASHTAG, yytext()); }
 "+"			{return new_symbol(sym.PLUS, yytext()); }
 "-"			{return new_symbol(sym.MINUS, yytext()); }
 "*"			{return new_symbol(sym.TIMES, yytext()); }

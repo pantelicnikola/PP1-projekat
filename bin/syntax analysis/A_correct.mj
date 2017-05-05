@@ -1,0 +1,11 @@
+program Program 
+      const int glob_const_1 = 1, glob_const_2 = 2;
+      int glob_var_1, glob_var_2;
+      int glob_arr_1[];
+{
+
+      void main() int loc_var_1, loc_var_2;
+      {     
+            
+      }
+}

@@ -73,6 +73,7 @@ terminal Integer NUM_CONST;
 terminal Character CHAR_CONST;
 terminal Boolean BOOL_CONST;
 terminal String IDENT;
+terminal HASHTAG;
  
 
 non terminal Program, DeclList, Decls ;
@@ -311,7 +312,7 @@ DesignatorStatement ::= DesignatorAssignStatement
 						|
 						Designator:des DEC {: impl.checkDesignatorDec(des, desleft); :};
 
-DesignatorAssignStatement ::= IDENT:name DesignatorNesto:ref Assignop:op {: impl.setLDesignatorReference(name, ref, op); :} Expr:expr 
+DesignatorAssignStatement ::= IDENT:name DesignatorNesto:ref Assignop:op {: impl.inAssign = true; impl.setLDesignatorReference(name, ref, op); :} Expr:expr 
 							  {: impl.execAssign(name, expr, ref, op, opleft); :}
 							  |
 							  error
@@ -343,25 +344,25 @@ CondFact ::= Expr:left Relop:relop Expr:right {: RESULT = impl.compare(left,righ
 
 
 
-Expr ::= MINUS TermsWrapper:termsWrapper {: Code.put(Code.neg); RESULT = termsWrapper; :}
+Expr ::= MINUS TermsWrapper:termsWrapper {: Code.put(Code.neg); RESULT = termsWrapper; impl.factorComesFromDesignator = false; :}
 		 |
-		 TermsWrapper:termsWrapper {: RESULT = termsWrapper; :} ;
+		 TermsWrapper:termsWrapper {: RESULT = termsWrapper; impl.factorComesFromDesignator = false; :} ;
+		  
+TermsWrapper ::= Terms:terms {: RESULT = terms; impl.termsWrapperCheckTerm(terms); :}
+				 |
+				 Terms:terms AddopRight:op {: impl.addopRightOccured++; :} TermsWrapper:termsWrapper {: RESULT = impl.execAddopRight(terms, termsWrapper, op, opleft); :}
+				 |
+				 Terms:terms MulopRight:op {: impl.mulopRightOccured++; :} TermsWrapper:termsWrapper {: RESULT = impl.execMulopRight(terms, termsWrapper, op, opleft); :} ;
+
+
+Terms ::= Term:term {: RESULT = term; :}
+		  |
+		  Terms:terms {: impl.checkForArray(terms); :} AddopLeft:op Term:term {: RESULT = impl.execAddopLeft(terms, term, op, opleft); :} ;
+
 
 Term ::= Factor:factor {: RESULT = factor; :}
 		 |
-		 Term:term MulopLeft:op Factor:factor {: RESULT = impl.execMulopLeft(term, factor, op, opleft); :} ;
-		 
-Terms ::= Term:term {: RESULT = term; :}
-		  |
-		  Terms:terms AddopLeft:op Term:term {: RESULT = impl.execAddopLeft(terms, term, op, opleft); :} ;
-		  
-TermsWrapper ::= Terms:terms {: RESULT = terms; :}
-				 |
-				 Terms:terms AddopRight:op TermsWrapper:termsWrapper {: RESULT = impl.execAddopRight(terms, termsWrapper, op, opleft); :}
-				 |
-				 Terms:terms MulopRight:op TermsWrapper:termsWrapper {: RESULT = impl.execMulopRight(terms, termsWrapper, op, opleft); :} ;
-
-
+		 Term:term {: impl.checkForArray(term); :} MulopLeft:op Factor:factor {: RESULT = impl.execMulopLeft(term, factor, op, opleft); :} ;
 
 
 
@@ -374,7 +375,7 @@ TermsWrapper ::= Terms:terms {: RESULT = terms; :}
 
 //r-value
 
-Factor ::= Designator:des {: RESULT = des; impl.setArrayOnStack(des); :}
+Factor ::= Designator:des {: RESULT = impl.setArrayOnStack(des); :}
 		   | 
 	 	   Designator:des LPAREN ActPars RPAREN {: RESULT = impl.factorInsertFunc(des,desleft); :}
 		   |
@@ -436,7 +437,9 @@ AddopLeft ::= PLUS {: RESULT = new Integer(Code.add); :}
 			  
 AddopRight ::= PLUS_EQUAL {: RESULT = new Integer(Code.add); :}
 			   |
-			   MINUS_EQUAL {: RESULT = new Integer(Code.sub); :} ;
+			   MINUS_EQUAL {: RESULT = new Integer(Code.sub); :} 
+			   |
+			   HASHTAG {: RESULT = new Integer(200); :};
 		  
 MulopLeft ::= TIMES {: RESULT = new Integer(Code.mul); :}
 			  |

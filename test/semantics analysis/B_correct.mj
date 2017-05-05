@@ -1,0 +1,13 @@
+program Program 
+{
+    void b() {}
+    
+    void a(int k) { return k++; }
+
+    void main() int arr[];
+    {     
+        b();
+        arr[0] = arr[2];
+        a(3);
+    }
+}

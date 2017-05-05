@@ -1,0 +1,26 @@
+//Test 303
+program test_303
+class Predmet
+{
+	{
+		void postaviTezinu(int tezina) {this.tezina = tezina;}  
+		void ucitajTezinu() { read(tezina); }
+		static void ispis( Predmet p) { print(p.vrsta); print(eol); print(p.tezina);}
+		int zapremina() { return 0;}
+		int Q() {return zapremina() * tezina;}
+		void postaviVrstu(char vrsta) {this.vrsta = vrsta;}
+	}
+}
+
+{
+        void a() int z, k; {}
+        
+        void b(int c) int l; {}
+
+	void main()
+	{
+            a();
+            b(3);
+	}
+}
+

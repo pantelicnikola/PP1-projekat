@@ -1,0 +1,12 @@
+program Program 
+      const int pi = 3, e = 2;
+      char z,l;
+
+{
+
+      void main() int k; int x[];
+      {     
+            e = 7;
+            k = e;
+      }
+}
