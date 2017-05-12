@@ -1,6 +1,9 @@
 package rs.ac.bg.etf.pp1.impl;
 
 import java_cup.runtime.*;
+
+import java.awt.Window.Type;
+
 import org.apache.log4j.*;
 
 import rs.ac.bg.etf.pp1.MJParserTest;
@@ -278,9 +281,9 @@ public class CompilerImpl {
 	}
 	
 	public void termsWrapperCheckTerm(Obj term) {
-		if(isArray(term)&&(mulopRightOccured==0)&&(addopRightOccured==0)&&factorComesFromDesignator&&(inAssign))
-			Code.load(term);
-
+		if(isArray(term)&&(mulopRightOccured==0)&&(addopRightOccured==0)&&factorComesFromDesignator&&(inAssign)){
+			//Code.load(term);
+		}
 	} 
 	
 	
@@ -327,16 +330,34 @@ public class CompilerImpl {
 	}
 	
 	public void read(Obj des, int line){
-		int type = des.getType().getKind();
-		if(type == Struct.Int){
+		Obj realDes = Tab.currentScope().findSymbol(des.getName());
+		if (realDes == null) {
+			realDes = universeScope.findSymbol(des.getName());
+		}
+		Struct typeToCheck = (realDes.getType().getKind()==Struct.Array)?realDes.getType().getElemType():realDes.getType();
+		 
+        if(((typeToCheck != Tab.charType) && (typeToCheck != Tab.intType)&&(typeToCheck.getKind() != Struct.Bool)))
+                log.error("Error! Expression is not of type int, char or bool on line ");
+        
+		if(isArray(realDes)) {
+			Obj tmp = new Obj(Obj.Var,"",Tab.intType);
+			Code.store(tmp);
+			Code.load(realDes);
+			Code.load(tmp);
+			realDes = new Obj(Obj.Elem, realDes.getName(), new Struct(Struct.Array, realDes.getType().getElemType()));
+			
+			
+		}
+		if(typeToCheck == Tab.intType){
 			Code.put(Code.read);
-			Code.store(des);
-		} else if (type == Struct.Char){
+			Code.store(realDes);
+		} else if (typeToCheck == Tab.charType){
 			Code.put(Code.bread);
-			Code.store(des);
+			Code.store(realDes);
 		} else {
 			log.error("Operand instrukcije READ mora biti INT ili CHAR - linija: " + line);
 		}
+		inAssign = false;
 	}
 	
 	public void print(Obj des, int num, int line){
@@ -345,8 +366,7 @@ public class CompilerImpl {
         if(((typeToCheck != Tab.charType) && (typeToCheck != Tab.intType)&&(typeToCheck.getKind() != Struct.Bool)))
                 log.error("Error! Expression is not of type int, char or bool on line ");
         else {
-        	if(isArray(des))
-        		Code.load(des);
+        	
             if(typeToCheck == Tab.intType) {
                 Code.loadConst(5);
                 Code.put(Code.print);
@@ -411,8 +431,15 @@ public class CompilerImpl {
 		
 		checkAssignComaptibility(des, expr, op, line);
 		
+		if (ldesignatorIsDereferenced == true || !isArray(des)){
+			if (expr.getKind()==5 || isArray(expr)){
+				Code.load(expr);
+			}
+		}
+		
 		if (op == 0) {
 			if (ref != null) { // ako je r-value dereferenciran bice postavljen kind na Obj.Elem odn. 5
+				
 				des = new Obj(Obj.Elem, des.getName(), new Struct(Struct.Array, des.getType().getElemType()));
 				
 			} 
@@ -760,6 +787,23 @@ public class CompilerImpl {
 		
 		
 	}
+
+	public void loadIfArray(Obj expr) {
+		
+			if (expr.getType().getKind() == Struct.Array || expr.getKind() == 5 ) {
+				Code.load(expr);
+			}
+		
+		
+	}
 	
+	public void loadIfArrayBrackets(Obj expr) {
+		
+		if (expr.getType().getKind() == Struct.Array || expr.getKind() == Obj.Elem) {
+			Code.load(expr);
+		}
+	
+	
+}
 
 }

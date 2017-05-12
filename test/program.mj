@@ -1,21 +1,27 @@
 // Test301
 
 program test301
-int c[];
+	const int jedan = 1;
+	const int pet = 5;
+
+	int niz[];
+	
+	char nizch[];
+	
 {
-	
-	void main()	int a[], b;
+	void main()	int bodovi;
 	{
-		
-		a = new int[3];
-		c = new int[5];
-		a[1] = 3;
-		
-		
-		c[3] = 5;
-		print(c[a[1]]);
 	
+		bodovi = 7;
+		
+		niz = new int[2];
+		niz[0] = pet;
+		niz[1] = 0;
+		niz[niz[1]] *= bodovi;
+		print(niz[niz[1]]);
+		read(bodovi);//5
+		read(niz[0]);//1
+		read(niz[niz[0]]);
+		
 	}
 }
-
-

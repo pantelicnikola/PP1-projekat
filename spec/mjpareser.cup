@@ -271,11 +271,9 @@ Statement ::= DesignatorStatement SEMI_COLON:semi
 			  |
 			  RETURN:a {: impl.checkReturn(null,aleft); :} SEMI_COLON
 			  |
-			  READ LPAREN Designator:des RPAREN SEMI_COLON {: impl.read(des,desleft); :}
+			  READ LPAREN Designator:des RPAREN SEMI_COLON {: impl.read(des,desleft); :}    
 			  |
-			  PRINT {:inPrint = true;:} LPAREN Expr:exp COMMA NUM_CONST:num RPAREN SEMI_COLON {: impl.print(exp,num,expleft); :}    
-			  |
-			  PRINT LPAREN Expr:exp RPAREN SEMI_COLON {: impl.print(exp,-1,expleft); :}    
+			  PRINT LPAREN Expr:exp RPAREN SEMI_COLON {: impl.loadIfArray(exp); impl.print(exp,-1,expleft); :}    
 			  |
 			  LBRACE StatementList RBRACE ;
 
@@ -405,7 +403,7 @@ Designator ::= IDENT:name DesignatorNesto:ref {: RESULT = impl.findDesignator(na
 
 DesignatorNesto ::= DOT IDENT DesignatorNesto {: RESULT = null; :}
 					|
-					LBRACKET Expr:expr RBRACKET  DesignatorNesto	{: RESULT = "deReferenced";:}
+					LBRACKET Expr:expr RBRACKET  DesignatorNesto	{: RESULT = "deReferenced"; impl.loadIfArrayBrackets(expr); :}
 					|
 					/* epsilon */ {: RESULT = null; :}
 					;
