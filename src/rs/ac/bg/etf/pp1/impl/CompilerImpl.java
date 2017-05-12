@@ -278,7 +278,7 @@ public class CompilerImpl {
 	}
 	
 	public void termsWrapperCheckTerm(Obj term) {
-		if(isArray(term)&&(mulopRightOccured==0)&&(addopRightOccured==0)&&inAssign&&factorComesFromDesignator)
+		if(isArray(term)&&(mulopRightOccured==0)&&(addopRightOccured==0)&&factorComesFromDesignator&&(inAssign))
 			Code.load(term);
 
 	} 
@@ -352,7 +352,7 @@ public class CompilerImpl {
                 Code.put(Code.print);
             } else if (typeToCheck == Tab.charType) {
              	Code.loadConst(1);
-                 Code.put(Code.bprint);
+                Code.put(Code.bprint);
             }
         }
 	}
@@ -527,9 +527,16 @@ public class CompilerImpl {
 				// 10. a*a*a b*b*b
 				// 11. a*a*a b*b*b -
 				Obj tmp = new Obj(Obj.Var, "", new Struct(Struct.Int));
+				
+				Obj oj = new Obj(Obj.Con,"",Tab.intType);
+				oj.setAdr(6);
 				Code.store(tmp);
+				
 				Code.put(Code.dup);
 				Code.put(Code.dup);
+				
+				Code.load(oj);
+				Code.put(Code.mul);
 				Code.put(Code.mul);
 				Code.put(Code.mul);
 				Code.load(tmp);
@@ -629,6 +636,7 @@ public class CompilerImpl {
 		if (realDes == null) {
 			realDes = universeScope.findSymbol(des.getName());
 		}
+		//System.out.println(realDes.getName());
 		if (realDes != null && realDes.getType().getKind() == Struct.Array) {  // ovo treba raditi samo u slucaju da je niz u pitanju
 			Obj tmp = new Obj(Obj.Var, realDes.getName(), new Struct(Struct.Int));
 			Code.store(tmp);
@@ -666,7 +674,21 @@ public class CompilerImpl {
 	public void checkDesignatorInt(Obj des, int line) {
 		if (des.getType().getKind() != Struct.Int) {
 			log.error("Operand inkrementiranja mora biti tipa INT - linija: " + line);
+			return;
 		}
+		if (des.getKind() == 5) {
+			ldesignatorIsDereferenced = true;
+			Obj o = Tab.insert(Obj.Var,"",Tab.intType);
+			Code.store(o);
+			Obj ob = Tab.currentScope().findSymbol(des.getName());
+			if (ob == null) {
+				ob = universeScope.findSymbol(des.getName());
+			}
+			Code.load(ob); 
+			Code.load(o);
+			Code.load(ob); 
+			Code.load(o);
+		} 
 		Code.load(des);
 		Code.loadConst(1);
 		Code.put(Code.add);
@@ -677,10 +699,24 @@ public class CompilerImpl {
 		if (des.getType().getKind() != Struct.Int) {
 			log.error("Operand dekrementiranja mora biti tipa INT - linija: " + line);
 		}
+		if (des.getKind() == 5) {
+			ldesignatorIsDereferenced = true;
+			Obj o = Tab.insert(Obj.Var,"",Tab.intType);
+			Code.store(o);
+			Obj ob = Tab.currentScope().findSymbol(des.getName());
+			if (ob == null) {
+				ob = universeScope.findSymbol(des.getName());
+			}
+			Code.load(ob); 
+			Code.load(o);
+			Code.load(ob); 
+			Code.load(o);
+		} 
 		Code.load(des);
 		Code.loadConst(1);
 		Code.put(Code.sub);
 		Code.store(des);
+		return;
 	}
 	
 	public void checkInForLoopBreak(int line) {
